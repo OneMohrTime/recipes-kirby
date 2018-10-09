@@ -1,7 +1,8 @@
 {
   "require": {
     "craftcms/cms": "^3.0.0",
-    "vlucas/phpdotenv": "^2.4.0"
+    "vlucas/phpdotenv": "^2.4.0",
+    "nystudio107/craft-recipe": "1.0.7"
   },
   "autoload": {
     "psr-4": {
