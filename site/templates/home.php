@@ -1,29 +1,29 @@
 <?php snippet('header') ?>
 
-  <main class="main" role="main">
-    
-    <header class="wrap">
-      <h1><?= $page->title()->html() ?></h1>
-      <div class="intro text">
-        <?= $page->intro()->kirbytext() ?>
-      </div>
-      <hr />
-    </header>
+<main>
+  <header class="intro">
+    <h1><?= $site->title() ?></h1>
+  </header>
 
-    <div class="text wrap">
-      <?= $page->text()->kirbytext() ?>
-    </div>
-  
-    <section class="projects-section">
-      
-      <div class="wrap wide">
-        <h2>Latest Projects</h2>
-        <?php snippet('showcase', ['limit' => 3]) ?>
-        <p class="projects-section-more"><a href="<?= page('projects')->url() ?>" class="btn">show all projects &hellip;</a></p>
-      </div>
-      
-    </section>
+  <ul class="grid">
+    <?php foreach (page('photography')->children()->listed() as $album): ?>
+    <li>
+      <a href="<?= $album->url() ?>">
+        <figure>
+          <?php if ($cover = $album->cover()): ?>
+          <?= $cover->resize(1024, 1024) ?>
+          <?php endif ?>
+          <figcaption>
+            <span>
+              <span class="example-name"><?= $album->title() ?></span>
+            </span>
+          </figcaption>
+        </figure>
+      </a>
+    </li>
+    <?php endforeach ?>
+  </ul>
 
-  </main>
+</main>
 
 <?php snippet('footer') ?>

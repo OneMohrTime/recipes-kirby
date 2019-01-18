@@ -1,17 +1,15 @@
-  <footer class="footer cf" role="contentinfo">
-    <div class="wrap wide">
+  </div>
 
-      <p class="footer-copyright"><?php
-        // Parse Kirbytext to support dynamic year,
-        // but remove all HTML like paragraph tags:
-        echo html::decode($site->copyright()->kirbytext())
-      ?></p>
+  <footer class="footer">
+    <a href="<?= url() ?>">&copy; <?= date('Y') ?> / <?= $site->title() ?></a>
 
-      <p class="footer-madewithkirby">
-        <a href="http://getkirby.com/made-with-kirby-and-love">Made with Kirby and <b class="heart">♥</b></a>
-      </p>
-    
-    </div>
+    <?php if ($about = page('about')): ?>
+    <nav class="social">
+      <?php foreach ($about->social()->toStructure() as $social): ?>
+      <a href="<?= $social->url() ?>"><?= $social->platform() ?></a>
+      <?php endforeach ?>
+    </nav>
+    <?php endif ?>
   </footer>
 
 </body>

@@ -1,26 +1,25 @@
 <!doctype html>
-<html lang="<?= site()->language() ? site()->language()->code() : 'en' ?>">
+<html lang="en">
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-  <title><?= $site->title()->html() ?> | <?= $page->title()->html() ?></title>
-  <meta name="description" content="<?= $site->description()->html() ?>">
+  <title><?= $site->title() ?> | <?= $page->title() ?></title>
 
-  <?= css('assets/css/index.css') ?>
+  <?= css(['assets/css/index.css', '@auto']) ?>
 
 </head>
 <body>
 
-  <header class="header wrap wide" role="banner">
-    <div class="grid">
+  <div class="page">
+    <header class="header">
+      <a class="logo" href="<?= $site->url() ?>"><?= $site->title() ?></a>
 
-      <div class="branding column">
-        <a href="<?= url() ?>" rel="home"><?= $site->title()->html() ?></a>
-      </div>
+      <nav id="menu" class="menu">
+        <?php foreach ($site->children()->listed() as $item): ?>
+        <?= $item->title()->link() ?>
+        <?php endforeach ?>
+      </nav>
+    </header>
 
-      <?php snippet('menu') ?>
-
-    </div>
-  </header>

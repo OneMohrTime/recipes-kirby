@@ -1,13 +1,1 @@
-Title: Recipe Book
-
-----
-
-Author: Derek Mohr
-
-----
-
-Description: This is Kirby's Starterkit.
-
-----
-
-Copyright: © 2018–(date: Year) (link: https://onemohrti.me text: OneMohrTime)
+Title: Mægazine

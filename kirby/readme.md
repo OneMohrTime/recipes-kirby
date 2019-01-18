@@ -1,18 +1,24 @@
-# Kirby Core
+# Kirby
 
-This is the Kirby Core submodule.
+[![Build Status](https://travis-ci.com/k-next/kirby.svg?branch=master)](https://travis-ci.com/k-next/kirby)
 
-Please refer to the [Kirby Starterkit](http://github.com/getkirby/starterkit)
-for a complete installation of Kirby
+This is Kirby's core application folder. Get started with one of the following repositories instead:
 
-![Build Status](https://travis-ci.org/getkirby/kirby.svg?branch=master)
+- [Starterkit](https://github.com/getkirby/starterkit)
+- [Plainkit](https://github.com/getkirby/plainkit)
 
-## Author
-Bastian Allgeier
-<bastian@getkirby.com>
+## Bug reports
 
-## Website
-<http://getkirby.com>
+Please post all bug reports in our issue tracker:
+https://github.com/getkirby/kirby/issues
+
+## Feature suggestions
+
+If you want to suggest features or enhancements for Kirby, please use our Ideas repository:
+https://github.com/getkirby/ideas/issues
 
 ## License
-<http://getkirby.com>
+
+Kirby is not free software. In order to run Kirby on a public server you must purchase a valid license.
+- https://getkirby.com/buy
+- https://getkirby.com/license

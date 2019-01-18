@@ -1,57 +1,51 @@
 <?php snippet('header') ?>
 
-  <main class="main" role="main">
+<main>
+  <header class="intro">
+    <h1><?= $page->title() ?></h1>
+  </header>
 
-    <div class="wrap">
-      
-      <header>
-        <h1><?= $page->title()->html() ?></h1>
-        <div class="intro text">
-          <?= $page->intro()->kirbytext() ?>
+  <div class="layout">
+
+    <aside>
+      <section>
+        <h2>Address</h2>
+        <div class="text">
+          <?= $page->address()->kt() ?>
         </div>
-        <hr />
-      </header>
-      
-      <div class="text">
-        <?= $page->text()->kirbytext() ?>
-      </div>
-      
+      </section>
+
+      <section>
+        <h2>Email</h2>
+        <div class="text">
+          <?= html::email($page->email()) ?>
+        </div>
+      </section>
+
+      <section>
+        <h2>Phone</h2>
+        <div class="text">
+          <?= html::tel($page->phone()) ?>
+        </div>
+      </section>
+
+      <section>
+        <h2>On the web</h2>
+        <div class="text">
+          <ul>
+            <?php foreach ($page->social()->toStructure() as $social): ?>
+            <li><?= html::a($social->url(), $social->platform()) ?></li>
+            <?php endforeach ?>
+          </ul>
+        </div>
+      </section>
+
+    </aside>
+
+    <div class="text">
+      <?= $page->text()->kt() ?>
     </div>
-    
-    <section class="team wrap wide">
-      
-      <h2>Our Purring Team</h2>
-
-      <ul class="team-list grid gutter-1">
-        <?php foreach($page->children()->visible() as $member): ?>
-          <li class="team-item column">
-            
-            <?php if($image = $member->image()): ?>
-              <figure class="team-portrait">
-                <img src="<?= $image->url() ?>" alt="Portrait of <?= $member->title()->html() ?>" />
-              </figure>
-            <?php endif ?>
-            
-            <div class="team-info">
-              <h3 class="team-name"><?= $member->title()->html() ?></h3>
-              <p class="team-position"><?= $member->position()->html() ?></p>
-              <div class="team-about text">
-                <?= $member->about()->kirbytext() ?>
-              </div>
-            </div>
-            
-            <div class="team-contact text">
-              <i>Phone:</i><br />
-              <?= kirbytag(['tel' => $member->phone()->html()]) ?><br />
-              <i>Email:</i><br />
-              <a href="mailto:<?= $member->email()->html() ?>"><?= $member->email()->html() ?></a><br />
-            </div>
-          </li>
-        <?php endforeach ?>
-      </ul>
-      
-    </section>
-
-  </main>
+  </div>
+</main>
 
 <?php snippet('footer') ?>
