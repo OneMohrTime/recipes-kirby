@@ -10,6 +10,12 @@ Icon
 /media/*
 !/media/index.html
 
+# No version control plz
+# ---------------
+
+/kirby
+/vendor
+
 # -------------SECURITY-------------
 # NEVER publish these files via Git!
 # -------------SECURITY-------------
