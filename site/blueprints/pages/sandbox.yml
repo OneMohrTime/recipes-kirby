@@ -18,4 +18,4 @@ fields:
         label: Image
         type: files
         max: 1
-        parent: site.find('photography').children.first
+        parent: site.find('recipes').children.first

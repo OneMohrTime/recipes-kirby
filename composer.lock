@@ -38,8 +38,8 @@
             "authors": [
                 {
                     "name": "Cory LaViska",
-                    "homepage": "http://www.abeautifulsite.net/",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "homepage": "http://www.abeautifulsite.net/"
                 }
             ],
             "description": "A PHP class that makes working with images as simple as possible.",
@@ -90,8 +90,8 @@
             "authors": [
                 {
                     "name": "Filipe Dobreira",
-                    "homepage": "https://github.com/filp",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "homepage": "https://github.com/filp"
                 }
             ],
             "description": "php error handling for cool kids",
@@ -108,16 +108,16 @@
         },
         {
             "name": "getkirby/cms",
-            "version": "3.0.0",
+            "version": "3.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/kirby.git",
-                "reference": "72f01eac0a7db59360894e0cfb44680276260174"
+                "reference": "03d6e96aa27f631e5311cb6c2109e1510505cab7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/kirby/zipball/72f01eac0a7db59360894e0cfb44680276260174",
-                "reference": "72f01eac0a7db59360894e0cfb44680276260174",
+                "url": "https://api.github.com/repos/getkirby/kirby/zipball/03d6e96aa27f631e5311cb6c2109e1510505cab7",
+                "reference": "03d6e96aa27f631e5311cb6c2109e1510505cab7",
                 "shasum": ""
             },
             "require": {
@@ -125,20 +125,18 @@
                 "ext-ctype": "*",
                 "ext-mbstring": "*",
                 "filp/whoops": "2.3.1",
-                "getkirby/composer-installer": "*",
+                "getkirby/composer-installer": "^1.0",
                 "michelf/php-smartypants": "1.8.1",
                 "mustangostang/spyc": "0.6.2",
                 "php": ">=7.1.0",
-                "phpmailer/phpmailer": "6.0.6",
+                "phpmailer/phpmailer": "6.0.7",
                 "true/punycode": "2.1.1",
                 "zendframework/zend-escaper": "2.6.0"
             },
             "type": "kirby-cms",
             "autoload": {
                 "files": [
-                    "config/helpers.php",
-                    "config/aliases.php",
-                    "config/tests.php"
+                    "config/setup.php"
                 ],
                 "classmap": [
                     "dependencies/"
@@ -165,28 +163,28 @@
                 "core",
                 "kirby"
             ],
-            "time": "2019-01-15T08:15:26+00:00"
+            "time": "2019-08-06T08:13:08+00:00"
         },
         {
             "name": "getkirby/composer-installer",
-            "version": "1.0.1",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/k-next/composer-installer.git",
-                "reference": "dc0e38c4f0fc04875c1a523d82364a44f436cbf4"
+                "url": "https://github.com/getkirby/composer-installer.git",
+                "reference": "2d6b8f5601a31caeeea45623e1643fbb437eb94e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/k-next/composer-installer/zipball/dc0e38c4f0fc04875c1a523d82364a44f436cbf4",
-                "reference": "dc0e38c4f0fc04875c1a523d82364a44f436cbf4",
+                "url": "https://api.github.com/repos/getkirby/composer-installer/zipball/2d6b8f5601a31caeeea45623e1643fbb437eb94e",
+                "reference": "2d6b8f5601a31caeeea45623e1643fbb437eb94e",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0"
             },
             "require-dev": {
-                "composer/composer": "^1.3",
-                "phpunit/phpunit": "^6.0"
+                "composer/composer": "^1.8",
+                "phpunit/phpunit": "^7.0"
             },
             "type": "composer-plugin",
             "extra": {
@@ -194,16 +192,16 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Kirby\\ComposerInstaller\\": "src/"
+                    "Kirby\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "Kirby's custom Composer installer for the Kirby CMS",
+            "description": "Kirby's custom Composer installer for the Kirby CMS and for Kirby plugins",
             "homepage": "https://getkirby.com",
-            "time": "2018-12-19T10:01:45+00:00"
+            "time": "2019-02-11T20:27:36+00:00"
         },
         {
             "name": "league/color-extractor",
@@ -243,9 +241,9 @@
             "authors": [
                 {
                     "name": "Mathieu Lechat",
+                    "role": "Developer",
                     "email": "math.lechat@gmail.com",
-                    "homepage": "http://matthecat.com",
-                    "role": "Developer"
+                    "homepage": "http://matthecat.com"
                 }
             ],
             "description": "Extract colors from an image as a human would do.",
@@ -289,9 +287,9 @@
             "authors": [
                 {
                     "name": "Michel Fortin",
+                    "role": "Developer",
                     "email": "michel.fortin@michelf.ca",
-                    "homepage": "https://michelf.ca/",
-                    "role": "Developer"
+                    "homepage": "https://michelf.ca/"
                 },
                 {
                     "name": "John Gruber",
@@ -361,16 +359,16 @@
         },
         {
             "name": "phpmailer/phpmailer",
-            "version": "v6.0.6",
+            "version": "v6.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "8190d73eb5def11a43cfb020b7f36db65330698c"
+                "reference": "0c41a36d4508d470e376498c1c0c527aa36a2d59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/8190d73eb5def11a43cfb020b7f36db65330698c",
-                "reference": "8190d73eb5def11a43cfb020b7f36db65330698c",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/0c41a36d4508d470e376498c1c0c527aa36a2d59",
+                "reference": "0c41a36d4508d470e376498c1c0c527aa36a2d59",
                 "shasum": ""
             },
             "require": {
@@ -423,7 +421,7 @@
                 }
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-            "time": "2018-11-16T00:41:32+00:00"
+            "time": "2019-02-01T15:04:28+00:00"
         },
         {
             "name": "psr/log",
@@ -474,16 +472,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.10.0",
+            "version": "v1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "c79c051f5b3a46be09205c73b80b346e4153e494"
+                "reference": "b42a2f66e8f1b15ccf25652c3424265923eb4f17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/c79c051f5b3a46be09205c73b80b346e4153e494",
-                "reference": "c79c051f5b3a46be09205c73b80b346e4153e494",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/b42a2f66e8f1b15ccf25652c3424265923eb4f17",
+                "reference": "b42a2f66e8f1b15ccf25652c3424265923eb4f17",
                 "shasum": ""
             },
             "require": {
@@ -495,7 +493,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.9-dev"
+                    "dev-master": "1.12-dev"
                 }
             },
             "autoload": {
@@ -529,7 +527,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2018-09-21T13:07:52+00:00"
+            "time": "2019-08-06T08:03:45+00:00"
         },
         {
             "name": "true/punycode",
