@@ -1,0 +1,21 @@
+title: Drinks
+
+columns:
+  - width: 1/2
+    sections:
+      drafts:
+        extends: sections/drinks
+        headline: Drafts
+        status: draft
+
+      unlisted:
+        extends: sections/drinks
+        headline: In Review
+        status: unlisted
+
+  - width: 1/2
+    sections:
+      listed:
+        extends: sections/drinks
+        headline: Published
+        status: listed

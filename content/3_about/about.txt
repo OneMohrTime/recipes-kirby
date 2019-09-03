@@ -1,3 +1,7 @@
+Title: About us
+
+----
+
 Text:
 
 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
@@ -6,16 +10,11 @@ The Big Oxmox advised her not to do so, because there were thousands of bad Comm
 
 ----
 
-Address:
-
-Mægazine Inc.
-Sesamestreet 1
-Gotham City
-USA
+Address: Grand Rapids, MI
 
 ----
 
-Email: mail@maegazine.com
+Email: derek@onemohrti.me
 
 ----
 
@@ -25,12 +24,15 @@ Phone: +49 1234 5678
 
 Social:
 
--
-  platform: Twitter
-  url: https://twitter.com/getkirby
--
+- 
   platform: Instagram
-  url: https://instagram.com/getkirby
+  url: https://instagram.com/onemohrtimedesign
+- 
+  platform: Dribbble
+  url: https://dribbble.com/OneMohrTime
+- 
+  platform: Twitter
+  url: https://twitter.com/onemohrtime
 
 ----
 
@@ -40,7 +42,3 @@ Kirby Magazine Inc.
 Sesamestreet 1
 Gotham City
 USA
-
-----
-
-Title: About us

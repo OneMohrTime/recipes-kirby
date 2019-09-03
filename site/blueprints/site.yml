@@ -3,10 +3,10 @@ title: Site
 columns:
   - width: 1/2
     sections:
-      albums: sections/albums
+      recipes: sections/recipes
   - width: 1/2
     sections:
-      notes: sections/notes
+      drinks: sections/drinks
       pages:
         type: pages
         create: default

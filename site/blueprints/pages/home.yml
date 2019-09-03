@@ -9,11 +9,11 @@ sections:
   info:
     headline: Info
     type: info
-    text: All content for the homepage is being pulled from the photography page.
+    text: All content for the homepage is being pulled from the recipes page.
 
-  photography:
-    headline: Photography
-    extends: sections/albums
+  recipes:
+    headline: Recipes
+    extends: sections/recipes
     status: listed
 
 

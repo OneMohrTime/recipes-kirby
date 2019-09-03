@@ -1,0 +1,12 @@
+title: Recipes
+
+sections:
+  drafts:
+    extends: sections/recipes
+    headline: Drafts
+    status: draft
+
+  listed:
+    extends: sections/recipes
+    headline: Published Drinks
+    status: listed
