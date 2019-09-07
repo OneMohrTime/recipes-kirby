@@ -1,25 +1,30 @@
-<?php snippet('header') ?>
+{% extends '@templates/default.twig' %}
+{% set mainClass = 'album' %}
 
-<main class="album">
+{% block content %}
 	<article>
 
 		<header>
+<!--
 			<?php if ($cover = $page->cover()): ?>
 			<figure class="album-cover">
 				<?= $cover->crop(1024, 768) ?>
 				<figcaption>
-					<h1><?= $page->headline()->or($page->title()) ?></h1>
+-->
+					<h1>{{ page.headline ?: page.title }}</h1>
+<!--
 				</figcaption>
 			</figure>
 			<?php endif ?>
+-->
 		</header>
 
 		<div class="album-text text">
-			<?= $page->description()->kt() ?>
+			{{ page.description.kirbytext | raw }}
 
-			<?php if ($page->tags()->isNotEmpty()): ?>
-			<p class="album-tags tags"><?= $page->tags() ?></p>
-			<?php endif ?>
+			{% if page.tags is defined and page.tags is not empty %}
+				<p class="album-tags tags">{{ page.tags }}</p>
+			{% endif %}
 		</div>
 
 		<?php if ($gallery): ?>
@@ -36,6 +41,4 @@
 		</ul>
 		<?php endif ?>
 	</article>
-</main>
-
-<?php snippet('footer') ?>
+{% endblock %}

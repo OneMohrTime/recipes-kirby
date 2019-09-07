@@ -1,8 +1,8 @@
-<?php snippet('header') ?>
+{% extends '@templates/default.twig' %}
 
-<main>
+{% block content %}
 	<header class="intro">
-		<h1><?= $page->title() ?></h1>
+		<h1>{{ page.title }}</h1>
 	</header>
 
 	<div class="notes">
@@ -17,7 +17,4 @@
 		</article>
 		<?php endforeach ?>
 	</div>
-
-</main>
-
-<?php snippet('footer') ?>
+{% endblock %}

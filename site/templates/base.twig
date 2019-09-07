@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="{{ site.language() }}">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>{{ htmlTitle | default('No title') }}</title>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,600,600i,700,700i,900,900i&display=swap&subset=latin-ext" />
+	{{ css(['assets/css/index.css', '@auto']) }}
+
+</head>
+
+<body>
+
+	<div class="page">
+
+		<header class="header">
+			<a class="logo" href="{{ site.url }}">{{ site.title }}</a>
+
+			{% include '@snippets/navigation.twig' %}
+		</header>
+		
+		<main{% if mainClass is defined and mainClass is not null %} class="{{ mainClass }}"{% endif %}>
+			{% block content %}
+			{% endblock %}
+		</main>
+		
+	</div>
+
+	<footer class="footer">
+		<a href="{{ site.url }}">&copy; {{ 'now' | date('Y') }} / {{ site.title }}</a>
+<!--
+
+		<?php if ($about = page('about')): ?>
+		<nav class="social">
+
+			<?php foreach ($about->social()->toStructure() as $social): ?>
+			<a href="<?= $social->url() ?>"><?= $social->platform() ?></a>
+			<?php endforeach ?>
+
+		</nav>
+		<?php endif ?>
+-->
+	</footer>
+</body>
+
+</html>

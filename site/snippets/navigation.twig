@@ -1,0 +1,7 @@
+<nav id="menu" class="menu">
+	
+	{% for item in site.children().listed %}
+		<a href="{{ item.url }}">{{ item.title }}</a>
+	{% endfor %}
+	
+</nav>
