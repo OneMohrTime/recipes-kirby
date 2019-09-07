@@ -6,6 +6,16 @@ https://coolors.co/2b3b4c-1e2732-845a6d-6e75a8-fffef7
 https://coolors.co/2b3b4c-1e2732-f1bf98-8fd5a6-fffef7
 */
 
+@import
+	'_utilities/variables';
+
+@import
+	'_layout/typography',
+	'_layout/footer';
+
+@import
+	'_components/social-icons';
+
 :root {
   --content-width: 65rem;
 }
@@ -19,7 +29,7 @@ https://coolors.co/2b3b4c-1e2732-f1bf98-8fd5a6-fffef7
 }
 
 html {
-	font-family: "Vollkorn", serif;
+	font-family: "Prospectus Pro", serif;
 
 }
 
@@ -153,33 +163,4 @@ main {
 }
 .text img {
   width: 100%;
-}
-
-.footer {
-  padding: 1.5rem 5vw 10vh;
-  text-align: center;
-  max-width: var(--content-width);
-  margin: 0 auto;
-  line-height: 1.5em;
-}
-.footer a {
-  display: inline-block;
-  font-size: .875rem;
-}
-.footer > a {
-  margin-bottom: 1.5rem;
-  border-top: 2px solid #000;
-  width: 16.5rem;
-  padding-top: .5rem;
-}
-
-.social a {
-  margin: 0 .75rem;
-  padding: .5rem 1rem;
-  border: 2px solid #000;
-  width: 7.5rem;
-}
-.social a:hover {
-  background: #000;
-  color: #fff;
 }

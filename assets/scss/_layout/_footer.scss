@@ -1,0 +1,23 @@
+/* ----------------------------------------
+	Layout / Footer
+---------------------------------------- */
+
+.footer {
+	padding: 1.5rem 5vw 10vh;
+	text-align: center;
+	max-width: var(--content-width);
+	margin: 0 auto;
+	line-height: 1.5em;
+}
+
+.footer a {
+	display: inline-block;
+	font-size: .875rem;
+}
+
+.footer > a {
+	margin-bottom: 1.5rem;
+	border-top: 2px solid #000;
+	width: 16.5rem;
+	padding-top: .5rem;
+}
