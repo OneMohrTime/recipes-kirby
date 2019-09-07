@@ -5,9 +5,9 @@
 		<h1>{{ page.title }}</h1>
 	</header>
 
-	<ul class="albums" <?= attr(['data-even' => $page->children()->listed()->isEven()], ' ') ?>>
-		<?php foreach ($page->children()->listed() as $recipe): ?>
-		<li>
+	<ul class="albums">
+		{% for recipe in recipes %}
+		<li{% if page.children().listed is even %} data-even{% endif %}>
 			<a href="<?= $recipe->url() ?>">
 				<figure>
 					<?php if ($cover = $recipe->cover()): ?>
@@ -17,6 +17,6 @@
 				</figure>
 			</a>
 		</li>
-		<?php endforeach ?>
+		{% endfor %}
 	</ul>
 {% endblock %}

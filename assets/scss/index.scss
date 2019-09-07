@@ -17,20 +17,22 @@ https://coolors.co/2b3b4c-1e2732-f1bf98-8fd5a6-fffef7
 	'_components/social-icons';
 
 :root {
-  --content-width: 65rem;
-}
-
-*,
-*:after,
-*:before{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	--content-width: 65rem;
 }
 
 html {
-	font-family: "Prospectus Pro", serif;
+	margin: 0;
+	padding: 0;
+}
 
+body {
+	font-family: "Prospectus Pro", serif;
+	background-color: map-get($color, light-gray);
+	color: map-get($color, black);
+}
+
+* {
+	box-sizing: border-box;
 }
 
 li {
@@ -131,6 +133,8 @@ main {
 }
 
 .text {
+	background-color: map-get($color, white);
+	color: map-get($color, dark-gray);
   line-height: 1.5em;
 }
 .text p,
