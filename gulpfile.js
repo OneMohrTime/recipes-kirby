@@ -17,7 +17,7 @@ gulp.task('serve', function() {
   // Watch for changes in PHP files and reload the browser
   gulp.watch("assets/scss/**/*.scss", ['sass']);
   // Watch for changes in PHP files and reload the browser
-  gulp.watch('**/*.php').on('change', function () {
+  gulp.watch('**/*.twig').on('change', function () {
     browserSync.reload();
   });
 });
