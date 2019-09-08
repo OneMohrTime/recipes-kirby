@@ -2,7 +2,7 @@
 
 {% block content %}
 	<header class="intro">
-		<h1><?= $page->title() ?></h1>
+		<h1>{{ page.title }}</h1>
 	</header>
 
 	<div class="layout">
@@ -11,21 +11,21 @@
 			<section>
 				<h2>Address</h2>
 				<div class="text">
-					<?= $page->address()->kt() ?>
+					{{ page.address.kirbytext | raw }}
 				</div>
 			</section>
 
 			<section>
 				<h2>Email</h2>
 				<div class="text">
-					<?= html::email($page->email()) ?>
+					{{ page.email() }}
 				</div>
 			</section>
 
 			<section>
 				<h2>Phone</h2>
 				<div class="text">
-					<?= html::tel($page->phone()) ?>
+					{{ page.phone() }}
 				</div>
 			</section>
 
@@ -33,9 +33,11 @@
 				<h2>On the web</h2>
 				<div class="text">
 					<ul>
-						<?php foreach ($page->social()->toStructure() as $social): ?>
-						<li><?= html::a($social->url(), $social->platform()) ?></li>
-						<?php endforeach ?>
+						
+						{% for social in page.social().toStructure %}
+							<li><a href="{{ social.url }}">{{ social.platform }}</a></li>
+						{% endfor %}
+						
 					</ul>
 				</div>
 			</section>
@@ -43,7 +45,7 @@
 		</aside>
 
 		<div class="text">
-			<?= $page->text()->kt() ?>
+			{{ page.text.kirbytext | raw }}
 		</div>
 	</div>
 </main>

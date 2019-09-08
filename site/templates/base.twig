@@ -19,37 +19,36 @@
 </head>
 
 <body>
-
 	<div class="page">
 
-		<header class="header">
+		<header class="page__header">
 			<a class="logo" href="{{ site.url }}">{{ site.title }}</a>
 
 			{% include '@snippets/navigation.twig' %}
 		</header>
 		
-		<main{% if mainClass is defined and mainClass is not null %} class="{{ mainClass }}"{% endif %}>
+		<main class="page__body{% if mainClass is defined and mainClass is not null %} {{ mainClass }}{% endif %}">
 			{% block content %}
 			{% endblock %}
 		</main>
 		
+		<footer class="page__footer">
+			<p>&copy; {{ 'now' | date('Y') }} | <a href="{{ site.url }}">{{ site.title }}</a> | <em>A shared cookery book between <a href="https://onemohrti.me" rel="nofollow noreferrer">Derek</a> &amp; <a href="https://owielanctot.com" rel="nofollow noreferrer">Owie</a></em> | <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></p>
+	<!--
+
+			<?php if ($about = page('about')): ?>
+			<nav class="social">
+
+				<?php foreach ($about->social()->toStructure() as $social): ?>
+				<a href="<?= $social->url() ?>"><?= $social->platform() ?></a>
+				<?php endforeach ?>
+
+			</nav>
+			<?php endif ?>
+	-->
+		</footer>
+		
 	</div>
-
-	<footer class="footer">
-		<a href="{{ site.url }}">&copy; {{ 'now' | date('Y') }} / {{ site.title }}</a>
-<!--
-
-		<?php if ($about = page('about')): ?>
-		<nav class="social">
-
-			<?php foreach ($about->social()->toStructure() as $social): ?>
-			<a href="<?= $social->url() ?>"><?= $social->platform() ?></a>
-			<?php endforeach ?>
-
-		</nav>
-		<?php endif ?>
--->
-	</footer>
 </body>
 
 </html>

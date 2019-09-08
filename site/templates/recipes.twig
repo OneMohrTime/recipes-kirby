@@ -1,22 +1,33 @@
 {% extends '@templates/default.twig' %}
 
+{% set recipes = site
+	.find('recipes')
+	.children()
+	.sortBy('date', 'desc') %}
+
 {% block content %}
 	<header class="intro">
-		<h1>{{ page.title }}</h1>
+		<h1>{{ page.headline ?: page.title }}</h1>
 	</header>
 
-	<ul class="albums">
+	{% if recipes is defined and recipes is not empty %}
+	<ul class="recipes">
 		{% for recipe in recipes %}
-		<li{% if page.children().listed is even %} data-even{% endif %}>
-			<a href="<?= $recipe->url() ?>">
+		<li>
+			<a href="{{ recipe.url }}">
 				<figure>
-					<?php if ($cover = $recipe->cover()): ?>
-					<?= $cover->crop(800, 1000) ?>
-					<?php endif ?>
-					<figcaption><?= $recipe->title() ?></figcaption>
+					<img src="http://lorempixel.com/g/500/400/food/{{ loop.index }}" />
+					<figcaption>{{ recipe.title }}</figcaption>
 				</figure>
 			</a>
 		</li>
 		{% endfor %}
 	</ul>
+	{% else %}
+		<p>No recipes :(</p>
+	{% endif %}
+	
+	{% if page.description is defined and page.description is not empty %}
+		<p>{{ page.description }}</p>
+	{% endif %}
 {% endblock %}
