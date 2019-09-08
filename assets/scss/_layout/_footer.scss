@@ -2,7 +2,7 @@
 	Layout / Footer
 ---------------------------------------- */
 
-.footer {
+.page__footer {
 	padding: 1.5rem 5vw 10vh;
 	text-align: center;
 	max-width: var(--content-width);
@@ -10,12 +10,12 @@
 	line-height: 1.5em;
 }
 
-.footer a {
+.page__footer a {
 	display: inline-block;
 	font-size: .875rem;
 }
 
-.footer > a {
+.page__footer > a {
 	margin-bottom: 1.5rem;
 	border-top: 2px solid #000;
 	width: 16.5rem;

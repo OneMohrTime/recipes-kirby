@@ -1,0 +1,39 @@
+/* ----------------------------------------
+	Layout / Header
+---------------------------------------- */
+
+.page__header {
+	margin-bottom: 1.5rem;
+}
+
+.page__header a {
+	position: relative;
+	text-transform: uppercase;
+	font-size: .875rem;
+	letter-spacing: .05em;
+	padding: .5rem 0;
+	font-weight: 700;
+}
+
+.page__header .logo {
+	display: block;
+	margin-bottom: 1.5rem;
+	padding: .5rem 0;
+}
+
+.page__header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+@media screen and (min-width: 40rem) {
+	.page__header .logo {
+		margin-bottom: 0;
+	}
+
+	.page__header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
