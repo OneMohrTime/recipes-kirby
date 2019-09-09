@@ -6,15 +6,19 @@
 	.sortBy('date', 'desc') %}
 
 {% block content %}
-	<header class="intro">
+	<header class="page__intro intro">
 		<h1>{{ page.headline ?: page.title }}</h1>
+		
+		{% if page.description is defined and page.description is not empty %}
+			{{ page.description.kirbytext | raw }}
+		{% endif %}
 	</header>
 
 	{% if recipes is defined and recipes is not empty %}
-	<ul class="recipes">
+	<ul class="page__recipes">
 		{% for recipe in recipes %}
-		<li>
-			<a href="{{ recipe.url }}">
+		<li class="recipe">
+			<a href="{{ recipe.url }}" class="recipe__image">
 				<figure>
 					<img src="http://lorempixel.com/g/500/400/food/{{ loop.index }}" />
 					<figcaption>{{ recipe.title }}</figcaption>
@@ -25,9 +29,5 @@
 	</ul>
 	{% else %}
 		<p>No recipes :(</p>
-	{% endif %}
-	
-	{% if page.description is defined and page.description is not empty %}
-		<p>{{ page.description }}</p>
 	{% endif %}
 {% endblock %}

@@ -3,10 +3,44 @@
 ---------------------------------------- */
 
 /**
+ * Vendor
+ * - Bourbon
+ * - Include-Media
+ */
+
+$bourbon: (
+	"contrast-switch-dark-color": #2b3b4c,
+	"contrast-switch-light-color": #e8e7e1,
+	"global-font-file-formats": ("eot", "ttf", "woff2", "woff"),
+	"modular-scale-base": 1em 1.25em,
+	"modular-scale-ratio": 1.618,
+	"rails-asset-pipeline": false,
+);
+
+$breakpoints: (
+	for-phone-only: 599px,
+	for-tablet-portrait-up: 600px,
+	for-tablet-landscape-up: 900px,
+	for-desktop-up: 1200px,
+	for-big-desktop-up: 1800px
+);
+
+//$breakpoints: (
+//	xxs: 375px,
+//	xs: 425px,
+//	sm: 540px,
+//	md: 64em,
+//	lg: 64em
+//	xl: 64em
+//	xxl: 64em
+//);
+
+
+/**
  * Spacing
  */
 
-$spaces: (
+$spacer: (
 	0: 0,
 	1: 1.125rem,
 	2: 2.25rem,

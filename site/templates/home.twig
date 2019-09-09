@@ -4,7 +4,6 @@
 {% set recipes = site
 	.find('recipes')
 	.children()
-	.filterBy('status', 'published')
 	.sortBy('date', 'desc') %}
 
 {% block content %}
@@ -12,10 +11,10 @@
 		<h1>{{ site.title }}</h1>
 	</header>
 
-	{{ dump(recipes) }}
 	<ul class="grid">
 		{% for recipe in recipes %}
 		<li>
+	{{ dump(recipe) }}
 			<a href="{{ recipe.url }}">
 				<figure>
 <!--

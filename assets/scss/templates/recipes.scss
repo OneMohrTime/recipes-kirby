@@ -4,41 +4,42 @@
 
 @import "../../scss/_utilities/variables";
 
-.recipes {
+.page__recipes {
 	display: grid;
 	list-style: none;
 	grid-gap: 1rem;
-	line-height: 0;
+	padding-left: 0;
 }
 
 @media screen and (min-width: 30em) {
-	.recipes {
+	.page__recipes {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
 @media screen and (min-width: 60em) {
-	.recipes {
+	.page__recipes {
 		grid-template-columns: repeat(3, 1fr);
 	}
 
-	.recipes[data-even] {
+	.page__recipes[data-even] {
 		grid-template-columns: repeat(4, 1fr);
 	}
 }
 
 
-.recipes li {
+.page__recipes li {
 	overflow: hidden;
 	background: map-get($color, light-gray);
 }
 
-.recipes figure {
+.page__recipes figure {
 	position: relative;
-	padding-bottom: 125%;
+	margin: 0;
+	padding-bottom: 80%;
 }
 
-.recipes figcaption {
+.page__recipes figcaption {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -57,7 +58,7 @@
 	letter-spacing: .125em;
 }
 
-.recipes img {
+.page__recipes img {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -69,6 +70,6 @@
 	transition: all .3s;
 }
 
-.recipes img:hover {
+.page__recipes img:hover {
 	opacity: .2;
 }

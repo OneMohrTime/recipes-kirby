@@ -1,0 +1,24 @@
+/* ----------------------------------------
+	Layout / Page
+---------------------------------------- */
+
+.page {
+	position: relative;
+}
+
+.page > * {
+	max-width: var(--content-width);
+	margin: 0 auto;
+	padding-left: map-get($spacer, 1);
+	padding-right: map-get($spacer, 1);
+}
+
+.page__header {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.intro {
+	padding-top: 15vh;
+	padding-bottom: 15vh;
+}

@@ -6,7 +6,7 @@
 	
 	a {
 		position: relative;
-		margin: 0 #{map-get($spaces, 1) / 2};
+		margin: 0 #{map-get($spacer, 1) / 2};
 		
 		&::after {
 			content: "";
