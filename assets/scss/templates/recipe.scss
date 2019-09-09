@@ -1,0 +1,31 @@
+/* ----------------------------------------
+	Template / Recipe
+---------------------------------------- */
+
+@import "../../../node_modules/include-media/dist/include-media";
+@import "../../scss/_utilities/variables";
+
+.recipe__grid {
+	
+	@include media(">=for-tablet-landscape-up") {
+		display: grid;
+	}
+}
+
+.recipe__header {
+	@include media(">=for-tablet-landscape-up") {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+.recipe__cover,
+.recipe__ingredients,
+.recipe__directions,
+.recipe__tags {
+	margin-bottom: 5vh;
+	
+	@include media(">=for-tablet-landscape-up") {
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,9 @@
+<nav id="menu" class="menu">
+	
+	{% for item in site.children().listed %}
+		<a href="{{ item.url }}" class="menu__item"{% if item.isActive %} aria-current="page"{% endif %}>{{ item.title }}</a>
+	{% endfor %}
+	
+	<a href="#searchToggle" class="menu__item">Search</a>
+	
+</nav>

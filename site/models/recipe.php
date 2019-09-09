@@ -1,6 +1,6 @@
 <?php
 
-class AlbumPage extends Page
+class RecipePage extends Page
 {
     public function cover()
     {

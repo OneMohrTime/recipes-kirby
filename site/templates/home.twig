@@ -1,0 +1,36 @@
+{% extends '@templates/default.twig' %}
+{% set htmlTitle = page.title ~ ' - ' ~ site.title %}
+
+{% set recipes = site
+	.find('recipes')
+	.children()
+	.sortBy('date', 'desc') %}
+
+{% block content %}
+	<header class="intro">
+		<h1>{{ site.title }}</h1>
+	</header>
+
+	<ul class="grid">
+		{% for recipe in recipes %}
+		<li>
+	{{ dump(recipe) }}
+			<a href="{{ recipe.url }}">
+				<figure>
+<!--
+					<?php if ($cover = $recipe->cover()): ?>
+					<?= $cover->resize(1024, 1024) ?>
+					<?php endif ?>
+-->
+					<figcaption>
+						<span>
+							<span class="example-name">{{ recipe.title }}</span>
+						</span>
+					</figcaption>
+				</figure>
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+
+{% endblock %}

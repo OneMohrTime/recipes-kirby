@@ -1,0 +1,32 @@
+{
+  "name": "recipes",
+  "version": "1.0.0",
+  "description": "Gulpfile for http://cookbook.onemohrti.me",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OneMohrTime/recipes.git"
+  },
+  "author": "\"Derek Mohr <derek@onemohrti.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OneMohrTime/recipes/issues"
+  },
+  "homepage": "https://github.com/OneMohrTime/recipes#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-connect-php": "^1.0.3",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglifycss": "^1.1.0"
+  },
+  "dependencies": {
+    "bourbon": "^6.0.0",
+    "include-media": "^1.4.9",
+    "normalize.css": "^8.0.1"
+  }
+}

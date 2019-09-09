@@ -1,0 +1,1 @@
+@media(min-width:900px){.recipe__grid{display:grid}}@media(min-width:900px){.recipe__header{padding-top:0;padding-bottom:0}}.recipe__cover,.recipe__ingredients,.recipe__directions,.recipe__tags{margin-bottom:5vh}@media(min-width:900px){.recipe__cover,.recipe__ingredients,.recipe__directions,.recipe__tags{margin-bottom:0}}
