@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'debug' => true,
+    'install' => true,
+    'debug' => false,
 ];
