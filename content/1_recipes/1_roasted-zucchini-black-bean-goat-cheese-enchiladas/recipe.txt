@@ -2,13 +2,13 @@ Title: Roasted Zucchini, Black Bean + Goat Cheese Enchiladas
 
 ----
 
-Cover:
-
-- profile.jpg
+Headline: Roasted Zucchini, Black Bean + Goat Cheese Enchiladas
 
 ----
 
-Headline: Roasted Zucchini, Black Bean + Goat Cheese Enchiladas
+Cover:
+
+- profile.jpg
 
 ----
 
@@ -21,3 +21,69 @@ I would consider the below recipe pretty easy on the cheese all things considere
 ----
 
 Tags: Vegetarian
+
+----
+
+Ingredients:
+
+[
+    {
+        "attrs": [],
+        "content": "sadsa",
+        "id": "_xeb8cqksj",
+        "type": "ul"
+    },
+    {
+        "attrs": {
+            "indent": 0
+        },
+        "content": "asdsad",
+        "id": "_fbbjdm6qn",
+        "type": "ul"
+    },
+    {
+        "attrs": {
+            "indent": 0
+        },
+        "content": "sdfdfdsf",
+        "id": "_yissxe287",
+        "type": "ul"
+    }
+]
+
+----
+
+Directions:
+
+[
+    {
+        "attrs": [],
+        "content": "kuhhjk",
+        "id": "_w9x19fw5u",
+        "type": "ol"
+    },
+    {
+        "attrs": {
+            "indent": 0
+        },
+        "content": "jhbjhbjh",
+        "id": "_37zb29c6a",
+        "type": "ol"
+    },
+    {
+        "attrs": {
+            "indent": 0
+        },
+        "content": "jhbjhbjhb",
+        "id": "_nk1dv99i4",
+        "type": "ol"
+    },
+    {
+        "attrs": {
+            "indent": 0
+        },
+        "content": "jbjbj",
+        "id": "_7be4b8i58",
+        "type": "ol"
+    }
+]
