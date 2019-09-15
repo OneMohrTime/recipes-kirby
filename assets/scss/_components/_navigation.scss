@@ -6,18 +6,23 @@
 	
 	a {
 		position: relative;
-		margin: 0 #{map-get($spacer, 1) / 2};
+		margin-top: 0;
+		margin-left: map-get($spacer, 1);
+		margin-right: #{map-get($spacer, 1) / 2};
+		margin-bottom: 0;
 		
 		&::after {
 			content: "";
 			position: absolute;
-			left: 50%;
+			top: 50%;
+			left: -#{map-get($spacer, 1)};
 			display: block;
 			width: 10px;
 			height: 10px;
 			opacity: 0;
-			transform: translateX(-50%);
-			transition: opacity 500ms;
+			transform: translateY(-50%);
+			transition: background 500ms, opacity 500ms;
+			background-image: none;
 			background-size: 10px 10px;
 		}
 		

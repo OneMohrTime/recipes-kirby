@@ -14,12 +14,39 @@ status:
     text: Your drink is online and listed in the blog
 
 columns:
-  - width: 2/3
+  - width: 1/2
     fields:
-      text:
+      cover:
+        type: files
+        layout: cards
+        multiple: false
+  - width: 1/2
+    fields:
+      description:
+        label: Description
         type: textarea
-        size: large
-
+      ingredients:
+        label: Ingredients
+        type: textarea
+        buttons:
+          - ul
+      directions:
+        label: Directions
+        type: textarea
+        buttons:
+          - ol
+  - width: 2/3
+    sections:
+      images:
+        type: files
+        layout: cards
+        template: image
+        info: "{{ file.dimensions }}"
+        image:
+          ratio: 5/4
+          cover: true
+        min: 1
+        size: small
   - width: 1/3
     sections:
       meta:
@@ -32,12 +59,3 @@ columns:
           author:
             type: users
           tags: true
-          gallery:
-            type: pages
-            query: site.find("drinks").children
-            multiple: false
-            info: "{{ page.images.count }} image(s)"
-            empty: "No drink selected"
-            image:
-              cover: true
-            help: Place the {{ gallery }} tag anywhere in your text to add the selected gallery

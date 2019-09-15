@@ -5,32 +5,36 @@
 	<article class="recipe__grid">
 
 		<header class="recipe__header intro">
-			<h1 class="recipe__headline">{{ page.headline ?: page.title }}</h1>
+			<h1 class="recipe__headline headline">{{ page.headline ?: page.title }}</h1>
 			<div class="recipe__subheadline">{{ page.description.kirbytext | raw }}</div>
 		</header>
 		
 		<figure class="recipe__cover">
-			<img src="http://lorempixel.com/g/960/450/food" />
+			<img src="http://lorempixel.com/960/450/food" />
 			<figcaption>
 			</figcaption>
 		</figure>
 
 		<section class="recipe__ingredients">
 			<h2 class="ingredient__title">Ingredients</h2>
+			
+			{% if page.ingredients is defined and page.ingredients is not empty %}
 			<ul class="ingredient__list">
-				<li class="ingredient">ingredient</li>
-				<li class="ingredient">ingredient</li>
-				<li class="ingredient">ingredient</li>
+<!--				<li class="ingredient">ingredient</li>-->
+				{{ page.ingredients | raw }}
 			</ul>
+			{% endif %}
 		</section>
 		
 		<section class="recipe__directions">
 			<h2 class="directions__title">Directions</h2>
-			<ul class="directions__list">
-				<li class="direction">ingredient</li>
-				<li class="direction">ingredient</li>
-				<li class="direction">ingredient</li>
-			</ul>
+			
+			{% if page.directions is defined and page.directions is not empty %}
+			<ol class="directions__list">
+<!--				<li class="direction">ingredient</li>-->
+				{{ page.directions | raw }}
+			</ol>
+			{% endif %}
 		</section>
 		
 		{% if page.tags is defined and page.tags is not empty %}
