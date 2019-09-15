@@ -33,7 +33,7 @@
 		</main>
 		
 		<footer class="page__footer">
-			<p>&copy; {{ 'now' | date('Y') }} <a href="{{ site.url }}">{{ site.title }}</a> | <em>A shared cook book or recipes between <a href="https://onemohrti.me" rel="nofollow noreferrer">Derek</a> &amp; <a href="https://owielanctot.com" rel="nofollow noreferrer">Owie</a></em></p>
+			<p>&copy; {{ 'now' | date('Y') }} <a href="{{ site.url }}">{{ site.title }}</a> | <em>A shared cookbook of recipes between <a href="https://onemohrti.me" rel="nofollow noreferrer">Derek</a> &amp; <a href="https://owielanctot.com" rel="nofollow noreferrer">Owie</a></em></p>
 			<p><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></p>
 	<!--
 
@@ -50,6 +50,16 @@
 		</footer>
 		
 	</div>
+	
+	{#
+	{{ js('assets/js/main.js') }}
+	Async
+	{{ js('assets/js/main.js', true) }}
+	Defer
+	{{ js('assets/js/site.js', ['async' => true, 'defer' => true, 'data-something' => 'my-value']) }}
+	#}
+	{# Autoloading template specific script files #}
+	{{ js(['assets/js/main.js', '@auto']) }}
 </body>
 
 </html>
