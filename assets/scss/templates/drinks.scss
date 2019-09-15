@@ -1,20 +1,96 @@
-.notes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-gap: 1.5rem;
-  grid-auto-rows: 1fr;
+/* ----------------------------------------
+	Template / Drinks
+---------------------------------------- */
+
+@import "../../../node_modules/include-media/dist/include-media";
+@import "../../../node_modules/bourbon/core/bourbon";
+@import "../../scss/_utilities/variables";
+
+.page__drinks {
+	display: grid;
+	grid-gap: map-get($spacer, 1);
 }
-.note {
-  border: 2px solid #000;
+
+@media screen and (min-width: 30em) {
+	.page__drinks {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
-.note a {
-  display: block;
-  padding: 1rem;
-  line-height: 1.25em;
+
+@media screen and (min-width: 60em) {
+	.page__drinks {
+		grid-template-columns: repeat(4, 1fr);
+	}
 }
-.note h2 {
-  font-size: 1rem;
+
+.drink {
+	position: relative;
+	overflow: hidden;
+	
+	&:focus,
+	&:hover {
+		.drink__subtitle {
+			overflow: visible;
+			text-overflow: none;
+			white-space: normal;
+		}
+		.drink__caption {
+			padding: map-get($spacer, 1);
+			background-color: map-get($color, blue);
+			color: map-get($color, white);
+		}
+		.drink__crosshair {
+			margin-top: map-get($spacer, 3) / 2;
+			margin-bottom: map-get($spacer, 3) / 2;
+			&::before,
+			&::after {
+				background-color: map-get($color, white);
+			}
+		}
+	}
 }
-.note time {
-  font-size: .75rem;
+
+.drink__title {
+	@include ellipsis;
+	display: block;
+	font-size: modular-scale(1);
+}
+
+.drink__subtitle {
+	@include ellipsis;
+	display: block;
+	transition: overflow 500ms, text-overflow 500ms, white-space 500ms;
+	transition-delay: 1s;
+	font-size: modular-scale(0);
+	font-style: italic;
+	font-weight: 300;
+}
+
+.drink__cover {
+	position: relative;
+}
+
+.drink__caption {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	transition: padding 500ms, background-color 500ms, color 500ms;
+	background-color: map-get($color, white);
+	color: map-get($color, dark-gray);
+}
+
+.drink__crosshair {
+	margin-bottom: map-get($spacer, 1);
+	transition: margin 500ms;
+	
+	&::before,
+	&::after {
+		transition: all 500ms;
+	}
+}
+
+.no-drinks {
+	grid-column: span 4;
+	display: block;
+	font-size: modular-scale(1);
 }
