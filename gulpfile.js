@@ -1,4 +1,7 @@
-// First, include gulp and gulp-connect-php
+/**
+ * First, include gulp and gulp-connect-php
+ */
+
 var gulp          = require('gulp');
     connect       = require('gulp-connect-php'),
     browserSync   = require('browser-sync'),
@@ -6,7 +9,10 @@ var gulp          = require('gulp');
     autoprefixer  = require('gulp-autoprefixer'),
     uglifycss     = require('gulp-uglifycss');
 
-// Second, create a task to start a PHP server
+/**
+ * Second, create a task to start a PHP server
+ */
+
 gulp.task('serve', function() {
   // Initiate browserSync
   connect.server({}, function (){
@@ -35,5 +41,8 @@ gulp.task('sass', function() {
     .pipe(browserSync.stream());
 });
 
-// Third, set the `serve` task to be the default task
+/**
+ * Third, set the `serve` task to be the default task
+ */
+
 gulp.task('default', ['serve']);
