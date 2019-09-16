@@ -3,8 +3,7 @@
 ---------------------------------------- */
 
 .page__footer {
-	padding: 1.5rem 5vw 10vh;
-	text-align: center;
-	max-width: var(--content-width);
 	margin: 0 auto;
+	padding: map-get($spacer, 1) calc( 50% - (var(--content-width) / 2) ) 10vh;
+	text-align: center;
 }

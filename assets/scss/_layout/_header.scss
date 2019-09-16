@@ -3,7 +3,8 @@
 ---------------------------------------- */
 
 .page__header {
-	margin-bottom: 1.5rem;
+	margin-bottom: map-get($spacer, 1);
+	padding: map-get($spacer, 1) calc( 50% - (var(--content-width) / 2) );
 }
 
 .page__header a {
