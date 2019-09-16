@@ -36,7 +36,18 @@
 .recipe__subheadline {
 	
 	@include media(">=for-tablet-landscape-up") {
+		position: relative;
 		padding-left: map-get($spacer, 8);
+		
+		&::before {
+			content: "";
+			position: absolute;
+			right: calc(100% - 50px);
+			width: 100px;
+			height: 61px;
+			background: transparent url("../../../assets/img/recipe.png") no-repeat;
+			background-size: 100px 61px;
+		}
 	}
 }
 
