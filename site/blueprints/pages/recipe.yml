@@ -40,11 +40,13 @@ columns:
     fields:
       ingredients:
         label: Ingredients
-        type: editor
-        allowed: ul
+        type: textarea
+        buttons:
+          - ul
   - width: 1/2
     fields:
       directions:
         label: Directions
-        type: editor
-        allowed: ol
+        type: textarea
+        buttons:
+          - ol
