@@ -8,6 +8,7 @@
 .page__body.recipe {
 	
 	@include media(">=for-tablet-landscape-up") {
+		padding-left: 0;
 		padding-right: 0;
 	}
 }
@@ -26,8 +27,7 @@
 		grid-column: 3 / 11;
 		grid-row: 1 / 2;
 		max-width: var(--content-width);
-		padding-top: 0;
-		padding-bottom: 0;
+		padding: 10vh calc( 50% - (var(--content-width) / 2) ) 20vh;
 	}
 }
 
