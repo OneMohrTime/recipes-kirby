@@ -21,9 +21,13 @@
 <body>
 	<div class="page">
 
-		<header class="page__header">
-			<a class="logo" href="{{ site.url }}">{{ site.title }}</a>
+		<header class="nav page__header">
+			<a class="nav__logo" href="{{ site.url }}">{{ site.title }}</a>
+			
+			{# When activated, search appears over nav #}
+			{% include '@snippets/searchForm.twig' %}
 
+			{# Main site mobile and desktop navigation#}
 			{% include '@snippets/navigation.twig' %}
 		</header>
 		
@@ -33,7 +37,7 @@
 		</main>
 		
 		<footer class="page__footer">
-			<p>&copy; {{ 'now' | date('Y') }} <a href="{{ site.url }}">{{ site.title }}</a> | <em>A shared cookbook of recipes between <a href="https://onemohrti.me" rel="nofollow noreferrer">Derek</a> &amp; <a href="https://owielanctot.com" rel="nofollow noreferrer">Owie</a></em></p>
+			<p>&copy; {{ 'now' | date('Y') }} <a href="{{ site.url }}/about">{{ site.title }}</a> | <em>A shared cookbook of recipes</em> | &lsquo;lil project of <a href="https://onemohrti.me" rel="nofollow noreferrer">Derek</a> &amp; <a href="https://owielanctot.com" rel="nofollow noreferrer">Owie</a></p>
 			<p><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></p>
 	<!--
 
