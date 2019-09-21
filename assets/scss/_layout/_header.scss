@@ -16,7 +16,7 @@
 	font-weight: 700;
 }
 
-.page__header .logo {
+.page__header .nav__logo {
 	display: block;
 	margin-bottom: 1.5rem;
 	padding: .5rem 0;
@@ -29,7 +29,7 @@
 }
 
 @media screen and (min-width: 40rem) {
-	.page__header .logo {
+	.page__header .nav__logo {
 		margin-bottom: 0;
 	}
 

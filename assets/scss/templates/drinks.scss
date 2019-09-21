@@ -2,9 +2,7 @@
 	Template / Drinks
 ---------------------------------------- */
 
-@import "../../../node_modules/include-media/dist/include-media";
-@import "../../../node_modules/bourbon/core/bourbon";
-@import "../../scss/_utilities/variables";
+@import "../_utilities/templates";
 
 .page__drinks {
 	display: grid;
@@ -62,8 +60,7 @@
 	transition: overflow 500ms, text-overflow 500ms, white-space 500ms;
 	transition-delay: 1s;
 	font-size: modular-scale(0);
-	font-style: italic;
-	font-weight: 300;
+	font-weight: 400;
 }
 
 .drink__cover {

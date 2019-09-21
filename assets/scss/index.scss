@@ -12,7 +12,8 @@ https://coolors.co/2b3b4c-1e2732-f1bf98-8fd5a6-fffef7
 	"../../node_modules/include-media/dist/include-media";
 	
 @import
-	"_utilities/variables";
+	"_utilities/variables",
+	"_utilities/helpers";
 
 @import
 	"_layout/base",
@@ -26,4 +27,5 @@ https://coolors.co/2b3b4c-1e2732-f1bf98-8fd5a6-fffef7
 	"_components/buttons",
 	"_components/crosshair",
 	"_components/navigation",
+	"_components/search",
 	"_components/social-icons";
