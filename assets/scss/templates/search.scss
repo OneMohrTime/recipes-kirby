@@ -1,0 +1,52 @@
+/* ----------------------------------------
+	Template / Search
+---------------------------------------- */
+
+@import "../_utilities/templates";
+
+.results__grid {
+	max-width: var(--content-width);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.results__list {
+	// Needs extra specificity
+	.results & {
+		@include list-reset();
+	}
+}
+
+.result {
+	position: relative;
+	display: block;
+	margin-bottom: map-get($spacer, 1);
+	padding-top: map-get($spacer, 1) / 2;
+	padding-bottom: map-get($spacer, 1) / 2;
+	transition: color 500ms;
+	border-bottom: 1px map-get($color, light-gray) solid;
+	
+	&:hover,
+	&:focus {
+		color: map-get($color, blue);
+	}
+}
+
+.result__image {
+	display: none;
+}
+
+.result__type {
+	font-size: modular-scale(0);
+	font-style: italic;
+	font-weight: 400;
+	color: map-get($color, blue);
+}
+
+.result__title {
+	font-size: modular-scale(1);
+}
+
+.result__description {
+	
+}
