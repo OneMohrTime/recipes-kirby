@@ -4,4 +4,28 @@
 
 .nav__search {
 	display: none;
+	float: right;
+	padding-left: map-get($spacer, 1);
+	padding-right: map-get($spacer, 1) / 2;
+	
+	@supports (display: flex) {
+		padding-right: 0;
+	}
+	
+	&.--is-active {
+		display: block;
+	}
+}
+
+.nav__search-form {
+	
+	@supports (display: flex) {
+		display: flex;
+	}
+}
+
+.search__field {
+	display: block;
+	width: auto;
+	min-width: 100px;
 }

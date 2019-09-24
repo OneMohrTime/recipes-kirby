@@ -4,37 +4,19 @@
 
 .page__header {
 	margin-bottom: map-get($spacer, 1);
-	padding: map-get($spacer, 1) calc( 50% - (var(--content-width) / 2) );
-}
-
-.page__header a {
-	position: relative;
-	text-transform: uppercase;
-	font-size: .875rem;
-	letter-spacing: .05em;
-	padding: .5rem 0;
-	font-weight: 700;
-}
-
-.page__header .nav__logo {
-	display: block;
-	margin-bottom: 1.5rem;
-	padding: .5rem 0;
-}
-
-.page__header {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-@media screen and (min-width: 40rem) {
-	.page__header .nav__logo {
-		margin-bottom: 0;
+	padding: map-get($spacer, 1) / 2;
+	
+	@include media(">=for-tablet-portrait-up") {
+		padding: map-get($spacer, 1);
 	}
-
-	.page__header {
-		flex-direction: row;
-		justify-content: space-between;
+	
+	@include media(">=for-tablet-landscape-up") {
+		padding-left: map-get($spacer, 2);
+		padding-right: map-get($spacer, 2);
+	}
+	
+	@include media(">=for-desktop-up") {
+		padding-left: calc( 50% - (var(--content-width) / 2) );
+		padding-right: calc( 50% - (var(--content-width) / 2) );
 	}
 }

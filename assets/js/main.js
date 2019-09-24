@@ -1,10 +1,21 @@
-var searchToggle = document.getElementById('searchToggle');
-console.log(searchToggle)
+const searchToggle = document.getElementById('searchToggle'),
+	  seachForm    = document.getElementById('searchForm'),
+	  searchClose  = document.getElementById('searchClose'),
+	  mainNav      = document.getElementById('mainNav'),
+	  menu         = document.getElementById('menu');
 
 searchToggle.addEventListener('click', function(e) {
-	console.log(e.target)
+	mainNav.classList.add('--is-searching');
+	menu.classList.add('--is-hidden');
+	seachForm.classList.add('--is-active');
+});
+
+searchClose.addEventListener('click', function(e) {
+	mainNav.classList.remove('--is-searching');
+	menu.classList.remove('--is-hidden');
+	seachForm.classList.remove('--is-active');
 })
-//
+
 //import '../../node_modules/tingle.js/src/tingle.js';
 //
 //// instanciate new modal
