@@ -1,14 +1,15 @@
 /* ----------------------------------------
-	Page / Recipes
+	Template / Recipes
 ---------------------------------------- */
 
-@import "../../scss/_utilities/variables";
+@import "../_utilities/templates";
 
 .page__recipes {
 	display: grid;
 	list-style: none;
 	grid-gap: 1rem;
-	padding-left: 0;
+	margin: 0 !important;
+	padding: 0 !important;
 }
 
 @media screen and (min-width: 30em) {
