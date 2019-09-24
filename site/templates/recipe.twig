@@ -21,7 +21,7 @@
 			{% if page.ingredients is defined and page.ingredients is not empty %}
 			<ul class="ingredient__list">
 <!--				<li class="ingredient">ingredient</li>-->
-				{{ page.ingredients | raw }}
+				{{ page.ingredients.kirbytext | raw }}
 			</ul>
 			{% endif %}
 		</section>
@@ -32,7 +32,7 @@
 			{% if page.directions is defined and page.directions is not empty %}
 			<ol class="directions__list">
 <!--				<li class="direction">ingredient</li>-->
-				{{ page.directions | raw }}
+				{{ page.directions.kirbytext | raw }}
 			</ol>
 			{% endif %}
 		</section>

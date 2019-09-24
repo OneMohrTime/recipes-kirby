@@ -20,20 +20,26 @@
 
 <body>
 	<div class="page">
+		
+		<a href="#mainContent" class="skip-to-content">Skip to content</a>
 
-		<header class="page__header">
-			<a class="logo" href="{{ site.url }}">{{ site.title }}</a>
+		<header id="mainNav" class="nav page__header">
+			<a class="nav__logo" href="{{ site.url }}">{{ site.title }}</a>
+			
+			{# When activated, search appears over nav #}
+			{% include '@snippets/searchForm.twig' %}
 
+			{# Main site mobile and desktop navigation#}
 			{% include '@snippets/navigation.twig' %}
 		</header>
 		
-		<main class="page__body{% if mainClass is defined and mainClass is not null %} {{ mainClass }}{% endif %}">
+		<main id="mainContent" class="page__body{% if mainClass is defined and mainClass is not null %} {{ mainClass }}{% endif %}">
 			{% block content %}
 			{% endblock %}
 		</main>
 		
 		<footer class="page__footer">
-			<p>&copy; {{ 'now' | date('Y') }} <a href="{{ site.url }}">{{ site.title }}</a> | <em>A shared cookbook of recipes between <a href="https://onemohrti.me" rel="nofollow noreferrer">Derek</a> &amp; <a href="https://owielanctot.com" rel="nofollow noreferrer">Owie</a></em></p>
+			<p>&copy; {{ 'now' | date('Y') }} <a href="{{ site.url }}/about">{{ site.title }}</a> | <em>A shared cookbook of recipes</em> | Project of <a href="https://onemohrti.me" rel="nofollow noreferrer">Derek</a> &amp; <a href="https://owielanctot.com" rel="nofollow noreferrer">Owie</a></p>
 			<p><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></p>
 	<!--
 
