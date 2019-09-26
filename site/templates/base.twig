@@ -19,7 +19,7 @@
 </head>
 
 <body>
-	<div class="page">
+	<div class="page{{ pageClass ?? null }}">
 		
 		<a href="#searchToggle" class="skip-to-content">
 			<span class="button">Skip to search</span>
@@ -27,14 +27,23 @@
 		<a href="#mainContent" class="skip-to-content">
 			<span class="button">Skip to content</span>
 		</a>
+		
+		{% if page.parent == 'recipes' %}
+			<a href="#ingredients" class="skip-to-content">
+				<span class="button">Skip to ingredients</span>
+			</a>
+			<a href="#directions" class="skip-to-content">
+				<span class="button">Skip to directions</span>
+			</a>
+		{% endif %}
 
 		<header id="mainNav" class="nav page__header">
-			<a class="nav__logo menu__item" href="{{ site.url }}"><span data-title="Home">{{ site.title }}</span></a>
+			<a class="nav__logo menu__item" href="{{ site.url }}" aria-label="Home"><span data-title="Home">{{ site.title }}</span></a>
 			
 			{# When activated, search appears over nav #}
 			{% include '@snippets/searchForm.twig' %}
 
-			{# Main site mobile and desktop navigation#}
+			{# Main site mobile and desktop navigation #}
 			{% include '@snippets/navigation.twig' %}
 		</header>
 		
