@@ -170,8 +170,8 @@ em {
 }
 
 :focus {
-	outline: 1px fade-out(map-get($color, red), 0.7) solid;
-	outline-offset: map-get($spacer, 1) / 5;
+	outline: 1px fade-out(map-get($color, blue), 0.4) solid;
+	outline-offset: map-get($spacer, 1) / 3;
 }
 
 ::selection {
