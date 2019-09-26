@@ -58,11 +58,13 @@
 			position: absolute;
 			left: 0;
 			top: 0;
+			width: 100%;
 			padding: map-get($spacer, 1) / 2;
-			color: map-get($color, white);
-			background: map-get($color, blue);
-			transform-origin: 50% 0%;
 			transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+			transform-origin: 50% 0%;
+			text-align: center;
+			background-color: map-get($color, blue);
+			color: map-get($color, white);
 		}
 	}
 

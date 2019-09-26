@@ -5,4 +5,8 @@
 #{$all-text-inputs} {
 	margin: 0;
 	padding: 0 map-get($spacer, 1) / 2;
+	
+	@include media(">=for-desktop-up") {
+		width: 100%;
+	}
 }
