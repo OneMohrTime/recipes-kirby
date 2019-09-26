@@ -3,7 +3,7 @@
 return function ($site) {
 
   $query   = get('q');
-  $results = $site->index()->search($query, 'title|text');
+  $results = $site->index()->search($query, 'title|text|ingredients');
   $results = $results->paginate(20);
 
   return [

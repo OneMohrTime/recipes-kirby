@@ -1,0 +1,81 @@
+/* ----------------------------------------
+	Components / Navigation
+---------------------------------------- */
+
+$nudge: map-get($spacer, 1);
+
+.nav {
+	margin-left: auto;
+	margin-right: auto;
+	@include clearfix();
+	transform: translateY(0);
+	transition: transform 500ms;
+
+	&.--is-searching {
+		width: calc(100% - #{$nudge});
+		transform: translateY($nudge);
+	}
+
+	@supports(display: flex) {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		&::after {
+			display: none;
+		}
+	}
+}
+
+.nav__logo {
+	display: block;
+	float: left;
+	margin-bottom: 0;
+	padding-left: map-get($spacer, 1) / 2;
+
+	@supports(display: flex) {
+		margin-right: auto;
+		padding-left: 0;
+		
+		@include media(">=for-desktop-up") {
+			// visuall align from button padding
+			transform: translateX(-#{map-get($spacer, 1) / 2});
+		}
+	}
+}
+
+.menu {
+	display: block;
+	float: right;
+	padding-right: map-get($spacer, 1) / 2;
+
+	@supports(display: flex) {
+		padding-right: 0;
+		
+		@include media(">=for-desktop-up") {
+			// visuall align from button padding
+			transform: translateX(#{map-get($spacer, 1) / 2});
+		}
+	}
+
+	&.--is-hidden {
+		display: none;
+	}
+}
+
+.menu__item {
+	
+	@include nav-link();
+
+	&[aria-current] {
+	}
+}
+
+
+.skip-to-content {
+	@include hide-visually('hide');
+
+	&:focus {
+		@include hide-visually('unhide');
+	}
+}
