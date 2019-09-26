@@ -3,22 +3,6 @@
 ---------------------------------------- */
 
 /**
- * Apply styles to all header elements at once
- */
-
-@mixin headers-all() {
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		@content;
-	}
-}
-
-
-/**
  * Navigation link styles
  */
 
@@ -70,5 +54,54 @@
 
 	&:first-child {
 		margin-left: 0;
+	}
+}
+
+
+/**
+ * Inline link styles
+ */
+
+@mixin inline-link() {
+	position: relative;
+	transition: 500ms color;
+	font-size: inherit;
+	font-weight: 700;
+	color: inherit;
+	backface-visibility: hidden;
+	
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -2px;
+		width: 100%;
+		height: 2px;
+		background-color: map-get($color, light-gray);
+	}
+	
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -2px;
+		width: 0;
+		height: 2px;
+		transition: 500ms all;
+		background-color: map-get($color, blue);
+		backface-visibility: hidden;
+	}
+	
+	&:focus {
+		outline-color: transparent;
+	}
+	
+	&:focus,
+	&:hover {
+		color: map-get($color, blue);
+		
+		&::after {
+			width: 100%;
+		}
 	}
 }

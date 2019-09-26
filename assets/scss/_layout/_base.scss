@@ -3,6 +3,10 @@
 }
 
 html {
+	font-family: "Prospectus Pro", $font-stack-garamond;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	background-color: map-get($color, light-gray);
 }
 

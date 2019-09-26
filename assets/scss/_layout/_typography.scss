@@ -5,16 +5,8 @@
 @import "../_components/font-face";
 
 /**
- * General
+ * Headers
  */
-
-html,
-body {
-	font-family: "Prospectus Pro", $font-stack-garamond;
-	font-weight: 400;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
 
 @for $i from 1 through 6 {
 	h#{$i} {
@@ -74,76 +66,17 @@ h6 {
 	}
 }
 
+
+/**
+ * Body copy
+ */
+
 p {
 	margin: 0 0 #{map-get($spacer, 1) / 2};
 	font-weight: 400;
 	widows: 3;
 	orphans: 3;
 	hyphens: auto;
-}
-	
-a {
-	color: currentColor;
-	text-decoration: none;
-}
-
-a:not([class]) {
-	position: relative;
-	display: inline-block;
-	padding: 0 #{map-get($spacer, 1) / 4};
-	transition: transform 500ms;
-	transform: translateX(0);
-	outline: none;
-	vertical-align: baseline;
-	white-space: nowrap;
-	color: map-get($color, dark-gray);
-	font-weight: 600;
-	
-	&::before,
-	&::after {
-		content: "";
-		position: absolute;
-		height: 100%;
-		transition: background 500ms, color 500ms, transform 500ms;
-		pointer-events: none;
-		backface-visibility: hidden;
-	}
-	
-	&::before {
-		left: 0;
-		width: 100%;
-		background-color: map-get($color, light-gray);
-		z-index: -1;
-	}
-	
-	&::after {
-		content: "→";
-		left: 100%;
-		width: 1em;
-		transform: translateX(-1em);
-		z-index: -2;
-		text-align: center;
-		background-color: map-get($color, light-gray);
-		background-size: 60% auto;
-		color: map-get($color, white);
-		pointer-events: auto;
-	}
-	
-	&:hover {
-		transform: translateX(-1em);
-		
-		&::before,
-		&::after {
-		}
-			
-		&::before {
-		}
-		
-		&::after {
-			transform: translateX(0);
-			background-color: map-get($color, blue);
-		}
-	}
 }
 
 ul, ol, dl {
@@ -169,15 +102,28 @@ em {
 	font-style: italic;
 }
 
-:focus {
-	outline: 1px fade-out(map-get($color, blue), 0.4) solid;
-	outline-offset: map-get($spacer, 1) / 3;
-}
-
 ::selection {
 	background-color: map-get($color, yellow);
 	color: map-get($color, blue);
 	text-shadow: none;
+}
+
+/**
+ * Links
+ */
+	
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:not([class]) {
+	@include inline-link();
+}
+
+:focus {
+	outline: 1px fade-out(map-get($color, blue), 0.4) solid;
+	outline-offset: map-get($spacer, 1) / 3;
 }
 
 

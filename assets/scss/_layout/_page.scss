@@ -12,7 +12,13 @@
 	padding-right: map-get($spacer, 1);
 }
 
-.intro {
-	padding-top: 15vh;
-	padding-bottom: 15vh;
+.page.--recipes {
+	& > .page__body {
+		
+		@include media(">=for-desktop-up") {
+			width: var(--content-width);
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
 }
