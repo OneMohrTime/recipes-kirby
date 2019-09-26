@@ -21,10 +21,15 @@
 <body>
 	<div class="page">
 		
-		<a href="#mainContent" class="skip-to-content">Skip to content</a>
+		<a href="#searchToggle" class="skip-to-content">
+			<span class="button">Skip to search</span>
+		</a>
+		<a href="#mainContent" class="skip-to-content">
+			<span class="button">Skip to content</span>
+		</a>
 
 		<header id="mainNav" class="nav page__header">
-			<a class="nav__logo" href="{{ site.url }}">{{ site.title }}</a>
+			<a class="nav__logo menu__item" href="{{ site.url }}"><span data-title="Home">{{ site.title }}</span></a>
 			
 			{# When activated, search appears over nav #}
 			{% include '@snippets/searchForm.twig' %}

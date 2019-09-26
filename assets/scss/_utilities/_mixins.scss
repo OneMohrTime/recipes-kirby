@@ -6,7 +6,7 @@
  * Apply styles to all header elements at once
  */
 
-@mixin headers-all {
+@mixin headers-all() {
 	h1,
 	h2,
 	h3,
@@ -14,5 +14,61 @@
 	h5,
 	h6 {
 		@content;
+	}
+}
+
+
+/**
+ * Navigation link styles
+ */
+
+@mixin nav-link() {
+	position: relative;
+	display: inline-block;
+	margin-top: 0;
+	margin-left: map-get($spacer, 1) / 2;
+	margin-right: 0;
+	margin-bottom: 0;
+	overflow: hidden;
+	vertical-align: top;
+	perspective: 600px;
+	perspective-origin: 50% 50%;
+
+	&:focus,
+	&:hover {
+		outline: none;
+		
+		span {
+			background-color: map-get($color, blue);
+			transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+		}
+	}
+	
+	span {
+		display: block;
+		position: relative;
+		padding: map-get($spacer, 1) / 2;
+		transition: all 400ms ease;
+		transform-origin: 50% 0%;
+		transform-style: preserve-3d;
+		
+		&:after {
+			content: attr(data-title);
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			padding: map-get($spacer, 1) / 2;
+			transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+			transform-origin: 50% 0%;
+			text-align: center;
+			background-color: map-get($color, blue);
+			color: map-get($color, white);
+		}
+	}
+
+	&:first-child {
+		margin-left: 0;
 	}
 }
