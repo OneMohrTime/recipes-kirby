@@ -6,11 +6,15 @@
 
 		<header class="results__intro intro">
 			<h1 class="results__headline headline">&ldquo;{{ query ?? 'Nothing?' }}&rdquo;</h1>
+			{% if results is defined and results is not empty %}
+				<p class="results__subheadline">Here&rsquo;s everything.</p>
+			{% else %}
+				<p class="results__subheadline">We got nothin&rsquo;.</p>
+			{% endif %}
 		</header>
 
 		<section class="results">
 			{% if results is defined and results is not empty %}
-				<p>Here&rsquo;s everything.</p>
 				<ul class="results__list">
 					{% for result in results %}
 
@@ -35,8 +39,6 @@
 
 					{% endfor %}
 				</ul>
-			{% else %}
-				<p>We got nothin&rsquo;.</p>
 			{% endif %}
 		</section>
 
