@@ -109,3 +109,15 @@
 		padding-left: map-get($spacer, 1);
 	}
 }
+
+.ingredients__title,
+.directions__title {
+	font-size: modular-scale(2);
+	font-weight: 900;
+}
+
+.tags__title {
+	font-size: modular-scale(1);
+	font-style: italic;
+	font-weight: 700;
+}
