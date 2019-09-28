@@ -83,13 +83,6 @@ ul, ol, dl {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
-	
-	.page__body & {
-		margin-bottom: map-get($spacer, 1) / 2;
-		padding-left: map-get($spacer, 1);
-		line-height: 1.35em;
-		list-style-type: square;
-	}
 }
 
 b,
@@ -137,8 +130,18 @@ a:not([class]) {
 	border-bottom: 7px map-get($color, tan) solid;
 }
 
-.ingredient__title,
-.directions__title,
-.tags__title {
-	font-size: modular-scale(1);
+.page__body {
+	ul, ol, dl {
+		margin-bottom: map-get($spacer, 1) / 2;
+		padding-left: map-get($spacer, 1);
+		line-height: 1.35em;
+	}
+	
+	ul {
+		list-style-type: square;
+	}
+	
+	ol {
+		list-style-type: decimal;
+	}
 }
