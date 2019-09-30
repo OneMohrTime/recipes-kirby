@@ -6,7 +6,10 @@
 
 		<header class="recipe__header intro">
 			<h1 class="recipe__headline headline">{{ page.headline | default(page.title) }}</h1>
-			<div class="recipe__subheadline">{{ page.description.kirbytext | raw }}</div>
+			
+			{% if page.description is defined and page.description is not empty %}
+				<div class="recipe__subheadline">{{ page.description.kirbytext | raw }}</div>
+			{% endif %}
 		</header>
 		
 		<figure class="recipe__cover">

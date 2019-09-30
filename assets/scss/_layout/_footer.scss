@@ -4,6 +4,15 @@
 
 .page__footer {
 	margin: 0 auto;
-	padding: map-get($spacer, 1) calc( 50% - (var(--content-width) / 2) ) 10vh;
+	padding-top: map-get($spacer, 3);
+	padding-bottom: map-get($spacer, 3);
 	text-align: center;
+	background-color: map-get($color, yellow);
+	
+	@include media(">=for-desktop-up") {
+		padding-top: 5vh;
+		padding-left: calc( 50% - (var(--content-width) / 2) );
+		padding-right: calc( 50% - (var(--content-width) / 2) );
+		padding-bottom: 5vh;
+	}
 }

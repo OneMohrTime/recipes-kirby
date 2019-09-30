@@ -68,6 +68,7 @@ $nudge: map-get($spacer, 1);
 	@include nav-link();
 
 	&[aria-current] {
+		background-color: map-get($color, light-gray);
 	}
 }
 

@@ -164,6 +164,12 @@ a {
 
 a:not([class]) {
 	@include inline-link();
+	
+	.page__footer & {
+		&::before {
+			background-color: map-get($color, gold);
+		}
+	}
 }
 
 :focus {

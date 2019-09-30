@@ -21,7 +21,7 @@
 		margin-top: -1px;
 		background-color: map-get($color, gray);
 		transform: translateY(0);
-		transition: transform 0.3s, opacity 0.3s;
+		transition: transform 0.3s linear, opacity 0.3s linear;
 		pointer-events: none;
 	}
 	
