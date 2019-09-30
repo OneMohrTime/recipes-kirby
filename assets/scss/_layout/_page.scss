@@ -12,11 +12,20 @@
 	padding-right: map-get($spacer, 1);
 }
 
-.page.--recipes {
+.page.--home,
+.page.--recipes,
+.page.--drinks,
+.page.--about {
 	& > .page__body {
+		margin-bottom: map-get($spacer, 2);
+		
+		@include media(">=for-tablet-portrait-up") {
+			margin-bottom: map-get($spacer, 3);
+		}
 		
 		@include media(">=for-desktop-up") {
 			width: var(--content-width);
+			margin-bottom: map-get($spacer, 4);
 			padding-left: 0;
 			padding-right: 0;
 		}
