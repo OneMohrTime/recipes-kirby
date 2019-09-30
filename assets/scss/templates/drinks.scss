@@ -9,15 +9,17 @@
 	grid-gap: map-get($spacer, 1);
 }
 
-@media screen and (min-width: 30em) {
+@include media(">=for-tablet-portrait-up") {
 	.page__drinks {
 		grid-template-columns: repeat(2, 1fr);
+		grid-gap: map-get($spacer, 3) / 2;
 	}
 }
 
-@media screen and (min-width: 60em) {
+@include media(">=for-tablet-landscape-up") {
 	.page__drinks {
 		grid-template-columns: repeat(4, 1fr);
+		grid-gap: map-get($spacer, 2);
 	}
 }
 
@@ -27,6 +29,9 @@
 	
 	&:focus,
 	&:hover {
+		.drink__title {
+			margin-top: 0;
+		}
 		.drink__subtitle {
 			overflow: visible;
 			text-overflow: none;
@@ -51,12 +56,15 @@
 .drink__title {
 	@include ellipsis;
 	display: block;
+	margin-top: map-get($spacer, 1) / 2;
+	transition: margin 500ms;
 	font-size: modular-scale(1);
 }
 
 .drink__subtitle {
 	@include ellipsis;
 	display: block;
+	margin-bottom: 0;
 	transition: overflow 500ms, text-overflow 500ms, white-space 500ms;
 	transition-delay: 1s;
 	font-size: modular-scale(0);

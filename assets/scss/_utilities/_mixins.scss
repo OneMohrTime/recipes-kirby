@@ -3,6 +3,17 @@
 ---------------------------------------- */
 
 /**
+ * Undo list styles
+ */
+
+@mixin list-reset() {
+	margin-bottom: 0;
+	padding-left: 0;
+	line-height: inherit;
+}
+
+
+/**
  * Navigation link styles
  */
 

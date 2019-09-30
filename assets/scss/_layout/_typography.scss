@@ -83,13 +83,6 @@ ul, ol, dl {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
-	
-	.page__body & {
-		margin-bottom: map-get($spacer, 1) / 2;
-		padding-left: map-get($spacer, 1);
-		line-height: 1.35em;
-		list-style-type: square;
-	}
 }
 
 b,
@@ -100,6 +93,58 @@ strong {
 i,
 em {
 	font-style: italic;
+}
+
+hr {
+	position: relative;
+	width: 50px;
+	height: 10px;
+	margin-top: map-get($spacer, 1);
+	margin-bottom: map-get($spacer, 1);
+	overflow: hidden;
+	border: 0;
+	background-image: url("../../assets/img/zigzag-long.png");
+	background-repeat: repeat-x;
+	animation: zigzag-bg-anim 7s linear infinite;
+}
+
+.hr {
+	&--black {
+		background-image: url("../../assets/img/zigzag-long__black.png");
+	}
+	&--blue {
+		background-image: url("../../assets/img/zigzag-long__blue.png");
+	}
+	&--dark-gray {
+		background-image: url("../../assets/img/zigzag-long__dark-gray.png");
+	}
+	&--gold {
+		background-image: url("../../assets/img/zigzag-long__gold.png");
+	}
+	&--green {
+		background-image: url("../../assets/img/zigzag-long__green.png");
+	}
+	&--light-gray {
+		background-image: url("../../assets/img/zigzag-long__light-gray.png");
+	}
+	&--red {
+		background-image: url("../../assets/img/zigzag-long__red.png");
+	}
+	&--tan {
+		background-image: url("../../assets/img/zigzag-long__tan.png");
+	}
+	&--white {
+		background-image: url("../../assets/img/zigzag-long__white.png");
+	}
+}
+
+@keyframes zigzag-bg-anim {
+	0% {
+		background-position: 0 0
+	}
+	to {
+		background-position:-215px 0
+	}
 }
 
 ::selection {
@@ -119,6 +164,12 @@ a {
 
 a:not([class]) {
 	@include inline-link();
+	
+	.page__footer & {
+		&::before {
+			background-color: map-get($color, gold);
+		}
+	}
 }
 
 :focus {
@@ -137,8 +188,18 @@ a:not([class]) {
 	border-bottom: 7px map-get($color, tan) solid;
 }
 
-.ingredient__title,
-.directions__title,
-.tags__title {
-	font-size: modular-scale(1);
+.page__body {
+	ul, ol, dl {
+		margin-bottom: map-get($spacer, 1) / 2;
+		padding-left: map-get($spacer, 1);
+		line-height: 1.35em;
+	}
+	
+	ul {
+		list-style-type: square;
+	}
+	
+	ol {
+		list-style-type: decimal;
+	}
 }

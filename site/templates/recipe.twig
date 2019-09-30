@@ -5,8 +5,11 @@
 	<article class="recipe__grid">
 
 		<header class="recipe__header intro">
-			<h1 class="recipe__headline headline">{{ page.headline ?: page.title }}</h1>
-			<div class="recipe__subheadline">{{ page.description.kirbytext | raw }}</div>
+			<h1 class="recipe__headline headline">{{ page.headline | default(page.title) }}</h1>
+			
+			{% if page.description is defined and page.description is not empty %}
+				<div class="recipe__subheadline">{{ page.description.kirbytext | raw }}</div>
+			{% endif %}
 		</header>
 		
 		<figure class="recipe__cover">
@@ -16,24 +19,20 @@
 		</figure>
 
 		<section class="recipe__ingredients">
-			<h2 class="ingredient__title">Ingredients</h2>
-			
-			{% if page.ingredients is defined and page.ingredients is not empty %}
-			<ul class="ingredient__list">
-<!--				<li class="ingredient">ingredient</li>-->
-				{{ page.ingredients.kirbytext | raw }}
-			</ul>
-			{% endif %}
+			<div class="ingredients">
+				<h2 class="ingredients__title">Ingredients</h2>
+
+				{% if page.ingredients is defined and page.ingredients is not empty %}
+					{{ page.ingredients.kirbytext | raw }}
+				{% endif %}
+			</div>
 		</section>
 		
 		<section class="recipe__directions">
 			<h2 class="directions__title">Directions</h2>
 			
 			{% if page.directions is defined and page.directions is not empty %}
-			<ol class="directions__list">
-<!--				<li class="direction">ingredient</li>-->
 				{{ page.directions.kirbytext | raw }}
-			</ol>
 			{% endif %}
 		</section>
 		
