@@ -31,3 +31,17 @@
 		}
 	}
 }
+
+.page.--recipe {
+	& > .page__body {
+		margin-bottom: map-get($spacer, 2);
+		
+		@include media(">=for-tablet-portrait-up") {
+			margin-bottom: map-get($spacer, 3);
+		}
+		
+		@include media(">=for-desktop-up") {
+			margin-bottom: map-get($spacer, 4);
+		}
+	}
+}

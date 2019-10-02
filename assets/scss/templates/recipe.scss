@@ -99,35 +99,61 @@
 }
 
 .recipe__directions {
+	margin-top: map-get($spacer, 2);
 	
 	@include media(">=for-tablet-landscape-up") {
 		grid-column: 6 / 11;
 		grid-row: 3 / 4;
 		max-width: var(--content-width);
-		margin-top: map-get($spacer, 1);
-		padding-left: map-get($spacer, 1);
+		margin-top: map-get($spacer, 3);
+	}
+	
+	ol {
+		@include list-reset();
+		counter-reset: direction-list;
+	}
+	
+	li {
+		position: relative;
+		counter-increment: direction-list;
+		margin-bottom: map-get($spacer, 1);
+		font-size: modular-scale(1);
+		z-index: 1;
+		
+		&::before {
+			content: counter(direction-list, decimal-leading-zero);
+			position: absolute;
+			right: 100%;
+			transform: translate3d( -#{map-get($spacer, 1) / 2}, -#{map-get($spacer, 1)}, 0 );
+			font-size: modular-scale(4);
+			font-style: italic;
+			font-weight: 700;
+			color: map-get($color, light-gray);
+			z-index: -1;
+		}
 	}
 }
 
 .recipe__tags {
+	margin-top: map-get($spacer, 1);
 	
 	@include media(">=for-tablet-landscape-up") {
 		grid-column: 6 / 11;
 		grid-row: 4 / 5;
 		max-width: var(--content-width);
-		margin-top: map-get($spacer, 1);
-		padding-left: map-get($spacer, 1);
+		margin-top: map-get($spacer, 2);
 	}
 }
 
 .ingredients__title,
 .directions__title {
+	margin-bottom: map-get($spacer, 3) / 2;
 	font-size: modular-scale(2);
 	font-weight: 900;
 }
 
 .tags__title {
+	margin-bottom: map-get($spacer, 3) / 2;
 	font-size: modular-scale(1);
-	font-style: italic;
 	font-weight: 700;
 }
