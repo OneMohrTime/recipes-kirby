@@ -62,6 +62,7 @@
 }
 
 .recipe__cover {
+	@include fluid-aspect(16 9, "> .cover__image");
 	
 	@include media(">=for-tablet-landscape-up") {
 		grid-column: 5 / 13;
@@ -69,8 +70,12 @@
 		z-index: 1;
 	}
 	
-	img {
+	.cover__image {
 		background-color: map-get($color, light-gray);
+	}
+	
+	.cover__caption {
+		@include hide-visually();
 	}
 }
 
@@ -130,6 +135,13 @@
 			font-weight: 700;
 			color: map-get($color, light-gray);
 			z-index: -1;
+		}
+		
+		&:focus,
+		&:hover {
+			&::before {
+				color: map-get($color, tan);
+			}
 		}
 	}
 }
