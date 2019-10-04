@@ -9,4 +9,3 @@ empty: No recipes yet
 image:
   query: page.cover
   cover: true
-  ratio: 5/4
