@@ -1,6 +1,6 @@
 {% extends '@templates/base.twig' %}
 {% set htmlTitle = page.title ~ ' - ' ~ site.title %}
-{% set pageClass = page.template ? ' --' ~ page.template : ' --' ~ site.page %}
+{% set pageClass = page.template ? ' --' ~ page.template : ' --default' %}
 
 {% block content %}
 	<header class="intro">

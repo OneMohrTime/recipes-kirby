@@ -60,3 +60,5 @@ node_modules/
 # License
 # ---------------
 /site/config/.license
+/site/config/config.php
+/site/config/config.localhost.php
