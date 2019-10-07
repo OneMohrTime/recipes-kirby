@@ -72,10 +72,15 @@
 	
 	.cover__image {
 		background-color: map-get($color, light-gray);
+		object-fit: cover;
 	}
 	
 	.cover__caption {
-		@include hide-visually();
+//		@include hide-visually();
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		z-index: 2;
 	}
 }
 
@@ -129,6 +134,7 @@
 			content: counter(direction-list, decimal-leading-zero);
 			position: absolute;
 			right: 100%;
+			transition: color 500ms;
 			transform: translate3d( -#{map-get($spacer, 1) / 2}, -#{map-get($spacer, 1)}, 0 );
 			font-size: modular-scale(4);
 			font-style: italic;
