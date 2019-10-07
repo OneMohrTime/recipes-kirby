@@ -18,14 +18,26 @@
 	{% if recipes is defined and recipes is not empty %}
 	<ul class="page__recipes">
 		{% for recipe in recipes %}
-		<li class="recipe">
-			<a href="{{ recipe.url }}" class="recipe__image">
-				<figure>
-					<img src="http://lorempixel.com/g/500/400/food/{{ loop.index }}" />
-					<figcaption>{{ recipe.title }}</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="recipe">
+				<a href="{{ recipe.url }}" id="{{ recipe.id | title | replace({ '-' : '', 'Recipes/' : '' }) | slice(0, 24) }}" class="recipe__image">
+					<figure>
+						{% if recipe.cover is defined and recipe.cover is not empty %}
+							<img src="{{ recipe.cover.url }}"
+								 alt="placeholder for {{ recipe.cover.title }}"
+								 width="{{ recipe.cover.dimensions.width }}"
+								 height="{{ recipe.cover.dimensions.height }}"
+								 class="cover__image ratio--{{ recipe.cover.ratio }}-{{ recipe.cover.orientation }}"
+								 id="{{ recipe.cover.hash }}"
+								 srcset="" />
+						{% else %}
+							<img src="https://via.placeholder.com/500x400/e8e7e1/2b3b4c?text=Pretend+this+is+{{ recipe.title }}" alt="placeholder for {{ recipe.title }}" class="" />
+							<figcaption class="">
+								{{ recipe.title ?? null }}
+							</figcaption>
+						{% endif %}
+					</figure>
+				</a>
+			</li>
 		{% endfor %}
 	</ul>
 	{% else %}

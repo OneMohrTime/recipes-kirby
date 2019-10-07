@@ -1,7 +1,8 @@
 title: Image
 
 columns:
-  - width: 1/2
+  main:
+    width: 1/2
     sections:
       content:
         type: fields
@@ -10,7 +11,8 @@ columns:
             label: Caption
             type: textarea
             size: medium
-  - width: 1/2
+  sidebar:
+    width: 1/2
     sections:
       meta:
         type: fields

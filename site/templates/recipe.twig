@@ -13,10 +13,51 @@
 		</header>
 		
 		<figure class="recipe__cover">
-			<img src="http://lorempixel.com/960/450/food" />
-			<figcaption>
-			</figcaption>
+			{% if page.images | length > 1 %}
+				{% for image in page.images %}
+					<img src="{{ image.url }}"
+						 alt="{{ image.name }}"
+						 width="{{ image.dimensions.width }}"
+						 height="{{ image.dimensions.height }}"
+						 class="gallery__image ratio--{{ image.ratio }}-{{ image.orientation }}"
+						 id="{{ image.hash }}"
+						 srcset="" />
+
+						{% if image.alt is defined and image.alt is not empty %}
+							<figcaption class="cover__caption">
+								Photo courtesy of XX
+							</figcaption>
+						{% endif %}
+				{% endfor %}
+			{% elseif page.cover is defined and page.cover is not empty %}
+				<img src="{{ page.cover.url }}"
+					 alt="placeholder for {{ page.cover.title }}"
+					 width="{{ page.cover.dimensions.width }}"
+					 height="{{ page.cover.dimensions.height }}"
+					 class="cover__image ratio--{{ page.cover.ratio }}-{{ page.cover.orientation }}"
+					 id="{{ page.cover.hash }}"
+					 srcset="" />
+			{% else %}
+				<img src="https://via.placeholder.com/960x450/e8e7e1/2b3b4c?text=Pretend+this+is+{{ page.title }}" alt="placeholder for {{ page.title }}" class="cover__image" />
+				<figcaption class="cover__caption">
+					{{ page.title ?? null }}
+				</figcaption>
+			{% endif %}
 		</figure>
+		
+		{% if page.images | length > 1 %}
+			<section class="recipe__gallery" style="display: none;">
+				{% for image in page.images %}
+					<img src="{{ image.url }}"
+						 alt="{{ image.name }}"
+						 width="{{ image.dimensions.width }}"
+						 height="{{ image.dimensions.height }}"
+						 class="gallery__image ratio--{{ image.ratio }}-{{ image.orientation }}"
+						 id="{{ image.hash }}"
+						 srcset="" />
+				{% endfor %}
+			</section>
+		{% endif %}
 
 		<section id="ingredients" class="recipe__ingredients">
 			<div class="ingredients">
