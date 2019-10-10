@@ -45,13 +45,17 @@ columns:
     fields:
       ingredients:
         label: Ingredients
-        type: textarea
-        buttons:
-          - ul
+        type: structure
+        fields:
+          step:
+            label: Steps
+            type: text
   - width: 1/2
     fields:
       directions:
         label: Directions
-        type: textarea
-        buttons:
-          - ol
+        type: structure
+        fields:
+          step:
+            label: Steps
+            type: textarea
