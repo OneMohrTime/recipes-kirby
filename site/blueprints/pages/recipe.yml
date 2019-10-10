@@ -52,6 +52,8 @@ columns:
     fields:
       directions:
         label: Directions
-        type: textarea
-        buttons:
-          - ol
+        type: structure
+        fields:
+          step:
+            label: Steps
+            type: textarea
