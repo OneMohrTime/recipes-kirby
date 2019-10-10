@@ -28,14 +28,8 @@ Tags: Vegetarian, Mexican
 
 Ingredients:
 
-- Turnip greens
-- yarrow
-- ricebean rutabaga endive
-- cauliflower
-- sea lettuce
-- kohlrabi amaranth
-- water spinach
-- avocado daikon napa cabbage
+- 
+  step: 1C greek yogurt
 
 ----
 
