@@ -29,7 +29,7 @@ Tags: Vegetarian, Mexican
 Ingredients:
 
 - 
-  step: 1C greek yogurt
+  ingredient: 1C greek yogurt
 
 ----
 
