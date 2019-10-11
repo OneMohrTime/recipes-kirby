@@ -9,7 +9,7 @@
 {% block content %}
 	<header class="drinks__intro intro">
 		<h1 class="drinks__headline headline">{{ page.headline | default(page.title) }}</h1>
-		
+
 		{% if page.description is defined and page.description is not empty %}
 			<div class="drinks__subheadline">{{ page.description.kirbytext | raw }}</div>
 		{% endif %}
@@ -17,9 +17,9 @@
 
 	<section class="page__drinks{% if drinks is empty %} --is-empty{% endif %}">
 		{% if drinks is defined and drinks is not empty %}
-			
+
 			{% for drink in drinks %}
-			<a href="{{ drink.url }}" class="drink crosshair__trigger">
+			<a href="{{ drink.url }}" id="{{ drink.id | title | replace({ '-' : '', 'Drinks/' : '' }) | slice(0, 24) }}" class="drink crosshair__trigger">
 				<img src="http://lorempixel.com/g/500/500/food" alt="" class="drink__cover" />
 				<div class="drink__caption">
 					<h2 class="drink__title">{{ drink.title }}</h2>
@@ -28,10 +28,11 @@
 				</div>
 			</a>
 			{% endfor %}
-			
+
 		{% else %}
-			
+
 			<p class="no-drinks">There aren&rsquo;t any drinks listed on {{ site.title }} :(</p>
+
 		{% endif %}
 	</section>
 {% endblock %}
