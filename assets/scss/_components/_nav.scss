@@ -74,6 +74,9 @@ $nudge: map-get($spacer, 1);
 
 
 .skip-to-content {
+	position: absolute !important;
+	top: map-get($spacer, 1) / 2;
+	left: map-get($spacer, 1) / 2;
 	@include hide-visually('hide');
 
 	&:focus {

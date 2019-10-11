@@ -47,8 +47,8 @@ columns:
         label: Ingredients
         type: structure
         fields:
-          step:
-            label: Steps
+          ingredient:
+            label: Ingredient
             type: text
   - width: 1/2
     fields:
@@ -59,3 +59,4 @@ columns:
           step:
             label: Steps
             type: textarea
+            size: large
