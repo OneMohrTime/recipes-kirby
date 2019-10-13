@@ -20,58 +20,30 @@
 
 <body>
 	<div class="page{{ pageClass ?? null }}">
-		
-		<a href="#searchToggle" class="skip-to-content">
-			<span class="button">Skip to search</span>
-		</a>
-		<a href="#mainContent" class="skip-to-content">
-			<span class="button">Skip to content</span>
-		</a>
-		
-		{% if page.parent == 'recipes' %}
-			<a href="#ingredients" class="skip-to-content">
-				<span class="button">Skip to ingredients</span>
-			</a>
-			<a href="#directions" class="skip-to-content">
-				<span class="button">Skip to directions</span>
-			</a>
-		{% endif %}
+
+		{% include '@snippets/skipToContent.twig' %}
 
 		<header id="mainNav" class="nav page__header">
 			<a class="nav__logo menu__item" href="{{ site.url }}" aria-label="Home"><span data-title="Home">{{ site.title }}</span></a>
-			
+
 			{# When activated, search appears over nav #}
 			{% include '@snippets/searchForm.twig' %}
 
 			{# Main site mobile and desktop navigation #}
 			{% include '@snippets/navigation.twig' %}
 		</header>
-		
+
 		<main id="mainContent" class="page__body{% if mainClass is defined and mainClass is not null %} {{ mainClass }}{% endif %}">
 			{% block content %}
 			{% endblock %}
 		</main>
-		
+
 		<footer class="page__footer">
-			<p>&copy; {{ 'now' | date('Y') }} <a href="{{ site.url }}/about">{{ site.title }}</a> | <em>A shared cookbook of recipes</em> | Project of <a href="https://onemohrti.me" rel="nofollow noreferrer">Derek</a> &amp; <a href="https://owielanctot.com" rel="nofollow noreferrer">Owie</a></p>
-			<hr class="hr--gold" />
-			<p><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></p>
-	<!--
-
-			<?php if ($about = page('about')): ?>
-			<nav class="social">
-
-				<?php foreach ($about->social()->toStructure() as $social): ?>
-				<a href="<?= $social->url() ?>"><?= $social->platform() ?></a>
-				<?php endforeach ?>
-
-			</nav>
-			<?php endif ?>
-	-->
+			{% include '@snippets/footer.twig' %}
 		</footer>
-		
+
 	</div>
-	
+
 	{#
 	{{ js('assets/js/main.js') }}
 	Async
@@ -80,6 +52,8 @@
 	{{ js('assets/js/site.js', ['async' => true, 'defer' => true, 'data-something' => 'my-value']) }}
 	#}
 	{# Autoloading template specific script files #}
+	{% block scripts %}
+	{% endblock %}
 	{{ js(['assets/js/main.js', '@auto']) }}
 </body>
 
