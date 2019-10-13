@@ -1,0 +1,15 @@
+<a href="#searchToggle" class="skip-to-content">
+	<span class="button">Skip to search</span>
+</a>
+<a href="#mainContent" class="skip-to-content">
+	<span class="button">Skip to content</span>
+</a>
+
+{% if page.parent == 'recipes' %}
+	<a href="#ingredients" class="skip-to-content">
+		<span class="button">Skip to ingredients</span>
+	</a>
+	<a href="#directions" class="skip-to-content">
+		<span class="button">Skip to directions</span>
+	</a>
+{% endif %}
