@@ -20,7 +20,8 @@
     "require": {
         "php": ">=7.1.0",
         "getkirby/cms": "^3.0",
-        "mgfagency/kirby-twig": "^1.0"
+        "mgfagency/kirby-twig": "^1.0",
+        "pedroborges/kirby-meta-tags": "^2.0"
     },
     "config": {
         "optimize-autoloader": true
