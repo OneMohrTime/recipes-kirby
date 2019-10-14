@@ -9,7 +9,7 @@
 {% block content %}
 	<header class="drinks__intro intro">
 		<h1 class="drinks__headline headline">{{ page.headline | default(page.title) }}</h1>
-		
+
 		{% if page.description is defined and page.description is not empty %}
 			<div class="drinks__subheadline">{{ page.description.kirbytext | raw }}</div>
 		{% endif %}
@@ -17,21 +17,40 @@
 
 	<section class="page__drinks{% if drinks is empty %} --is-empty{% endif %}">
 		{% if drinks is defined and drinks is not empty %}
-			
+
 			{% for drink in drinks %}
-			<a href="{{ drink.url }}" class="drink crosshair__trigger">
-				<img src="http://lorempixel.com/g/500/500/food" alt="" class="drink__cover" />
+			<a href="#{{ drink.id | title | replace({ '-' : '', 'Drinks/' : '' }) | slice(0, 24) }}" class="drink button--open crosshair__trigger">
+				{% if drink.cover is defined and drink.cover is not empty %}
+					<img src="{{ drink.cover.url }}"
+						 alt="placeholder for {{ drink.cover.title }}"
+						 width="{{ drink.cover.dimensions.width }}"
+						 height="{{ drink.cover.dimensions.height }}"
+						 class="cover__image ratio--{{ drink.cover.ratio }}-{{ drink.cover.orientation }}"
+						 id="{{ drink.cover.hash }}"
+						 srcset="" />
+				{% else %}
+					<img src="https://via.placeholder.com/500/e8e7e1/2b3b4c?text=Pretend+this+is+{{ drink.title }}" alt="placeholder for {{ drink.title }}" class="" />
+				{% endif %}
 				<div class="drink__caption">
 					<h2 class="drink__title">{{ drink.title }}</h2>
 					<figure class="drink__crosshair crosshair"></figure>
 					<p class="drink__subtitle">{{ drink.description | raw }}</p>
 				</div>
 			</a>
+			<dialog id="{{ drink.id | title | replace({ '-' : '', 'Drinks/' : '' }) | slice(0, 24) }}" class="drink__modal">
+				<h3>{{ drink.title }}</h3>
+				<p>{{ drink.description }}</p>
+				<div class="actions">
+					<button class="button ok-modal-btn">Ok!</button>
+					<button class="button button--close">Close</button>
+				</div>
+			</dialog>
 			{% endfor %}
-			
+
 		{% else %}
-			
+
 			<p class="no-drinks">There aren&rsquo;t any drinks listed on {{ site.title }} :(</p>
+
 		{% endif %}
 	</section>
 {% endblock %}

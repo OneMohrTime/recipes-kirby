@@ -1,63 +1,65 @@
-const searchToggle = document.getElementById('searchToggle'),
-	  seachForm    = document.getElementById('searchForm'),
-	  searchClose  = document.getElementById('searchClose'),
-	  search       = document.getElementById('search'),
-	  mainNav      = document.getElementById('mainNav'),
-	  menu         = document.getElementById('menu');
+/**
+ * Searchbar in the nav activation
+ */
 
-searchToggle.addEventListener('click', function(e) {
+const searchToggle = document.getElementById('searchToggle'),
+	seachForm      = document.getElementById('searchForm'),
+	searchClose    = document.getElementById('searchClose'),
+	search         = document.getElementById('search'),
+	mainNav        = document.getElementById('mainNav'),
+	menu           = document.getElementById('menu');
+
+searchToggle.addEventListener('click', function (e) {
 	mainNav.classList.add('--is-searching');
 	menu.classList.add('--is-hidden');
 	seachForm.classList.add('--is-active');
 	search.focus();
 });
 
-searchClose.addEventListener('click', function(e) {
+searchClose.addEventListener('click', function (e) {
 	mainNav.classList.remove('--is-searching');
 	menu.classList.remove('--is-hidden');
 	seachForm.classList.remove('--is-active');
 })
 
-//import '../../node_modules/tingle.js/src/tingle.js';
+
+/**
+ * Activate css modals
+ */
+
+const trigger = document.querySelectorAll('.button--open');
+//const closeBtn = document.querySelector('.button--close');
+const modal   = document.querySelector('.drink__modal');
 //
-//// instanciate new modal
-//var modal = new tingle.modal({
-//    footer: true,
-//    stickyFooter: false,
-//    closeMethods: ['overlay', 'button', 'escape'],
-//    closeLabel: "Close",
-//    cssClass: ['custom-class-1', 'custom-class-2'],
-//    onOpen: function() {
-//        console.log('modal open');
-//    },
-//    onClose: function() {
-//        console.log('modal closed');
-//    },
-//    beforeClose: function() {
-//        // here's goes some logic
-//        // e.g. save content before closing the modal
-//        return true; // close the modal
-//        return false; // nothing happens
-//    }
+//trigger.addEventListener('click', () => {
+//	modal.showModal();
 //});
-//
-//// set content
-//modal.setContent('<h1>here\'s some content</h1>');
-//
-//// add a button
-//modal.addFooterBtn('Button label', 'tingle-btn tingle-btn--primary', function() {
-//    // here goes some logic
-//    modal.close();
+//closeBtn.addEventListener('click', () => {
+//	modal.close();
 //});
-//
-//// add another button
-//modal.addFooterBtn('Dangerous action !', 'tingle-btn tingle-btn--danger', function() {
-//    // here goes some logic
-//    modal.close();
-//});
-//
-//// open modal
-//modal.open();
-//
-//// close modal
-//modal.close();
+
+// check for url string
+const drinksQuery = window.location.pathname.replace(/^\/|\/$/g, '');
+// filter slashes from query
+drinksQuery.replace(/^\/|\/$/g, '');
+// execute if drinks page
+if (drinksQuery == 'drinks') {
+	trigger.forEach((button) => {
+		// bind to click
+		button.addEventListener('click', (e) => {
+			//console.log(e.target);
+			let target = e.target.parentNode
+			
+			e.preventDefault();
+			target = target.nextElementSibling;
+			target.setAttribute('open', 'open');
+		});
+	});
+}
+
+//if( drinksQuery ) {
+//  console.log(window.location.hash)
+//  document.querySelector(drinksQuery).setAttribute('open', 'open')
+//} else {
+//  // Fragment doesn't exist
+//}

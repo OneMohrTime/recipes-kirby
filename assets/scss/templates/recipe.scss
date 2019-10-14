@@ -145,6 +145,8 @@
 		
 		&:focus,
 		&:hover {
+			outline-color: transparent;
+			
 			&::before {
 				color: map-get($color, tan);
 			}

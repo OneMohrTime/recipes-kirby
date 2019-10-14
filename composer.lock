@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6a63c3b8b30824de9015e125f4edfc79",
+    "content-hash": "24232405dd7169ed921faeb32fc58a4a",
     "packages": [
         {
             "name": "claviska/simpleimage",
@@ -397,6 +397,104 @@
                 "yml"
             ],
             "time": "2017-02-24T16:06:33+00:00"
+        },
+        {
+            "name": "pedroborges/kirby-meta-tags",
+            "version": "v2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pedroborges/kirby-meta-tags.git",
+                "reference": "0d20d2ce60e207def3a90dd1aac9eb13be1d2823"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pedroborges/kirby-meta-tags/zipball/0d20d2ce60e207def3a90dd1aac9eb13be1d2823",
+                "reference": "0d20d2ce60e207def3a90dd1aac9eb13be1d2823",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.1",
+                "pedroborges/meta-tags": "^0.0.2",
+                "php": ">=7.1.0"
+            },
+            "type": "kirby-plugin",
+            "extra": {
+                "installer-name": "meta-tags"
+            },
+            "autoload": {
+                "files": [
+                    "helpers.php"
+                ],
+                "psr-4": {
+                    "PedroBorges\\KirbyMetaTags\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pedro Borges",
+                    "email": "oi@pedroborg.es"
+                }
+            ],
+            "description": "HTML meta tags generator for Kirby 3.",
+            "homepage": "https://github.com/pedroborges/kirby-meta-tags",
+            "keywords": [
+                "JSON-LD",
+                "kirby-plugin",
+                "meta-tags",
+                "open-graph",
+                "twitter-cards"
+            ],
+            "time": "2019-02-22T13:24:16+00:00"
+        },
+        {
+            "name": "pedroborges/meta-tags",
+            "version": "v0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pedroborges/meta-tags.git",
+                "reference": "e6259f598019ab44f12c0e15d4b465d00b4d39cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pedroborges/meta-tags/zipball/e6259f598019ab44f12c0e15d4b465d00b4d39cb",
+                "reference": "e6259f598019ab44f12c0e15d4b465d00b4d39cb",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PedroBorges\\MetaTags\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pedro Borges",
+                    "email": "oi@pedroborg.es"
+                }
+            ],
+            "description": "HTML meta tags generator for PHP.",
+            "homepage": "https://github.com/pedroborges/meta-tags",
+            "keywords": [
+                "facebook",
+                "head",
+                "meta",
+                "meta tags",
+                "open graph",
+                "seo",
+                "twitter cards"
+            ],
+            "time": "2018-07-07T18:21:26+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
