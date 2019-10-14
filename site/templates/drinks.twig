@@ -19,7 +19,7 @@
 		{% if drinks is defined and drinks is not empty %}
 
 			{% for drink in drinks %}
-			<a href="{{ drink.url }}" id="{{ drink.id | title | replace({ '-' : '', 'Drinks/' : '' }) | slice(0, 24) }}" class="drink crosshair__trigger">
+			<a href="#{{ drink.id | title | replace({ '-' : '', 'Drinks/' : '' }) | slice(0, 24) }}" class="drink button--open crosshair__trigger">
 				{% if drink.cover is defined and drink.cover is not empty %}
 					<img src="{{ drink.cover.url }}"
 						 alt="placeholder for {{ drink.cover.title }}"
@@ -37,6 +37,14 @@
 					<p class="drink__subtitle">{{ drink.description | raw }}</p>
 				</div>
 			</a>
+			<dialog id="{{ drink.id | title | replace({ '-' : '', 'Drinks/' : '' }) | slice(0, 24) }}" class="drink__modal">
+				<h3>{{ drink.title }}</h3>
+				<p>{{ drink.description }}</p>
+				<div class="actions">
+					<button class="button ok-modal-btn">Ok!</button>
+					<button class="button button--close">Close</button>
+				</div>
+			</dialog>
 			{% endfor %}
 
 		{% else %}
