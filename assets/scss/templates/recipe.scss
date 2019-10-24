@@ -76,7 +76,7 @@
 	}
 	
 	.cover__caption {
-//		@include hide-visually();
+		@include hide-visually();
 		position: absolute;
 		right: 0;
 		bottom: 0;
@@ -98,13 +98,27 @@
 
 
 .ingredients {
+//	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='0.15' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+//	border: map-get($spacer, 1) / 2 map-get($color, white) solid;
+	transition: transform 500ms;
+	
+	&:focus {
+		transform: translatex( #{map-get($spacer, 2)} );
+	}
 	
 	@include media(">=for-tablet-landscape-up") {
 		position: absolute;
 		width: 100%;
 		padding: map-get($spacer, 2);
 		background-color: map-get($color, white);
-		box-shadow: 1px 2px 5px 0 fade-out( map-get($color, black), 0.85 );
+		box-shadow: 1px 2px 5px 0 fade-out( map-get($color, black), 0.66 );
+	}
+}
+
+.ingredients__list {
+	
+	.ingredient {
+//		display: inline-block;
 	}
 }
 
@@ -143,12 +157,18 @@
 			z-index: -1;
 		}
 		
-		&:focus,
 		&:hover {
-			outline-color: transparent;
 			
 			&::before {
 				color: map-get($color, tan);
+			}
+		}
+		
+		&:focus {
+			outline-color: transparent;
+			
+			&::before {
+				color: map-get($color, light-blue);
 			}
 		}
 	}
