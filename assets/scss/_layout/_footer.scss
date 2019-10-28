@@ -13,8 +13,8 @@
 		padding-right: calc( 50% - (var(--content-width) / 2) );
 
 		@supports (display: grid) {
-			padding-top: 5vh;
-			padding-bottom: 5vh;
+			padding-top: 20vh;
+			padding-bottom: 10vh;
 		}
 	}
 
