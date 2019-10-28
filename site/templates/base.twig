@@ -37,23 +37,26 @@
 			{% endblock %}
 		</main>
 
+		{% include '@snippets/modalSection.twig' %}
+
 		<footer class="page__footer">
 			{% include '@snippets/footer.twig' %}
 		</footer>
 
 	</div>
 
-	{#
-	{{ js('assets/js/main.js') }}
-	Async
-	{{ js('assets/js/main.js', true) }}
-	Defer
-	{{ js('assets/js/site.js', ['async' => true, 'defer' => true, 'data-something' => 'my-value']) }}
-	#}
-	{# Autoloading template specific script files #}
+	{# Load necessary vendor libraries #}
 	{% block scripts %}
 	{% endblock %}
-	{{ js(['assets/js/main.js', '@auto']) }}
+	{#
+	{{ js('assets/js/main.js') }}
+	{{ js('assets/js/main.js', true) }} : Async Example
+	{{ js('assets/js/site.js', ['async' => true, 'defer' => true, 'data-something' => 'my-value']) }} : Defer Example
+	#}
+	{{ js('assets/js/main.js') }}
+	{# Autoloading template specific script files #}
+	{{ js('@auto', true) }}
+
 </body>
 
 </html>
