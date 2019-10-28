@@ -1,6 +1,6 @@
 {% extends '@templates/base.twig' %}
 {% set htmlTitle = page.title ~ ' - ' ~ site.title %}
-{% set pageClass = page.template ? ' --' ~ page.template : ' --default' %}
+{% set pageClass = page.template ? ' __' ~ page.template : ' __default' %}
 {#
 {% head %}
 	{{ page.metaTags() }}

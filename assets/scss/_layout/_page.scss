@@ -12,10 +12,10 @@
 	padding-right: map-get($spacer, 1);
 }
 
-.page.--home,
-.page.--recipes,
-.page.--drinks,
-.page.--about {
+.page.__home,
+.page.__recipes,
+.page.__drinks,
+.page.__about {
 	& > .page__body {
 		margin-bottom: map-get($spacer, 2);
 		
@@ -32,7 +32,7 @@
 	}
 }
 
-.page.--recipe {
+.page.__recipe {
 	& > .page__body {
 		margin-bottom: map-get($spacer, 2);
 		

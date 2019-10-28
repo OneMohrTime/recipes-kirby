@@ -16,9 +16,9 @@
 	<h4 class="footer__title">Newest Recipes</h4>
 	<ul class="recipe-list">
 		{% for recipe in recipes %}
-			<li class="recipe"><a href="{{ recipe.url }}" title="{{ recipe.title }}" aria-title="{{ recipe.headline }}">{{ recipe.headline | length > 24 ? recipe.headline | slice(0, 24) ~ '...' : recipe.headline }}</a></li>
+			<li class="recipe-item"><a href="{{ recipe.url }}" title="{{ recipe.title }}" aria-title="{{ recipe.headline }}">{{ recipe.headline | length > 24 ? recipe.headline | slice(0, 24) ~ '...' : recipe.headline }}</a></li>
 		{% endfor %}
-		<li class="recipe"><a href="{{ site.url }}/recipes">All recipes</a></li>
+		<li class="recipe-item"><a href="{{ site.url }}/recipes"><em>Show all recipes</em></a></li>
 	</ul>
 </nav>
 
@@ -26,20 +26,22 @@
 	<h4 class="footer__title">Newest Drinks</h4>
 	<ul class="drink-list">
 		{% for drink in drinks %}
-			<li class="drink"><a href="{{ drink.url }}" title="{{ drink.title }}" aria-title="{{ drink.headline }}">{{ drink.title | length > 24 ? drink.title | slice(0, 24) ~ '...' : drink.title }}</a></li>
+			<li class="drink-item"><a href="{{ drink.url }}" title="{{ drink.title }}" aria-title="{{ drink.headline }}">{{ drink.title | length > 24 ? drink.title | slice(0, 24) ~ '...' : drink.title }}</a></li>
 		{% endfor %}
-		<li class="drink"><a href="{{ site.url }}/drinks">All drinks</a></li>
+		<li class="drink-item"><a href="{{ site.url }}/drinks"><em>Show all drinks</em></a></li>
 	</ul>
 </nav>
 
 <section class="footer__section --copy">
-	<p>&copy; {{ 'now' | date('Y') }} <a href="{{ site.url }}/about">{{ site.title }}</a> | <em>A shared cookbook of recipes</em> | Project of <a href="https://onemohrti.me" rel="nofollow noreferrer">Derek</a> &amp; <a href="https://owielanctot.com" rel="nofollow noreferrer">Owie</a></p>
+	<p>&copy; {{ 'now' | date('Y') }} <a href="{{ site.url }}/about">{{ site.title }}</a> | A shared cookbook of recipes</p>
+	<p>Project of <a href="https://onemohrti.me" target="_blank" rel="nofollow noreferrer">Derek</a> &amp; <a href="https://owielanctot.com" target="_blank" rel="nofollow noreferrer">Owie</a></p>
 	<hr class="hr--gold" />
-	<p><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></p>
 </section>
 
 <nav class="footer__section --social">
 	<ul class="social">
+		<li><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></li>
+		{#
 		{% set social = site.find('about') %}
 		{% set social = social.social.toStructure() %}
 		{% if social is defined and social is not empty %}
@@ -50,5 +52,6 @@
 				{% endif %}
 			{% endfor %}
 		{% endif %}
+		#}
 	</ul>
 </nav>

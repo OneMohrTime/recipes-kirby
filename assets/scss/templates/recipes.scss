@@ -79,8 +79,9 @@
 	position: absolute;
 	bottom: 0;
 	width: 100%;
+	padding: map-get($spacer, 1) / 4 map-get($spacer, 1) / 3;
 	transition: padding 500ms, background-color 500ms, color 500ms;
-	background-color: map-get($color, white);
+	background-color: map-get($color, light-gray);
 	color: map-get($color, dark-gray);
 }
 

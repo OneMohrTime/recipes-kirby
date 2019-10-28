@@ -1,13 +1,36 @@
 title: Site
 
 columns:
-  - width: 1/1
+  - width: 1/2
+    fields:
+      site_description:
+        label: Site Description
+        type: textarea
+      footer:
+        label: Footer Text
+        type: text
+  - width: 1/4
     sections:
-      recipes: sections/recipes
+      r_drafts:
+        extends: sections/recipes
+        headline: Started Recipes
+        status: draft
+  - width: 1/4
+    sections:
+      d_drafts:
+        extends: sections/drinks
+        headline: Started Drinks
+        status: draft
   - width: 2/3
     sections:
-      drinks: sections/drinks
+      listed:
+        extends: sections/recipes
+        headline: Finished Recipes
+        status: listed
   - width: 1/3
+    sections:
+      drinks: sections/drinks
+  - width: 1/1
     sections:
       pages:
         type: pages
