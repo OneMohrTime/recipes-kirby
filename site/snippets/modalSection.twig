@@ -1,0 +1,15 @@
+{% if page.template == 'drinks' %}
+
+	<div id="modalClose" class="page__overlay"></div>
+	{#
+	<section class="page__modals">
+		{% if drinks is defined and drinks is not empty %}
+			{% for drink in drinks %}
+				{% block modal %}
+				{% endblock %}
+			{% endfor %}
+		{% endif %}
+	</section>
+	#}
+
+{% endif %}
