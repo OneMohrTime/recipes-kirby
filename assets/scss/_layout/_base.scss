@@ -13,6 +13,7 @@ html {
 body {
 	background-color: map-get($color, background);
 	background-image: url("../img/bg.png");
+	background-repeat: repeat;
 }
 
 * {
