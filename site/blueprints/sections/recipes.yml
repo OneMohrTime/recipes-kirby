@@ -2,7 +2,7 @@ type: pages
 headline: Recipes
 parent: site.find("recipes")
 size: tiny
-info: "{{ page.images.count }} image(s)"
+info: "{{ page.recipeImages.count }} image(s)"
 layout: cards
 template: recipe
 empty: No recipes yet
