@@ -20,7 +20,7 @@
 	}
 }
 
-.recipe__header {
+.recipe__intro {
 	
 	@include media(">=for-tablet-landscape-up") {
 		grid-column: 3 / 11;
@@ -98,8 +98,8 @@
 
 
 .ingredients {
-//	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='0.15' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-//	border: map-get($spacer, 1) / 2 map-get($color, white) solid;
+	border-radius: 3px;
+	background-image: url("../img/bg.png");
 	transition: transform 500ms;
 	
 	&:focus {
@@ -139,9 +139,10 @@
 	
 	li {
 		position: relative;
-		counter-increment: direction-list;
 		margin-bottom: map-get($spacer, 1);
+		transition: padding 500ms;
 		font-size: modular-scale(1);
+		counter-increment: direction-list;
 		z-index: 1;
 		
 		&::before {
@@ -153,6 +154,7 @@
 			font-size: modular-scale(4);
 			font-style: italic;
 			font-weight: 700;
+			line-height: 1.65em;
 			color: map-get($color, light-gray);
 			z-index: -1;
 		}
@@ -165,6 +167,8 @@
 		}
 		
 		&:focus {
+			padding-top: map-get($spacer, 2);
+			padding-bottom: map-get($spacer, 2);
 			outline-color: transparent;
 			
 			&::before {
