@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "24232405dd7169ed921faeb32fc58a4a",
+    "content-hash": "d1dad3222f06aae81d3afe0eda0ea893",
     "packages": [
         {
             "name": "claviska/simpleimage",
@@ -347,6 +347,37 @@
                 "typography"
             ],
             "time": "2016-12-13T01:01:17+00:00"
+        },
+        {
+            "name": "mullema/k3-image-clip",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mullema/k3-image-clip.git",
+                "reference": "4362cb6aa8a00d004e3c269ea142285636e2b5ad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mullema/k3-image-clip/zipball/4362cb6aa8a00d004e3c269ea142285636e2b5ad",
+                "reference": "4362cb6aa8a00d004e3c269ea142285636e2b5ad",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.1"
+            },
+            "type": "kirby-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Müller",
+                    "email": "moeli@moeli.com"
+                }
+            ],
+            "description": "Visual image clip for Kirby3.",
+            "time": "2019-09-24T09:46:40+00:00"
         },
         {
             "name": "mustangostang/spyc",
