@@ -74,7 +74,7 @@ h6 {
 p {
 	margin: 0 0 #{map-get($spacer, 1) / 2};
 	font-weight: 400;
-	line-height: 1.6em;
+	line-height: 1.65em;
 	widows: 3;
 	orphans: 3;
 	hyphens: auto;
@@ -100,8 +100,7 @@ hr {
 	position: relative;
 	width: 50px;
 	height: 10px;
-	margin-top: map-get($spacer, 1);
-	margin-bottom: map-get($spacer, 1);
+	margin: map-get($spacer, 1) auto;
 	overflow: hidden;
 	border: 0;
 	background-image: url("../../assets/img/zigzag-long.png");
@@ -184,10 +183,23 @@ a:not([class]) {
 	mask-image: url(../../assets/img/texture-mask.png);
 }
 
+.reading {
+	line-height: 1.65em;
+}
+
 .highlight {
 	background-color: map-get($color, white);
-	padding-left: map-get($spacer, 1) / 2;
-	padding-right: map-get($spacer, 1) / 2;
+	padding: 2px map-get($spacer, 1) / 2;
+
+	&.--white {
+		background-color: map-get($color, white);
+	}
+	&.--yellow {
+		background-color: map-get($color, yellow);
+	}
+	&.--gold {
+		background-color: map-get($color, gold);
+	}
 }
 
 .page__body {

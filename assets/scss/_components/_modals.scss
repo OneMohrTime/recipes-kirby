@@ -16,6 +16,7 @@ body.--is-modal {
 	transition: opacity 500ms;
 	pointer-events: none;
 	background-color: fade-out( map-get($color, black), 0.15 );
+	background-image: url("../img/bg.png");
 	visibility: hidden;
 	z-index: 9;
 	

@@ -6,16 +6,14 @@
 	margin: 0 auto;
 	padding-top: map-get($spacer, 3);
 	padding-bottom: map-get($spacer, 3);
+	border-top: 2px map-get($color, gold) solid;
 	background-color: map-get($color, yellow);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='0.15' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+	background-blend-mode: multiply;
 
 	@include media(">=for-desktop-up") {
 		padding-left: calc( 50% - (var(--content-width) / 2) );
 		padding-right: calc( 50% - (var(--content-width) / 2) );
-
-		@supports (display: grid) {
-			padding-top: 20vh;
-			padding-bottom: 10vh;
-		}
 	}
 
 	a {
@@ -52,10 +50,17 @@
 	.drink-list {
 		padding-left: map-get($spacer, 1);
 		list-style-type: square;
-		line-height: 1.6em;
 
 		a {
 			font-weight: 400;
+		}
+	}
+	
+	.recipe-item,
+	.drink-item {
+		
+		&.highlight {
+			margin-bottom: map-get($spacer, 1) / 3;
 		}
 	}
 
@@ -73,9 +78,6 @@
 		&.--copy {
 			grid-column: span 1;
 			grid-row: 1 / 2;
-			hr {
-				margin-left: 0;
-			}
 		}
 
 		&.--social {
@@ -83,11 +85,13 @@
 			grid-row: 2 / 3;
 		}
 	}
-
 }
 
 .footer__title {
+	display: inline-block;
 	margin-bottom: 0.75em;
+	padding-top: map-get($spacer, 1) / 3;
+	padding-bottom: map-get($spacer, 1) / 3;
 	font-size: modular-scale(0);
 	font-style: italic;
 	font-weight: 900;
