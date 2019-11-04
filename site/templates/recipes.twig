@@ -40,7 +40,7 @@
 					<div class="recipe__caption">
 						<h2 class="recipe__title">{{ recipe.title }}</h2>
 					<figure class="recipe__crosshair crosshair"></figure>
-						<p class="recipe__subtitle">{{ recipe.description | raw | slice(0, 164) }}</p>
+						<p class="recipe__subtitle">{{ recipe.aboutRecipes | raw | slice(0, 164) }}</p>
 					</div>
 				</a>
 				{% endfor %}

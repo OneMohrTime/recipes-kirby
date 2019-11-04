@@ -27,6 +27,9 @@ columns:
       description:
         label: Quick Description
         type: textarea
+      aboutRecipes:
+        label: About the recipes page
+        type: textarea
   - width: 2/3
     sections:
       recipeImages:
