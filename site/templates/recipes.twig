@@ -53,7 +53,7 @@
 		</section>
 
 		<section class="recipes __blurb reading">
-			<p>{{ page.description }}</p>
+			{{ page.description.kirbytext | raw }}
 		</section>
 
 		<section class="recipes __newest">
@@ -87,8 +87,8 @@
 
 		<section class="recipes __all">
 			<h2 class="recipes__browse">
-				Browse
-				<select>
+				<span id="recipeLabel" class="recipe-type__label" aria-label="Browse recipes by">Browse</span>
+				<select class="recipe-type__input" aria-labelledby="recipeLabel">
 					<option>Everything</option>
 				</select>
 			</h2>
