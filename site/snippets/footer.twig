@@ -18,7 +18,7 @@
 		{% for recipe in recipes %}
 			<li class="recipe-item highlight --yellow"><a href="{{ recipe.url }}" title="{{ recipe.title }}" aria-title="{{ recipe.headline }}">{{ recipe.headline | length > 54 ? recipe.headline | slice(0, 54) ~ '...' : recipe.headline }}</a></li>
 		{% endfor %}
-		<li class="recipe-item highlight --yellow"><a href="{{ site.url }}/recipes"><em>Show all recipes</em></a></li>
+		<li class="recipe-item highlight --yellow"><a href="{{ site.url }}/recipes" title="Show all recipes" aria-title="Show all recipes"><em>Show all recipes</em></a></li>
 	</ul>
 </nav>
 
@@ -28,31 +28,22 @@
 		{% for drink in drinks %}
 			<li class="drink-item highlight --yellow"><a href="{{ drink.url }}" title="{{ drink.title }}" aria-title="{{ drink.headline }}">{{ drink.title | length > 54 ? drink.title | slice(0, 54) ~ '...' : drink.title }}</a></li>
 		{% endfor %}
-		<li class="drink-item highlight --yellow"><a href="{{ site.url }}/drinks"><em>Show all drinks</em></a></li>
+		<li class="drink-item highlight --yellow"><a href="{{ site.url }}/drinks" title="Show all drinks" aria-title="Show all drinks"><em>Show all drinks</em></a></li>
 	</ul>
 </nav>
 
 <section class="footer__section --copy">
 	<h4 class="footer__title --hide-text">About this website</h4>
-	<p class="highlight --yellow">&copy; {{ 'now' | date('Y') }} <a href="{{ site.url }}/about">{{ site.title }}</a> | A shared cookbook of recipes</p>
-	<p class="highlight --yellow">Project of <a href="https://onemohrti.me" target="_blank" rel="nofollow noreferrer">Derek</a> &amp; <a href="https://owielanctot.com" target="_blank" rel="nofollow noreferrer">Owie</a></p>
+	<p class="highlight --yellow">
+		&copy; {{ 'now' | date('Y') }} <a href="{{ site.url }}/about">{{ site.title }}</a> | A shared cookbook of recipes
+		<br/>
+		Project of <a href="https://onemohrti.me" target="_blank" rel="nofollow noreferrer">Derek</a> &amp; <a href="https://owielanctot.com" target="_blank" rel="nofollow noreferrer">Owie</a>
+	</p>
 	<hr class="hr--gold" />
 </section>
 
 <nav class="footer__section --social">
-	<ul class="social highlight --yellow">
-		<li><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></li>
-		{#
-		{% set social = site.find('about') %}
-		{% set social = social.social.toStructure() %}
-		{% if social is defined and social is not empty %}
-			{% for platform in social %}
-				<li class="social__platform"><a href="{{ platform.url }}">{{ platform.platform }}</a></li>
-				{% if not loop.last %}
-					|
-				{% endif %}
-			{% endfor %}
-		{% endif %}
-		#}
+	<ul class="social">
+		<li><a href="{{ site.url }}/terms-of-use" class="highlight --yellow">Terms of Use</a> | <a href="{{ site.url }}/privacy-policy" class="highlight --yellow">Privacy Policy</a></li>
 	</ul>
 </nav>
