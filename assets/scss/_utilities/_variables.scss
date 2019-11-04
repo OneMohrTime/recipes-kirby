@@ -66,3 +66,5 @@ $spacer: (
 	7: 7.875rem,
 	8: 6.5rem
 );
+
+$box-shadow: 0 2px 24px fade-out( map-get($color, dark-gray), 0.94 );
