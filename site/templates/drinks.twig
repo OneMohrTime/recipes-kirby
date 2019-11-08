@@ -30,7 +30,7 @@
 							 height="{{ drink.cover.dimensions.height }}"
 							 class="cover__image ratio--{{ drink.cover.ratio }}-{{ drink.cover.orientation }}"
 							 id="{{ drink.cover.hash }}"
-							 srcset="" />
+							 srcset="{{ drink.cover.srcset([400, 800, 1200, 1600]) }}" />
 					{% else %}
 						<img src="https://via.placeholder.com/500/e8e7e1/2b3b4c?text=Pretend+this+is+{{ drink.title | replace ({'&' : 'and', '?' : ''}) }}" alt="placeholder for {{ drink.title }}" class="" />
 					{% endif %}
