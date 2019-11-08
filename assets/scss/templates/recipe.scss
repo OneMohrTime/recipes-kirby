@@ -26,7 +26,8 @@
 		grid-column: 3 / 11;
 		grid-row: 1 / 2;
 		max-width: var(--content-width);
-		padding: 10vh calc( 50% - (var(--content-width) / 2) ) 20vh;
+		padding-left: calc( 50% - (var(--content-width) / 2) );
+		padding-right: calc( 50% - (var(--content-width) / 2) );
 	}
 }
 
