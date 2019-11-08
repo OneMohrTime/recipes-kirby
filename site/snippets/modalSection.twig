@@ -1,6 +1,32 @@
+{% set allDrinksSegment   = kirby.request.url.props.path ?? null %}
+{% set singleDrinkSegment = kirby.request.url.props.path[1] ?? null %}
+{% set isDrink            = allDrinksSegment | length > 1 ? true : false %}
+
 {% if page.template == 'drinks' %}
 
-	<div id="modalClose" class="page__overlay"></div>
+	<div id="modalClose" class="page__overlay{% if isDrink %} --is-modal{% endif %}"></div>
+	
+	{% block modal %}
+
+		{% if isDrink %}
+			{% set drink       = page.find(slug) %}
+			{% set drinkParent = drink.parent().url %}
+			{% set nextDrink   = drink.nextListed().url ?? null %}
+			{% set prevDrink   = drink.prevListed().url ?? null %}
+
+			<div id="{{ drink.uid }}" class="modal --is-modal">
+				<h3>{{ drink.title }}</h3>
+				<p>{{ drink.description }}</p>
+
+				<div class="modal__actions">
+					<a href="{{ drinkParent }}" class="button">All Drinks</a>
+					{% if nextDrink %}<a href="{{ nextDrink }}">Next</a>{% endif %}
+					{% if prevDrink %}<a href="{{ prevDrink }}">Prev</a>{% endif %}
+				</div>
+			</div>
+		{% endif %}
+
+	{% endblock %}
 	{#
 	<section class="page__modals">
 		{% if drinks is defined and drinks is not empty %}
@@ -11,5 +37,6 @@
 		{% endif %}
 	</section>
 	#}
+	
 
 {% endif %}
