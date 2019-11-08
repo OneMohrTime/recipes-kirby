@@ -173,10 +173,14 @@ $column: percentage( 1 / 12 );
 		margin-bottom: map-get($spacer, 1) / 2;
 		width: 100%;
 		height: 48px;
+		transform: translateX(0);
+		transition: transform 500ms;
 		background-color: tint(map-get($color, light-gray), 67%);
 		
 		&:focus,
 		&:hover {
+			transform: translateX( #{map-get($spacer, 1) / 2} );
+			
 			.recipe__title {
 				color: map-get($color, blue);
 			}
