@@ -100,11 +100,11 @@ $column: percentage( 1 / 12 );
 	background-size: map-get($spacer, 1) / 2;
 	background-position: calc(100% - #{map-get($spacer, 1) / 2}) center;
 	background-repeat: no-repeat;
+	cursor: pointer;
 	appearance: none;
 	
 	&:focus,
 	&:hover {
-		padding-left: map-get($spacer, 1);
 		padding-right: map-get($spacer, 3);
 		border-bottom-color: map-get($color, blue);
 	}

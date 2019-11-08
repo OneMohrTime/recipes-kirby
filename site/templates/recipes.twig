@@ -25,7 +25,7 @@
 			{% if recipes is defined and recipes is not empty %}
 
 				{% for recipe in recipes %}
-				<a href="{{ recipe.url }}" id="{{ recipe.id | title | replace({ '-' : '', 'Recipes/' : '' }) | slice(0, 24) }}" class="recipe crosshair__trigger">
+				<a href="{{ recipe.url }}" id="{{ recipe.uid }}" class="recipe crosshair__trigger">
 					{% if recipe.cover is defined and recipe.cover is not empty %}
 						<img src="{{ recipe.cover.url }}"
 							 alt="placeholder for {{ recipe.cover.title }}"
@@ -40,7 +40,7 @@
 					<div class="recipe__caption">
 						<h2 class="recipe__title">{{ recipe.title }}</h2>
 					<figure class="recipe__crosshair crosshair"></figure>
-						<p class="recipe__subtitle">{{ recipe.aboutRecipes | raw | slice(0, 164) }}</p>
+						<p class="recipe__subtitle">{{ recipe.description | raw | slice(0, 164) }}</p>
 					</div>
 				</a>
 				{% endfor %}
@@ -62,7 +62,7 @@
 			{% if recipes is defined and recipes is not empty %}
 
 				{% for recipe in recipes %}
-				<a href="{{ recipe.url }}" id="{{ recipe.id | title | replace({ '-' : '', 'Recipes/' : '' }) | slice(0, 24) }}" class="recipe --small">
+				<a href="{{ recipe.url }}" id="{{ recipe.uid }}" class="recipe --small">
 					{% if recipe.cover is defined and recipe.cover is not empty %}
 						<img src="{{ recipe.cover.url }}"
 							 alt="placeholder for {{ recipe.cover.title }}"
@@ -96,7 +96,7 @@
 			{% if recipes is defined and recipes is not empty %}
 
 				{% for recipe in recipes %}
-				<a href="{{ recipe.url }}" id="{{ recipe.id | title | replace({ '-' : '', 'Recipes/' : '' }) | slice(0, 24) }}" class="recipe crosshair__trigger">
+				<a href="{{ recipe.url }}" id="{{ recipe.uid }}" class="recipe crosshair__trigger" aria-label="Read {{ recipe.title }}">
 					{% if recipe.cover is defined and recipe.cover is not empty %}
 						<img src="{{ recipe.cover.url }}"
 							 alt="placeholder for {{ recipe.cover.title }}"
@@ -111,7 +111,6 @@
 					<div class="recipe__caption">
 						<h2 class="recipe__title">{{ recipe.title }}</h2>
 					<figure class="recipe__crosshair crosshair"></figure>
-						<p class="recipe__subtitle">{{ recipe.description | raw | slice(0, 164) }}</p>
 					</div>
 				</a>
 				{% endfor %}
