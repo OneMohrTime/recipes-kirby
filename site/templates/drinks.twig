@@ -7,7 +7,7 @@
 	.sortBy('date', 'desc') %}
 
 {% block content %}
-	
+
 	<header class="drinks__intro intro">
 		<h1 class="drinks__headline headline" data-title="{{ page.headline | default(page.title) }}">{{ page.headline | default(page.title) }}</h1>
 
@@ -17,12 +17,12 @@
 	</header>
 
 	<section class="page__drinks{% if drinks is empty %} --is-empty{% endif %}">
-		
+
 		{% if drinks is defined and drinks is not empty %}
 
 			{% for drink in drinks %}
-				
-				<a href="#{{ drink.id | title | replace({ '-' : '', 'Drinks/' : '' }) | slice(0, 24) }}" class="drink crosshair__trigger">
+
+				<a href="{{ drink.url }}" class="drink crosshair__trigger">
 					{% if drink.cover is defined and drink.cover is not empty %}
 						<img src="{{ drink.cover.url }}"
 							 alt="placeholder for {{ drink.cover.title }}"
@@ -40,16 +40,7 @@
 						<p class="drink__subtitle">{{ drink.description | raw | slice(0, 164) }}</p>
 					</div>
 				</a>
-				
-				<div id="{{ drink.id | title | replace({ '-' : '', 'Drinks/' : '' }) | slice(0, 24) }}" class="drink__modal">
-					<h3>{{ drink.title }}</h3>
-					<p>{{ drink.description }}</p>
-					<div class="actions">
-						<button class="button ok-modal-btn">Ok!</button>
-						<button class="button button--close">Close</button>
-					</div>
-				</div>
-				
+
 			{% endfor %}
 
 		{% else %}
@@ -57,7 +48,7 @@
 			<p class="no-drinks">There aren&rsquo;t any drinks listed on {{ site.title }} :(</p>
 
 		{% endif %}
-		
+
 	</section>
 {% endblock %}
 
@@ -65,5 +56,4 @@
 {% endblock %}
 
 {% block scripts %}
-	<script src="/assets/js/tingle.js"></script>
 {% endblock %}

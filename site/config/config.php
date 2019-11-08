@@ -22,6 +22,15 @@ return [
         'action'  => function() {
           return go('sitemap.xml', 301);
         }
+      ],
+      [
+        'pattern' => 'drinks/(:any)',
+        'action' => function ($any) {
+          $data = [
+            'slug' => $any,
+          ];
+          return page('drinks')->render($data);
+        }
       ]
     ],
     'panel' =>[
