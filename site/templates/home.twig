@@ -7,47 +7,37 @@
 	.sortBy('date', 'desc') %}
 
 {% block content %}
-	<header class="intro">
-		<h1>{{ site.title }}</h1>
-	</header>
+	<article class="homepage__grid">
+		
+		<header class="homepage__intro intro">
+			<h1 class="--hide-visually">{{ site.title }}</h1>
+			<h2>Hungry? Thirsty?</h2>
+			<p>text</p>
+			<a href="#" class="button">button</a>
+		</header>
+		
+		<section class="homepage__promos">
+			<div class="bored">
+				<h2>Bored?</h2>
+				<a href="#">Recipes</a>
+				<a href="#">Drinks</a>
+			</div>
+			<div class="feature">
+				<h3>Food Category</h3>
+				<p>category</p>
+				<a href="#">Link</a>
+			</div>
+		</section>
+		
+		<section class="hompage__category">
+			<h3>Food Category</h3>
+			<ul>
+				<li><a href="#">Recipe</a></li>
+				<li><a href="#">Recipe</a></li>
+				<li><a href="#">Recipe</a></li>
+				<li><a href="#">Recipe</a></li>
+			</ul>
+		</section>
 
-	<ul class="grid">
-		{% for recipe in recipes %}
-		<li>
-			<a href="{{ recipe.url }}">
-				<figure>
-					{% if recipe.cover is defined and recipe.cover is not empty %}
-						{# recipe.cover.resize(1024, 1024) #}
-						<img src="{{ recipe.cover.url }}"
-							 alt="placeholder for {{ recipe.cover.title }}"
-							 width="{{ recipe.cover.dimensions.width }}"
-							 height="{{ recipe.cover.dimensions.height }}"
-							 class="cover__image ratio--{{ recipe.cover.ratio }}-{{ recipe.cover.orientation }}"
-							 id="{{ recipe.cover.hash }}"
-							 srcset="" />
-						<figcaption>
-							<span>
-								<span class="example-name">{{ recipe.title ?? null }}</span>
-							</span>
-						</figcaption>
-					{% else %}
-						<img src="https://via.placeholder.com/500x400/e8e7e1/2b3b4c?text=Pretend+this+is+{{ recipe.title }}" alt="placeholder for {{ recipe.title }}" class="" />
-						<figcaption>
-							<span>
-								<span class="example-name">{{ recipe.title ?? null }}</span>
-							</span>
-						</figcaption>
-					{% endif %}
-
-					<figcaption>
-						<span>
-							<span class="example-name">{{ recipe.title }}</span>
-						</span>
-					</figcaption>
-				</figure>
-			</a>
-		</li>
-		{% endfor %}
-	</ul>
-
+	</article>
 {% endblock %}
