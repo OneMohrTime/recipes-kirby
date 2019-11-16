@@ -14,6 +14,10 @@
 	
 	&.--is-active {
 		display: block;
+		
+		@supports (display: flex) {
+			flex: 1;
+		}
 	}
 }
 
@@ -26,6 +30,24 @@
 
 .search__field {
 	display: block;
-	width: auto;
+	width: 100%;
 	min-width: 100px;
+	
+	&::placeholder {
+		font-style: italic;
+	}
+}
+
+.search__close {
+	padding-left: map-get($spacer, 1) / 2;
+	padding-right: map-get($spacer, 1) / 2;
+	font-size: 2em;
+	background-color: transparent;
+	color: map-get($color, red);
+}
+
+.search__submit {
+	padding: map-get($spacer, 1) / 2;
+	background-color: map-get($color, blue);
+	color: map-get($color, white);
 }

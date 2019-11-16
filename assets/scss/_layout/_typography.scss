@@ -177,10 +177,21 @@ a:not([class]) {
  */
 
 .headline {
+	position: relative;
 	margin-bottom: calc( #{map-get($spacer, 3) / 2} + 7px );
 	padding-bottom: #{map-get($spacer, 3) / 2};
 	border-bottom: 7px map-get($color, tan) solid;
-	mask-image: url(../../assets/img/texture-mask.png);
+//	mask-image: url(../../assets/img/texture-mask.png);
+	
+	&::before {
+		content: attr(data-title);
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translate3d(2px, 2px, 0);
+		mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+		z-index: 1;
+	}
 }
 
 .reading {
