@@ -12,8 +12,20 @@
 	background-blend-mode: multiply;
 
 	@include media(">=for-desktop-up") {
-		padding-left: calc( 50% - (var(--content-width) / 2) );
-		padding-right: calc( 50% - (var(--content-width) / 2) );
+		// padding-left: calc( 50% - (var(--content-width) / 2) );
+		// padding-right: calc( 50% - (var(--content-width) / 2) );
+		max-width: calc( var(--content-width) + #{map-get($spacer, 2)} );
+		border-left: 2px map-get($color, gold) solid;
+		border-right: 2px map-get($color, gold) solid;
+		box-shadow: $box-shadow;
+
+		@supports (display: grid) {
+			display: grid;
+			// grid-template-columns: 25% 25% 50%;
+			grid-template-columns: 1fr 1fr 2fr;
+			grid-auto-rows: auto;
+			grid-column-gap: map-get($spacer, 1);
+		}
 	}
 
 	a {
@@ -29,13 +41,6 @@
 				background-color: map-get($color, black);
 			}
 		}
-	}
-
-	@supports (display: grid) {
-		display: grid;
-		grid-template-columns: 25% 25% 50%;
-		grid-auto-rows: auto;
-		grid-column-gap: map-get($spacer, 1);
 	}
 }
 
@@ -55,10 +60,10 @@
 			font-weight: 400;
 		}
 	}
-	
+
 	.recipe-item,
 	.drink-item {
-		
+
 		&.highlight {
 			margin-bottom: map-get($spacer, 1) / 3;
 		}

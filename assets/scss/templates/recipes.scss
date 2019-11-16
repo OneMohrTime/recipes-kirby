@@ -7,8 +7,11 @@
 $column: percentage( 1 / 12 );
 
 .page__recipes {
-	display: grid;
-	grid-template-columns: repeat(12, $column);
+	
+	@include media(">=for-tablet-landscape-up") {
+		display: grid;
+		grid-template-columns: repeat(12, $column);
+	}
 }
 
 .recipes {
@@ -53,11 +56,7 @@ $column: percentage( 1 / 12 );
 	letter-spacing: 0.05em;
 }
 
-@include media(">=for-tablet-portrait-up") {
-}
-
-@include media(">=for-tablet-landscape-up") {
-}
+@include media(">=for-tablet-portrait-up") {}
 
 .recipes__intro {
 
