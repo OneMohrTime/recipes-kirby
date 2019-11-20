@@ -1,19 +1,6 @@
-.layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 3rem;
-}
+/* ----------------------------------------
+	Template / About
+---------------------------------------- */
 
-@media screen and (min-width: 45rem) {
-  .layout {
-    grid-template-columns: 1fr 2fr;
-  }
-}
+@import "../_utilities/templates";
 
-.layout aside section {
-  margin-bottom: 3rem;
-}
-
-.layout aside h2 {
-  margin-bottom: .75rem;
-}

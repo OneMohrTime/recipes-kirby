@@ -10,7 +10,7 @@ $nudge: map-get($spacer, 1);
 	margin-right: auto;
 	@include clearfix();
 	transform: translateY(0);
-	transition: width 500ms, transform 500ms;
+	transition: width 500ms, margin 500ms, transform 500ms;
 
 	&.--is-searching {
 		width: calc(100% - #{$nudge});
