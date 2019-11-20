@@ -15,8 +15,35 @@
 			{% set prevDrink   = drink.prevListed().url ?? null %}
 
 			<div id="{{ drink.uid }}" class="modal --is-modal">
-				<h3>{{ drink.title }}</h3>
-				<p>{{ drink.description }}</p>
+				
+				<h3 class="modal__headline headline" data-title="{{ drink.headline | default(drink.title) }}">{{ drink.headline | default(drink.title) }}</h3>
+				
+				<div class="modal__description">
+					<p>{{ drink.description }}</p>
+				</div>
+				
+				<figure class="modal__image">
+					<img src="https://loremflickr.com/1000/1000/drink,bar/all" />
+					<figcaption></figcaption>
+				</figure>
+				
+				<div class="modal__ingredients">
+					<h4>Ingredients</h4>
+					<ul>
+						<li>Item #1</li>
+						<li>Item #2</li>
+						<li>Item #3</li>
+					</ul>
+				</div>
+				
+				<div class="modal__directions">
+					<h4>Directions</h4>
+					<ol>
+						<li>Item #1</li>
+						<li>Item #2</li>
+						<li>Item #3</li>
+					</ol>
+				</div>
 
 				<div class="modal__actions">
 					<a href="{{ drinkParent }}" class="button">All Drinks</a>
