@@ -9,6 +9,7 @@
 	border: 0;
 	border-radius: 3px;
 	background-color: map-get($color, light-gray);
+	cursor: pointer;
 }
 
 .button {
@@ -18,4 +19,5 @@
 	border: 0;
 	background-color: map-get($color, light-gray);
 	appearance: none;
+	cursor: pointer;
 }

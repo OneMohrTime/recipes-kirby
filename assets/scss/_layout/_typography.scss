@@ -181,7 +181,6 @@ a:not([class]) {
 	margin-bottom: calc( #{map-get($spacer, 3) / 2} + 7px );
 	padding-bottom: #{map-get($spacer, 3) / 2};
 	border-bottom: 7px map-get($color, tan) solid;
-//	mask-image: url(../../assets/img/texture-mask.png);
 	
 	&::before {
 		content: attr(data-title);

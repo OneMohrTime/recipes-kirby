@@ -1,1 +1,21 @@
 Title: Home
+
+----
+
+Headline: Hungry? Thirsty?
+
+----
+
+Subheadline: 
+
+----
+
+Left:
+
+- recipes
+
+----
+
+Right:
+
+- drinks

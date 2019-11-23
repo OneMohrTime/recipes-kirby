@@ -7,3 +7,9 @@ Headline: this is food
 ----
 
 Description: this is not food, (link: http:onemohrti.me text: onemohrtime) and more more more
+
+----
+
+Cover:
+
+- mighty_oct_team-photos_21.jpg

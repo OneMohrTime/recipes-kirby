@@ -3,17 +3,47 @@ title: Home
 icon: 🏠
 
 options:
-  status: false
+  status:
+    draft: true
+    listed: true
 
-sections:
-  info:
-    headline: Info
-    type: info
-    text: All content for the homepage is being pulled from the recipes page.
-
-  recipes:
-    headline: Recipes
-    extends: sections/recipes
-    status: listed
-
-
+columns:
+  - width: 1/1
+    fields:
+      headline:
+        label: Main Headline
+        type: text
+  - width: 1/2
+    fields:
+      description:
+        label: Main Description
+        type: textarea
+  - width: 1/2
+  - width: 1/1
+    fields:
+      subheadline:
+        label: Secondary Headline
+        type: text
+  - width: 1/2
+    fields:
+      left:
+        label: Left Link
+        type: pages
+        layout: cards
+        multiple: false
+        image: page.image.findBy('name', 'cover')
+  - width: 1/2
+    fields:
+      right:
+        label: Right Link
+        type: pages
+        layout: cards
+        multiple: false
+        image: page.image.findBy('name', 'cover')
+  - width: 1/1
+  - width: 1/1
+    sections:
+      recipes:
+        headline: Recipes
+        extends: sections/recipes
+        status: listed

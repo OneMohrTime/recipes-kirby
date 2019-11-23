@@ -16,19 +16,102 @@ $nudge: map-get($spacer, 4);
 }
 
 .homepage__promos {
-	height: 200vh;
+	height: 100vh;
 	text-align: center;
 	background-image: url('https://loremflickr.com/1200/1200/food,elegant/all');
-	
+	background-size: cover;
+	@include media(">=for-tablet-portrait-up") {
+		height: 150vh;
+	}
+	@include media(">=for-desktop-up") {
+		height: 200vh;
+	}
+
 	.bored {
-		max-width: var(--content-width);
-		height: 75vh;
+		height: auto;
+		max-width: calc( 100% - #{map-get($spacer, 2)} );
 		margin-left: auto;
 		margin-right: auto;
+		padding-bottom: map-get($spacer, 1);
 		transform: translateY(-#{$nudge});
 		background-color: map-get($color, dark-gray);
 		color: map-get($color, white);
 		box-shadow: $box-shadow;
 		z-index: 10;
+
+		@include media(">=for-tablet-portrait-up") {
+//			height: 50vh;
+			max-width: calc( 100% - #{map-get($spacer, 8)} );
+			padding-bottom: 0;
+		}
+
+		@include media(">=for-desktop-up") {
+			max-width: var(--content-width);
+		}
+			
+		@supports (display: grid) {
+			display: grid;
+			grid-template-columns: repeat(2, calc( 50% - #{map-get($spacer, 1)} ));
+			grid-column-gap: map-get($spacer, 2);
+			align-content: start;
+			align-items: start;
+			padding: map-get($spacer, 2);
+		}
+	}
+
+	.bored__headline {
+		margin-left: map-get($spacer, 1);
+		margin-right: map-get($spacer, 1);
+		padding-top: map-get($spacer, 1) / 2;
+		padding-bottom: map-get($spacer, 1) / 2;
+		border-bottom: 3px map-get($color, white) solid;
+		
+		@supports (display: grid) {
+			grid-column: span 2;
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+	
+	.bored__link {
+		grid-column: span 1;
+		padding: map-get($spacer, 1) map-get($spacer, 2);
+		background-color: map-get($color, light-gray);
+		color: map-get($color, dark-gray);
+	}
+	
+	.left-link,
+	.right-link {
+		display: flex;
+		
+		&__headline {
+			// .left-link__headline
+			// .right-link__headline
+			display:inline-block;
+			font-size: modular-scale(2);
+			font-weight: 400;
+		}
+	}
+	
+	.feature {
+		color: map-get($color, white);
+		padding-left: 33%;
+		padding-right: map-get($spacer, 1);
+		text-align: left;
+		
+		@include media(">=for-tablet-portrait-up") {}
+		@include media(">=for-desktop-up") {}
+	}
+}
+
+.hompage__category {
+	max-width: var(--content-width);
+	margin-left: auto;
+	margin-right: auto;
+	
+	.category__list {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: map-get($spacer, 4);
 	}
 }

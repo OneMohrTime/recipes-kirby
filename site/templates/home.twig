@@ -11,27 +11,67 @@
 		
 		<header class="homepage__intro intro">
 			<h1 class="--hide-visually">{{ site.title }}</h1>
-			<h2>Hungry? Thirsty?</h2>
-			<p>text</p>
-			<a href="#" class="button">button</a>
+			<h2 class="homepage__headline headline">{{ page.headline }}</h2>
+			<p class="homepage__subheadline">text</p>
+			<a href="#searchToggle" class="button">button</a>
 		</header>
 		
 		<section class="homepage__promos">
-			<div class="bored">
-				<h2>Bored?</h2>
-				<a href="#">Recipes</a>
-				<a href="#">Drinks</a>
-			</div>
-			<div class="feature">
-				<h3>Food Category</h3>
-				<p>category</p>
-				<a href="#">Link</a>
-			</div>
+			<aside class="bored">
+				<h2 class="bored__headline headline">Bored?</h2>
+				
+				{% set left      = page.left.related.toPage() %}
+				{% set leftCover = left.cover.toFile() %}
+				{% set right      = page.right.related.toPage() %}
+				{% set rightCover = right.cover.toFile() %}
+				
+				<a href="{{ left.url }}" class="bored__link">
+					<h3 class="left-link__headline headline">
+						Browse Food Recipes
+					</h3>
+					<div class="left-link__description">
+						{{ left.description | raw }}
+					</div>
+					{% if leftCover is defined and leftCover is not empty %}
+						<img src="{{ leftCover.url }}"
+							 alt="{{ leftCover.name }}"
+							 width="{{ leftCover.dimensions.width }}"
+							 height="{{ leftCover.dimensions.height }}"
+							 id="img-{{ leftCover.hash }}"
+							 class="left-link__cover"
+							 srcset="{{ leftCover.srcset([400, 800, 1200, 1600]) }}" />
+					{% endif %}
+				</a>
+				
+				<a href="{{ right.url }}" class="bored__link">
+					<h3 class="right-link__headline headline">
+						Browse Drinks &amp; Cocktails
+					</h3>
+					<div class="right-link__description">
+						{{ right.description | raw }}
+					</div>
+					{% if rightCover is defined and rightCover is not empty %}
+						<img src="{{ rightCover.url }}"
+							 alt="{{ rightCover.name }}"
+							 width="{{ rightCover.dimensions.width }}"
+							 height="{{ rightCover.dimensions.height }}"
+							 id="img-{{ rightCover.hash }}"
+							 class="right-link__cover"
+							 srcset="{{ rightCover.srcset([400, 800, 1200, 1600]) }}" />
+					{% endif %}
+				</a>
+			</aside>
+			
+			<aside class="feature">
+				<h3 class="feature__headline">Food Category</h3>
+				<div class="feature__description">category</div>
+				<a href="#" class="feature__link">Link</a>
+			</aside>
 		</section>
 		
 		<section class="hompage__category">
-			<h3>Food Category</h3>
-			<ul>
+			<h3 class="category__headline headline">Food Category</h3>
+			<ul class="category__list">
 				<li><a href="#">Recipe</a></li>
 				<li><a href="#">Recipe</a></li>
 				<li><a href="#">Recipe</a></li>

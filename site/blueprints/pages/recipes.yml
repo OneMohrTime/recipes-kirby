@@ -9,17 +9,21 @@ columns:
         type: text
       description:
         type: textarea
-
+  - width: 1/3
+    fields:
+      cover:
+        type: files
+        layout: cards
+        multiple: false
+  - width: 2/3
+    sections:
+      listed:
+        extends: sections/recipes
+        headline: Finished Recipes
+        status: listed
   - width: 1/3
     sections:
       drafts:
         extends: sections/recipes
         headline: Started Recipes
         status: draft
-
-  - width: 1/1
-    sections:
-      listed:
-        extends: sections/recipes
-        headline: Finished Recipes
-        status: listed
