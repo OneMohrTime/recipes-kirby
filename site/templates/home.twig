@@ -11,13 +11,13 @@
 		
 		<header class="homepage__intro intro">
 			<h1 class="--hide-visually">{{ site.title }}</h1>
-			<h2 class="homepage__headline headline">{{ page.headline }}</h2>
+			<h2 class="homepage__headline headline" data-title="{{ page.headline }}">{{ page.headline }}</h2>
 			<p class="homepage__subheadline">text</p>
 			<a href="#searchToggle" class="button">button</a>
 		</header>
 		
 		<section class="homepage__promos">
-			<aside class="bored">
+			<aside id="homeBored" class="bored">
 				<h2 class="bored__headline headline">Bored?</h2>
 				
 				{% set left      = page.left.related.toPage() %}
@@ -62,15 +62,15 @@
 				</a>
 			</aside>
 			
-			<aside class="feature">
+			<aside id="homeFeature" class="feature">
 				<h3 class="feature__headline">Food Category</h3>
 				<div class="feature__description">category</div>
 				<a href="#" class="feature__link">Link</a>
 			</aside>
 		</section>
 		
-		<section class="hompage__category">
-			<h3 class="category__headline headline">Food Category</h3>
+		<section id="homeCategory" class="hompage__category">
+			<h3 class="category__headline headline" data-title="Food Category">Food Category</h3>
 			<ul class="category__list">
 				<li><a href="#">Recipe</a></li>
 				<li><a href="#">Recipe</a></li>

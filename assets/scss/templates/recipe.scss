@@ -5,7 +5,7 @@
 @import "../_utilities/templates";
 
 .page__body.recipe {
-	
+
 	@include media(">=for-tablet-landscape-up") {
 		padding-left: 0;
 		padding-right: 0;
@@ -13,7 +13,7 @@
 }
 
 .recipe__grid {
-	
+
 	@include media(">=for-tablet-landscape-up") {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
@@ -21,7 +21,7 @@
 }
 
 .recipe__intro {
-	
+
 	@include media(">=for-tablet-landscape-up") {
 		grid-column: 3 / 11;
 		grid-row: 1 / 2;
@@ -34,11 +34,11 @@
 .recipe__headline {}
 
 .recipe__subheadline {
-	
+
 	@include media(">=for-tablet-landscape-up") {
 		position: relative;
 		padding-left: map-get($spacer, 8);
-		
+
 		&::before {
 			content: "";
 			position: absolute;
@@ -56,7 +56,7 @@
 .recipe__directions,
 .recipe__tags {
 	margin-bottom: 5vh;
-	
+
 	@include media(">=for-tablet-landscape-up") {
 		margin-bottom: 0;
 	}
@@ -64,7 +64,7 @@
 
 .recipe__cover {
 	@include fluid-aspect(16 9, "> .cover__image");
-	
+
 	&::after {
 		content: "";
 		position: absolute;
@@ -77,19 +77,19 @@
 		mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 		z-index: 0;
 	}
-	
+
 	@include media(">=for-tablet-landscape-up") {
 		grid-column: 5 / 13;
 		grid-row: 2 / 3;
 		z-index: 1;
 	}
-	
+
 	.cover__image {
 		background-color: map-get($color, light-gray);
 		object-fit: cover;
 		z-index: 1;
 	}
-	
+
 	.cover__caption {
 		@include hide-visually();
 		position: absolute;
@@ -100,7 +100,7 @@
 }
 
 .recipe__ingredients {
-	
+
 	@include media(">=for-tablet-landscape-up") {
 		position: relative;
 		grid-column: 2 / 6;
@@ -111,27 +111,26 @@
 	}
 }
 
-
 .ingredients {
 	border-radius: 3px;
 	background-image: url("../img/bg.png");
 	transition: transform 500ms;
-	
-	&:focus {
-		transform: translatex( #{map-get($spacer, 2)} );
-	}
-	
+
 	@include media(">=for-tablet-landscape-up") {
 		position: absolute;
 		width: 100%;
 		padding: map-get($spacer, 2);
 		background-color: map-get($color, white);
 		box-shadow: 1px 2px 5px 0 fade-out( map-get($color, black), 0.66 );
+
+		&:focus {
+			transform: translatex( #{map-get($spacer, 2)} );
+		}
 	}
 }
 
 .ingredients__list {
-	
+
 	.ingredient {
 //		display: inline-block;
 	}
@@ -139,27 +138,32 @@
 
 .recipe__directions {
 	margin-top: map-get($spacer, 2);
-	
+
 	@include media(">=for-tablet-landscape-up") {
 		grid-column: 6 / 11;
 		grid-row: 3 / 4;
 		max-width: var(--content-width);
 		margin-top: map-get($spacer, 3);
 	}
-	
-	ol {
+
+	.directions__list {
 		@include list-reset();
+		padding-left: map-get($spacer, 4);
 		counter-reset: direction-list;
+		
+		@include media(">=for-tablet-portrait-up") {
+			padding-left: 0;
+		}
 	}
-	
-	li {
+
+	.direction {
 		position: relative;
 		margin-bottom: map-get($spacer, 1);
 		transition: padding 500ms;
 		font-size: modular-scale(1);
 		counter-increment: direction-list;
 		z-index: 1;
-		
+
 		&::before {
 			content: counter(direction-list, decimal-leading-zero);
 			position: absolute;
@@ -173,19 +177,18 @@
 			color: map-get($color, light-gray);
 			z-index: -1;
 		}
-		
+
 		&:hover {
-			
 			&::before {
 				color: map-get($color, tan);
 			}
 		}
-		
+
 		&:focus {
 			padding-top: map-get($spacer, 2);
 			padding-bottom: map-get($spacer, 2);
 			outline-color: transparent;
-			
+
 			&::before {
 				color: map-get($color, light-blue);
 			}
@@ -195,7 +198,7 @@
 
 .recipe__tags {
 	margin-top: map-get($spacer, 1);
-	
+
 	@include media(">=for-tablet-landscape-up") {
 		grid-column: 6 / 11;
 		grid-row: 4 / 5;

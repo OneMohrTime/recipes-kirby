@@ -19,7 +19,7 @@
 			{% endif %}
 		</header>
 
-		<section class="recipes __featured">
+		<section id="recipesFeatured" class="recipes __featured">
 			<h2 class="recipes__subtitle">Featured</h2>
 
 			{% if recipes is defined and recipes is not empty %}
@@ -56,7 +56,7 @@
 			{{ page.description.kirbytext | raw }}
 		</section>
 
-		<section class="recipes __newest">
+		<section id="recipesNewest" class="recipes __newest">
 			<h2 class="recipes__subtitle">Newest</h2>
 
 			{% if recipes is defined and recipes is not empty %}
@@ -85,7 +85,7 @@
 			{% endif %}
 		</section>
 
-		<section class="recipes __all">
+		<section id="recipesAll" class="recipes __all">
 			<h2 class="recipes__browse">
 				<span id="recipeLabel" class="recipe-type__label" aria-label="Browse recipes by">Browse</span>
 				<select class="recipe-type__input" aria-labelledby="recipeLabel">

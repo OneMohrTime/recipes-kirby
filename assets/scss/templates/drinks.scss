@@ -39,6 +39,11 @@ $column: percentage( 1 / 12 );
 	}
 }
 
+.drinks__headline {
+	margin-left: percentage(1/6);
+	margin-right: percentage(1/6);
+}
+
 .drink {
 	position: relative;
 	border-radius: 3px;
