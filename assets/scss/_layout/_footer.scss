@@ -11,7 +11,17 @@
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='0.15' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 	background-blend-mode: multiply;
 
-	@include media(">=for-desktop-up") {
+	@include media(">=for-tablet-portrait-up") {
+		
+		@supports (display: grid) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-auto-rows: auto;
+			grid-column-gap: map-get($spacer, 1);
+		}
+	}
+	
+	@include media(">=for-tablet-landscape-up") {
 		// padding-left: calc( 50% - (var(--content-width) / 2) );
 		// padding-right: calc( 50% - (var(--content-width) / 2) );
 		max-width: calc( var(--content-width) + #{map-get($spacer, 2)} );
@@ -20,11 +30,8 @@
 		box-shadow: $box-shadow;
 
 		@supports (display: grid) {
-			display: grid;
 			// grid-template-columns: 25% 25% 50%;
 			grid-template-columns: 1fr 1fr 2fr;
-			grid-auto-rows: auto;
-			grid-column-gap: map-get($spacer, 1);
 		}
 	}
 
@@ -55,6 +62,12 @@
 	.drink-list {
 		padding-left: map-get($spacer, 1);
 		list-style-type: square;
+		
+		@supports (display: flex) {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
 
 		a {
 			font-weight: 400;
@@ -71,23 +84,41 @@
 
 	@supports (display: grid) {
 		&.--recipes {
-			grid-column: span 1;
-			grid-row: 1 / 3;
+			@include media(">=for-tablet-portrait-up") {
+				grid-column: span 1;
+			}
+			@include media(">=for-tablet-landscape-up") {
+				grid-row: 1 / 3;
+			}
 		}
 
 		&.--drinks {
-			grid-column: span 1;
-			grid-row: 1 / 3;
+			@include media(">=for-tablet-portrait-up") {
+				grid-column: span 1;
+			}
+			@include media(">=for-tablet-landscape-up") {
+				grid-row: 1 / 3;
+			}
 		}
 
 		&.--copy {
-			grid-column: span 1;
-			grid-row: 1 / 2;
+			@include media(">=for-tablet-portrait-up") {
+				grid-column: span 2;
+			}
+			@include media(">=for-tablet-landscape-up") {
+				grid-column: span 1;
+				grid-row: 1 / 2;
+			}
 		}
 
 		&.--social {
-			grid-column: span 1;
-			grid-row: 2 / 3;
+			@include media(">=for-tablet-portrait-up") {
+				grid-column: span 2;
+			}
+			@include media(">=for-tablet-landscape-up") {
+				grid-column: span 1;
+				grid-row: 2 / 3;
+			}
 		}
 	}
 }
