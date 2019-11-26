@@ -18,17 +18,18 @@
 		
 		<section class="homepage__promos">
 			<aside id="homeBored" class="bored">
-				<h2 class="bored__headline headline">Bored?</h2>
+				<h2 class="bored__headline headline">{{ page.subheadline | length > 0 ? page.subheadline : 'Browse' }}</h2>
 				
 				{% set left      = page.left.related.toPage() %}
 				{% set leftCover = left.cover.toFile() %}
 				{% set right      = page.right.related.toPage() %}
 				{% set rightCover = right.cover.toFile() %}
 				
-				<a href="{{ left.url }}" class="bored__link">
-					<h3 class="left-link__headline headline">
+				<a href="{{ left.url }}" class="bored__link crosshair__trigger">
+					<h3 class="left-link__headline">
 						Browse Food Recipes
 					</h3>
+					<figure class="crosshair"></figure>
 					<div class="left-link__description">
 						{{ left.description | raw }}
 					</div>
@@ -43,10 +44,11 @@
 					{% endif %}
 				</a>
 				
-				<a href="{{ right.url }}" class="bored__link">
-					<h3 class="right-link__headline headline">
+				<a href="{{ right.url }}" class="bored__link crosshair__trigger">
+					<h3 class="right-link__headline">
 						Browse Drinks &amp; Cocktails
 					</h3>
+					<figure class="crosshair"></figure>
 					<div class="right-link__description">
 						{{ right.description | raw }}
 					</div>

@@ -13,11 +13,5 @@
 }
 
 .button {
-	display: inline-block;
-	margin: 0;
-	padding: map-get($spacer, 1) / 4 map-get($spacer, 1) / 2;
-	border: 0;
-	background-color: map-get($color, light-gray);
-	appearance: none;
-	cursor: pointer;
+	@include nav-link();
 }

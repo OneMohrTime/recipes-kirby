@@ -5,14 +5,17 @@
 $nudge: map-get($spacer, 1);
 
 .nav {
-	position: relative;
+	position: absolute;
+	top: 0;
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	padding: map-get($spacer, 1) / 2;
 	@include clearfix();
 	transform: translateY(0);
-	transition: width 500ms, margin 500ms, transform 500ms;
+	transition: width 500ms, margin 500ms, transform 500ms, border 500ms;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
 	
 	@include media(">=for-tablet-portrait-up") {
 		padding: map-get($spacer, 1);
@@ -26,6 +29,8 @@ $nudge: map-get($spacer, 1);
 	// When "search" is clicked
 	&.--is-searching {
 		transform: translateY($nudge);
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
 
 		@include media(">=for-desktop-up") {
 			width: calc(100% - #{$nudge});
@@ -56,7 +61,7 @@ $nudge: map-get($spacer, 1);
 		padding-left: 0;
 
 		@include media(">=for-desktop-up") {
-			// visuall align from button padding
+			// visually align from button padding
 			transform: translateX(-#{map-get($spacer, 1) / 2});
 		}
 	}
