@@ -12,7 +12,7 @@
 	<article class="page__recipes{% if recipes is empty %} --is-empty{% endif %}">
 
 		<header class="recipes__intro intro">
-			<h1 class="recipes__headline headline">{{ page.headline | default(page.title) }}</h1>
+			<h1 class="recipes__headline headline" data-title="{{ page.headline | default(page.title) }}">{{ page.headline | default(page.title) }}</h1>
 
 			{% if page.description is defined and page.description is not empty %}
 				<div class="recipes__subheadline">{{ page.description.kirbytext | raw }}</div>

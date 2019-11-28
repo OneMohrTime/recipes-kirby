@@ -31,7 +31,7 @@
 					<h3 class="left-link__headline">
 						Browse Food Recipes
 					</h3>
-					<figure class="crosshair"></figure>
+					<figure class="left-link__crosshair crosshair"></figure>
 					<div class="left-link__description">
 						{{ left.description | raw }}
 					</div>
@@ -43,6 +43,8 @@
 							 id="img-{{ leftCover.hash }}"
 							 class="left-link__cover"
 							 srcset="{{ leftCover.srcset([400, 800, 1200, 1600]) }}" />
+					{% else %}
+						<img src="https://loremflickr.com/1200/1200/food,elegant/all" alt="" class="left-link__cover" />
 					{% endif %}
 				</a>
 				
@@ -50,7 +52,7 @@
 					<h3 class="right-link__headline">
 						Browse Drinks &amp; Cocktails
 					</h3>
-					<figure class="crosshair"></figure>
+					<figure class="right-link__crosshair crosshair"></figure>
 					<div class="right-link__description">
 						{{ right.description | raw }}
 					</div>
@@ -67,8 +69,12 @@
 			</aside>
 			
 			<aside id="homeFeature" class="feature">
-				<h3 class="feature__headline">Food Category</h3>
-				<div class="feature__description">category</div>
+				<h3 class="feature__headline">
+					{{ page.featureHeadline }}
+				</h3>
+				<div class="feature__description">
+					{{ page.featureDescription.kirbytext | raw }}
+				</div>
 				<a href="#" class="feature__link">Link</a>
 			</aside>
 		</section>
