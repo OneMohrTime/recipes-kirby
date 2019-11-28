@@ -2,7 +2,9 @@ Title: Whiskey & Coke
 
 ----
 
-Cover: 
+Cover:
+
+- fjiola_li.jpg
 
 ----
 

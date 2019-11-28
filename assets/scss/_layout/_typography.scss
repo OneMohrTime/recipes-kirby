@@ -74,7 +74,7 @@ h6 {
 p {
 	margin: 0 0 #{map-get($spacer, 1) / 2};
 	font-weight: 400;
-	line-height: 1.6em;
+	line-height: 1.65em;
 	widows: 3;
 	orphans: 3;
 	hyphens: auto;
@@ -100,8 +100,7 @@ hr {
 	position: relative;
 	width: 50px;
 	height: 10px;
-	margin-top: map-get($spacer, 1);
-	margin-bottom: map-get($spacer, 1);
+	margin: map-get($spacer, 1) auto;
 	overflow: hidden;
 	border: 0;
 	background-image: url("../../assets/img/zigzag-long.png");
@@ -178,16 +177,39 @@ a:not([class]) {
  */
 
 .headline {
+	position: relative;
 	margin-bottom: calc( #{map-get($spacer, 3) / 2} + 7px );
 	padding-bottom: #{map-get($spacer, 3) / 2};
 	border-bottom: 7px map-get($color, tan) solid;
-	mask-image: url(../../assets/img/texture-mask.png);
+	
+	&::before {
+		content: attr(data-title);
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translate3d(2px, 2px, 0);
+		mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+		z-index: 1;
+	}
+}
+
+.reading {
+	line-height: 1.65em;
 }
 
 .highlight {
 	background-color: map-get($color, white);
-	padding-left: map-get($spacer, 1) / 2;
-	padding-right: map-get($spacer, 1) / 2;
+	padding: 2px map-get($spacer, 1) / 2;
+
+	&.--white {
+		background-color: map-get($color, white);
+	}
+	&.--yellow {
+		background-color: map-get($color, yellow);
+	}
+	&.--gold {
+		background-color: map-get($color, gold);
+	}
 }
 
 .page__body {

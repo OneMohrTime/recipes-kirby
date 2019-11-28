@@ -1,15 +1,46 @@
-<a href="#searchToggle" class="skip-to-content">
+<a href="#searchToggle" class="skip-to-content" aria-label="Skip to search">
 	<span class="button">Skip to search</span>
 </a>
-<a href="#mainContent" class="skip-to-content">
+
+<a href="#mainContent" class="skip-to-content" aria-label="Skip to content">
 	<span class="button">Skip to content</span>
 </a>
 
-{% if page.parent == 'recipes' %}
-	<a href="#ingredients" class="skip-to-content">
+{% if page.template == 'home' %}
+	
+	<a href="#homeBored" class="skip-to-content" aria-label="Skip to browse">
+		<span class="button">Skip to browse</span>
+	</a>
+	<a href="#homeFeature" class="skip-to-content" aria-label="Skip to featured link">
+		<span class="button">Skip to featured link</span>
+	</a>
+	<a href="#homeCategory" class="skip-to-content" aria-label="Skip to featured category">
+		<span class="button">Skip to featured category</span>
+	</a>
+	
+{% elseif page.template == 'recipes' %}
+	
+	<a href="#recipesFeatured" class="skip-to-content" aria-label="Skip to featured recipes">
+		<span class="button">Skip to featured recipes</span>
+	</a>
+	<a href="#recipesNewest" class="skip-to-content" aria-label="Skip to newest recipes">
+		<span class="button">Skip to newest recipes</span>
+	</a>
+	<a href="#recipesAll" class="skip-to-content" aria-label="Skip to all recipes">
+		<span class="button">Skip to all recipes</span>
+	</a>
+	
+{% elseif page.template == 'recipe' %}
+	
+	<a href="#ingredients" class="skip-to-content" aria-label="Skip to ingredients">
 		<span class="button">Skip to ingredients</span>
 	</a>
-	<a href="#directions" class="skip-to-content">
+	<a href="#directions" class="skip-to-content" aria-label="Skip to directions">
 		<span class="button">Skip to directions</span>
 	</a>
+	
 {% endif %}
+
+<a href="#footer" class="skip-to-content" aria-label="Skip to footer">
+	<span class="button">Skip to footer</span>
+</a>

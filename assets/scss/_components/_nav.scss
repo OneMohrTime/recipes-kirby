@@ -5,15 +5,38 @@
 $nudge: map-get($spacer, 1);
 
 .nav {
+	position: absolute;
+	top: 0;
+	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
+	padding: map-get($spacer, 1) / 2;
 	@include clearfix();
 	transform: translateY(0);
-	transition: transform 500ms;
+	transition: width 500ms, margin 500ms, transform 500ms, border 500ms;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	
+	@include media(">=for-tablet-portrait-up") {
+		padding: map-get($spacer, 1);
+	}
+	
+	@include media(">=for-tablet-landscape-up") {
+		padding-left: map-get($spacer, 2);
+		padding-right: map-get($spacer, 2);
+	}
 
+	// When "search" is clicked
 	&.--is-searching {
-		width: calc(100% - #{$nudge});
 		transform: translateY($nudge);
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
+
+		@include media(">=for-desktop-up") {
+			width: calc(100% - #{$nudge});
+			padding-top: 0;
+			padding-bottom: 0;
+		}
 	}
 
 	@supports(display: flex) {
@@ -36,9 +59,9 @@ $nudge: map-get($spacer, 1);
 	@supports(display: flex) {
 		margin-right: auto;
 		padding-left: 0;
-		
+
 		@include media(">=for-desktop-up") {
-			// visuall align from button padding
+			// visually align from button padding
 			transform: translateX(-#{map-get($spacer, 1) / 2});
 		}
 	}
@@ -51,7 +74,7 @@ $nudge: map-get($spacer, 1);
 
 	@supports(display: flex) {
 		padding-right: 0;
-		
+
 		@include media(">=for-desktop-up") {
 			// visuall align from button padding
 			transform: translateX(#{map-get($spacer, 1) / 2});
@@ -64,7 +87,7 @@ $nudge: map-get($spacer, 1);
 }
 
 .menu__item {
-	
+
 	@include nav-link();
 
 	&[aria-current] {

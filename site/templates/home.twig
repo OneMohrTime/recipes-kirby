@@ -7,47 +7,87 @@
 	.sortBy('date', 'desc') %}
 
 {% block content %}
-	<header class="intro">
-		<h1>{{ site.title }}</h1>
-	</header>
-
-	<ul class="grid">
-		{% for recipe in recipes %}
-		<li>
-			<a href="{{ recipe.url }}">
-				<figure>
-					{% if recipe.cover is defined and recipe.cover is not empty %}
-						{# recipe.cover.resize(1024, 1024) #}
-						<img src="{{ recipe.cover.url }}"
-							 alt="placeholder for {{ recipe.cover.title }}"
-							 width="{{ recipe.cover.dimensions.width }}"
-							 height="{{ recipe.cover.dimensions.height }}"
-							 class="cover__image ratio--{{ recipe.cover.ratio }}-{{ recipe.cover.orientation }}"
-							 id="{{ recipe.cover.hash }}"
-							 srcset="" />
-						<figcaption>
-							<span>
-								<span class="example-name">{{ recipe.title ?? null }}</span>
-							</span>
-						</figcaption>
-					{% else %}
-						<img src="https://via.placeholder.com/500x400/e8e7e1/2b3b4c?text=Pretend+this+is+{{ recipe.title }}" alt="placeholder for {{ recipe.title }}" class="" />
-						<figcaption>
-							<span>
-								<span class="example-name">{{ recipe.title ?? null }}</span>
-							</span>
-						</figcaption>
-					{% endif %}
-
-					<figcaption>
-						<span>
-							<span class="example-name">{{ recipe.title }}</span>
-						</span>
-					</figcaption>
-				</figure>
+	<article class="homepage__grid">
+		
+		<header class="homepage__intro intro">
+			<h1 class="--hide-visually">{{ site.title }}</h1>
+			<h2 class="homepage__headline headline" data-title="{{ page.headline }}">{{ page.headline }}</h2>
+			<p class="homepage__subheadline">{{ page.description }}</p>
+			<a href="javascript:void(0)" id="homeSearchToggle" class="homepage__button button">
+				<span data-title="Seach Food &amp; Drinks">Seach Food &amp; Drinks</span>
 			</a>
-		</li>
-		{% endfor %}
-	</ul>
+		</header>
+		
+		<section class="homepage__promos">
+			<aside id="homeBored" class="bored">
+				<h2 class="bored__headline headline">{{ page.subheadline | length > 0 ? page.subheadline : 'Browse' }}</h2>
+				
+				{% set left      = page.left.related.toPage() %}
+				{% set leftCover = left.cover.toFile() %}
+				{% set right      = page.right.related.toPage() %}
+				{% set rightCover = right.cover.toFile() %}
+				
+				<a href="{{ left.url }}" class="bored__link crosshair__trigger">
+					<h3 class="left-link__headline">
+						Browse Food Recipes
+					</h3>
+					<figure class="left-link__crosshair crosshair"></figure>
+					<div class="left-link__description">
+						{{ left.description | raw }}
+					</div>
+					{% if leftCover is defined and leftCover is not empty %}
+						<img src="{{ leftCover.url }}"
+							 alt="{{ leftCover.name }}"
+							 width="{{ leftCover.dimensions.width }}"
+							 height="{{ leftCover.dimensions.height }}"
+							 id="img-{{ leftCover.hash }}"
+							 class="left-link__cover"
+							 srcset="{{ leftCover.srcset([400, 800, 1200, 1600]) }}" />
+					{% else %}
+						<img src="https://loremflickr.com/1200/1200/food,elegant/all" alt="" class="left-link__cover" />
+					{% endif %}
+				</a>
+				
+				<a href="{{ right.url }}" class="bored__link crosshair__trigger">
+					<h3 class="right-link__headline">
+						Browse Drinks &amp; Cocktails
+					</h3>
+					<figure class="right-link__crosshair crosshair"></figure>
+					<div class="right-link__description">
+						{{ right.description | raw }}
+					</div>
+					{% if rightCover is defined and rightCover is not empty %}
+						<img src="{{ rightCover.url }}"
+							 alt="{{ rightCover.name }}"
+							 width="{{ rightCover.dimensions.width }}"
+							 height="{{ rightCover.dimensions.height }}"
+							 id="img-{{ rightCover.hash }}"
+							 class="right-link__cover"
+							 srcset="{{ rightCover.srcset([400, 800, 1200, 1600]) }}" />
+					{% endif %}
+				</a>
+			</aside>
+			
+			<aside id="homeFeature" class="feature">
+				<h3 class="feature__headline">
+					{{ page.featureHeadline }}
+				</h3>
+				<div class="feature__description">
+					{{ page.featureDescription.kirbytext | raw }}
+				</div>
+				<a href="#" class="feature__link">Link</a>
+			</aside>
+		</section>
+		
+		<section id="homeCategory" class="hompage__category">
+			<h3 class="category__headline headline" data-title="Food Category">Food Category</h3>
+			<ul class="category__list">
+				<li><a href="#">Recipe</a></li>
+				<li><a href="#">Recipe</a></li>
+				<li><a href="#">Recipe</a></li>
+				<li><a href="#">Recipe</a></li>
+			</ul>
+		</section>
 
+	</article>
 {% endblock %}

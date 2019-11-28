@@ -1,0 +1,33 @@
+Title: Beer
+
+----
+
+Cover:
+
+- img_7005.jpg
+
+----
+
+Description: can't mess that up
+
+----
+
+Ingredients: 
+
+----
+
+Directions: hops
+
+----
+
+Date: 2019-11-07 20:50
+
+----
+
+Author:
+
+- redwinger025@yahoo.com
+
+----
+
+Tags: 

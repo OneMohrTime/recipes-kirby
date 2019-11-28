@@ -31,7 +31,7 @@ $breakpoints: (
  */
 
 $color: (
-	white: #fffef7,
+	white: #fafaf9,
 	black: #1e2732,
 	dark-gray: #2b3b4c,
 	gray: #989ca1,
@@ -47,7 +47,7 @@ $color: (
 	gold: #e8c547,
 	orange: #a24936,
 	purple: #6e75a8,
-	background: #FAFAF9
+	background: #fffef7
 );
 
 
@@ -66,3 +66,5 @@ $spacer: (
 	7: 7.875rem,
 	8: 6.5rem
 );
+
+$box-shadow: 0 2px 24px fade-out( map-get($color, dark-gray), 0.94 );

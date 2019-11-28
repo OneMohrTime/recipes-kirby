@@ -4,7 +4,7 @@
 {% block content %}
 	<article class="recipe__grid">
 
-		<header class="recipe__header intro">
+		<header class="recipe__intro intro">
 			<h1 class="recipe__headline headline" data-title="{{ page.headline | default(page.title) }}">{{ page.headline | default(page.title) }}</h1>
 
 			{% if page.description is defined and page.description is not empty %}
@@ -37,7 +37,7 @@
 					 alt="placeholder for {{ page.cover.title }}"
 					 width="{{ page.cover.dimensions.width }}"
 					 height="{{ page.cover.dimensions.height }}"
-					 class="cover__image ratio--{{ page.cover.ratio }}-{{ page.cover.orientation }}"
+					 class="cover__image ratio--{{ page.cover.ratio | slice(0, 2) }}-{{ page.cover.orientation }}"
 					 id="{{ page.cover.hash }}"
 					 srcset="" />
 			{% else %}
@@ -48,14 +48,14 @@
 			{% endif %}
 		</figure>
 
-		{% if page.images | length > 1 %}
+		{% if page.recipeImages | length > 1 %}
 			<section class="recipe__gallery" style="display: none;">
-				{% for image in page.images %}
+				{% for image in page.recipeImages %}
 					<img src="{{ image.url }}"
 						 alt="{{ image.name }}"
 						 width="{{ image.dimensions.width }}"
 						 height="{{ image.dimensions.height }}"
-						 class="gallery__image ratio--{{ image.ratio }}-{{ image.orientation }}"
+						 class="gallery__image ratio--{{ image.ratio | slice(0, 2) }}-{{ image.orientation }}"
 						 id="{{ image.hash }}"
 						 srcset="" />
 				{% endfor %}
@@ -70,7 +70,7 @@
 					<ul class="ingredients__list">
 
 						{% for ingredient in page.ingredients.yaml %}
-							<li class="ingredient">
+							<li class="ingredient reading">
 								{{ ingredient.ingredient | raw }}
 							</li>
 						{% endfor %}
@@ -87,7 +87,7 @@
 				<ol class="directions__list" role="tablist">
 
 					{% for step in page.directions.yaml %}
-						<li id="{{ step.step | replace({ ' ' : '', '.' : '', ',' : '' }) | lower | slice(0, 24) }}" class="direction" role="tab" tabindex="0">
+						<li id="{{ step.step | replace({ ' ' : '', '.' : '', ',' : '' }) | lower | slice(0, 24) }}" class="direction reading" role="tab" tabindex="0">
 							{{ step.step | raw }}
 						</li>
 					{% endfor %}
@@ -99,7 +99,9 @@
 		{% if page.tags is defined and page.tags is not empty %}
 			<section class="recipe__tags">
 				<h3 class="tags__title">Related</h3>
-				<p>{{ page.tags }}</p>
+				{% for tag in page.tags %}
+					<p>{{ tag }}</p>
+				{% endfor %}
 			</section>
 		{% endif %}
 
