@@ -1,33 +1,59 @@
 {
-  "name": "recipes",
-  "version": "1.0.0",
-  "description": "Gulpfile for http://cookbook.onemohrti.me",
-  "main": "index.php",
+  "name": "murby",
+  "version": "0.1.0",
+  "main": "assets/js/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "php -S localhost:8282 -t web web/kirby/router.php",
+    "dev": "webpack --mode=development --watch",
+    "build": "rm -rf ./web/assets && webpack --mode=production",
+    "start": "concurrently \"npm:dev\" \"npm:server\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/OneMohrTime/recipes.git"
+  "author": "Matthias Fänger <matthias@faenger.de> (https://matti.dev/)",
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
   },
-  "author": "\"Derek Mohr <derek@onemohrti.me>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/OneMohrTime/recipes/issues"
-  },
-  "homepage": "https://github.com/OneMohrTime/recipes#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^7.0.0",
-    "gulp-connect-php": "^1.0.3",
-    "gulp-sass": "^4.0.2",
-    "gulp-uglifycss": "^1.1.0"
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^5.0.0",
+    "css-loader": "^3.0.0",
+    "cssnano": "^4.1.10",
+    "file-loader": "^4.0.0",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "mini-css-extract-plugin": "^0.7.0",
+    "open-cli": "^5.0.0",
+    "postcss-loader": "^3.0.0",
+    "sanitize.css": "^10.0.0",
+    "sass": "^1.22.3",
+    "sass-loader": "^7.1.0",
+    "url-loader": "^2.0.1",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5",
+    "webpack-livereload-plugin": "^2.2.0",
+    "webpack-merge": "^4.2.1",
+    "webpack-notifier": "^1.8.0"
   },
-  "dependencies": {
-    "bourbon": "^6.0.0",
-    "include-media": "^1.4.9",
-    "normalize.css": "^8.0.1",
-    "tingle.js": "^0.15.1"
+  "dependencies": {},
+  "browserslist": [
+    ">0.25%",
+    "last 12 versions",
+    "Firefox ESR",
+    "not ie < 11"
+  ],
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {},
+      "cssnano": {}
+    }
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   }
 }

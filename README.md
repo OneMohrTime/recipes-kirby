@@ -1,84 +1,88 @@
-# Kirby
+# Murby
 
-Kirby is a file-based CMS.
-Easy to setup. Easy to use. Flexible as hell.
+**A plain Kirby 3 starterkit on steroids. 🚀** You get a composer based workflow, a modern asset pipeline with Webpack, Sass, Babel, a live reload server, and much more. Murby just wants to help you quickly start developing and maybe saves you a few hours set up time.
 
-## Trial
+> ⚠️ This project template is in an early stage. Feel free to open up issues if you find any or help by submitting PRs.
 
-You can try Kirby on your local machine or on a test
-server as long as you need to make sure it is the right
-tool for your next project.
+-   [Features](#features)
+-   [Requirements](#requirements)
+-   [Installation](#installation)
+-   [Usage](#usage)
+-   [Deployment](#deployment)
+-   [Roadmap](#roadmap)
+-   [License](#license)
 
-## Buy a license
+## Features
 
-You can purchase your Kirby license at
-<https://getkirby.com/buy>
+-   **Composer** based Kirby workflow for easy updating the core and adding plugins
+-   A **webpack** configuration with Sass, Babel, Postcss and autoprefixer, Imagemin and more
+-   **Live reloading** when you change anything to your assets like JavaScript or Sass
+-   Easy **npm scripts** to start developing in no time and build optimized assets for production
+-   A pretty **basic template** scructure with Header, Footer, Treemenu, etc.
 
-A Kirby license is valid for a single domain. You can find
-Kirby's license agreement here: <https://getkirby.com/license>
+## Requirements
 
-## The Starterkit
+Of course you need to fullfil all [Kirby requirements](https://getkirby.com/docs/guide/quickstart#requirements) like PHP 7.1 and a webserver on your machine. If you're on Mac you shouldn't have any problems.
 
-Kirby's Starterkit comes with a small demo website and a fully
-configured panel. Feel free to modify it and play with it as
-much as you like.
+For development purposes this project uses the built-in PHP server. Of course you can also use MAMP, XAMPP, or everything else. You just have to adjust the NPM scripts to fit your environment. Since this starterkit uses the composer based workflow, you need to have that [installed on your machine](https://getcomposer.org/doc/00-intro.md).
 
-There's also the [Langkit](https://github.com/getkirby/langkit.git)
-in case you need a multi-language installation.
-
-## The Panel
-
-You can find the login for Kirby's admin interface at
-http://yourdomain.com/panel. You will be guided through the signup
-process for your first user, when you visit the panel
-for the first time.
+Also, for all that frontend stuff like Webpack, Babel and more you need to have Node.js (>= 10.0.0) and NPM (>= 6.0.0) installed on your machine. [Find out more](https://www.npmjs.com/get-npm).
 
 ## Installation
 
-Kirby does not require a database, which makes it very easy to
-install. Just copy Kirby's files to your server and visit the
-URL for your website in the browser.
+1. Just clone this repo:
 
-**Please check if the invisible .htaccess file has been
-copied to your server correctly**
+```bash
+git clone git@github.com:FNGR2911/murby.git myproject
+```
 
-### Requirements
+2. Go into your new project directory:
 
-Kirby runs on PHP 5.4+, Apache or Nginx.
+```bash
+cd myproject
+```
 
-### Download
+3. Install kirby and all vendors by:
 
-You can download the latest version of the Starterkit
-from https://download.getkirby.com
+```bash
+composer install
+```
 
-### With Git
+4. Install all required NPM packages by:
 
-If you are familiar with Git, you can clone Kirby's
-Starterkit repository from Github.
+```bash
+npm install
+```
 
-    git clone https://github.com/getkirby/starterkit.git
+5. Run the development script with `npm run start` and register your admin user by visiting `http://localhost:8282/panel`.
 
-## Documentation
+## Usage
 
-<https://getkirby.com/docs>
+To start developing (frontend and backend) run:
 
-## Issues and feedback
+```bash
+npm run start
+```
 
-If you have a Github account, please report issues
-directly on Github:
+The start script starts Webpack in watch mode, the built-in PHP webserver on `http://localhost:8282` and opens that site in your default browser.
 
-- <https://github.com/getkirby/kirby/issues>
-- <https://github.com/getkirby/panel/issues>
-- <https://github.com/getkirby/starterkit/issues>
+Your source assets are stored in the `/assets` folder.
 
-Otherwise you can use Kirby's forum: https://forum.getkirby.com
-or send us an email: <support@getkirby.com>
+To build the frontend assets for production run:
 
-## Support
+```bash
+npm run build
+```
 
-<https://getkirby.com/support>
+## Deployment
 
-## Copyright
+Deployment is exactly like deploying a normal Kirby project with one exception: Your web servers root should point to the `/web` directory and not the root directory of your project. You should also run `npm run build` to get optimized frontend assets before deploying to production ;)
 
-© 2009-2016 Bastian Allgeier (Bastian Allgeier GmbH)
-<http://getkirby.com>
+## Roadmap
+
+-   [ ] Remove all unnecessary files and folders from `/web`
+-   [ ] Ideas? Suggestions? Feel free to open PR or Issue!
+
+## License
+
+MIT

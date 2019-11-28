@@ -1,0 +1,13 @@
+Title: Welcome
+
+----
+
+Text: This is just demo content for your site. Now start building your Kirby site.
+
+---- 
+
+Metatitle: Welcome to murby!
+
+----
+
+Metadescription: This is the meta description for Home.

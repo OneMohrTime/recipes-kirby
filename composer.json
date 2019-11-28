@@ -1,30 +1,32 @@
 {
-    "name": "getkirby/starterkit",
-    "description": "Kirby Starterkit",
-    "type": "project",
-    "keywords": ["kirby", "cms", "starterkit"],
-    "homepage": "https://getkirby.com",
-    "authors": [
-        {
-            "name": "Bastian Allgeier",
-            "email": "bastian@getkirby.com",
-            "homepage": "https://getkirby.com"
-        }
-    ],
-    "support": {
-        "email": "support@getkirby.com",
-        "issues": "https://github.com/getkirby/starterkit/issues",
-        "forum": "https://forum.getkirby.com",
-        "source": "https://github.com/getkirby/starterkit"
-    },
-    "require": {
-        "php": ">=7.1.0",
-        "getkirby/cms": "^3.0",
-        "mgfagency/kirby-twig": "^1.0",
-        "pedroborges/kirby-meta-tags": "^2.0",
-        "mullema/k3-image-clip": "^2.0"
-    },
-    "config": {
-        "optimize-autoloader": true
+  "name": "murby",
+  "description": "Murby – a Kirby 3 plainkit on steroids!",
+  "type": "project",
+  "version": "0.1.0",
+  "keywords": [
+    "kirby",
+    "cms",
+    "plainkit",
+    "webpack",
+    "sass",
+    "babel"
+  ],
+  "authors": [
+    {
+      "name": "Matthias",
+      "email": "matthias@faenger.de",
+      "homepage": "https://matti.dev/"
     }
+  ],
+  "require": {
+    "php": ">=7.1.0",
+    "getkirby/cms": "^3.0"
+  },
+  "config": {
+    "optimize-autoloader": true
+  },
+  "extra": {
+    "kirby-cms-path": "web/kirby",
+    "kirby-plugin-path": "web/site/plugins"
+  }
 }
