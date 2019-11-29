@@ -1,0 +1,32 @@
+title: Drinks
+icon: 🥃
+
+columns:
+  - width: 2/3
+    fields:
+      headline:
+        type: text
+      description:
+        type: textarea
+  - width: 1/3
+    fields:
+      cover:
+        type: files
+        layout: cards
+        multiple: false
+  - width: 2/3
+    sections:
+      listed:
+        extends: sections/drinks
+        headline: Published
+        status: listed
+  - width: 1/3
+    sections:
+      drafts:
+        extends: sections/drinks
+        headline: Drafts
+        status: draft
+      unlisted:
+        extends: sections/drinks
+        headline: In Review
+        status: unlisted

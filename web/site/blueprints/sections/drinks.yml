@@ -1,0 +1,7 @@
+type: pages
+headline: Drinks
+parent: site.find("drinks")
+info: "{{ page.date.toDate('d.m.Y') }}"
+template: drink
+empty: No drinks yet
+sortBy: date desc

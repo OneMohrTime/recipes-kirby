@@ -1,0 +1,52 @@
+{% extends '@templates/default.twig' %}
+
+{% block content %}
+	<header class="intro">
+		<h1>{{ page.title }}</h1>
+	</header>
+
+	<div class="layout">
+
+		<aside>
+			<section>
+				<h2>Address</h2>
+				<div class="text">
+					{{ page.address.kirbytext | raw }}
+				</div>
+			</section>
+
+			<section>
+				<h2>Email</h2>
+				<div class="text">
+					{{ page.email() }}
+				</div>
+			</section>
+
+			<section>
+				<h2>Phone</h2>
+				<div class="text">
+					{{ page.phone() }}
+				</div>
+			</section>
+
+			<section>
+				<h2>On the web</h2>
+				<div class="text">
+					<ul>
+						
+						{% for social in page.social().toStructure %}
+							<li><a href="{{ social.url }}">{{ social.platform }}</a></li>
+						{% endfor %}
+						
+					</ul>
+				</div>
+			</section>
+
+		</aside>
+
+		<div class="text">
+			{{ page.text.kirbytext | raw }}
+		</div>
+	</div>
+</main>
+{% endblock %}

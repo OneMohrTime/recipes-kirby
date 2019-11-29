@@ -19,6 +19,12 @@
 /web/site/cache/*
 !/web/site/cache/index.html
 
+# Content
+# ---------------
+
+/web/content/*
+!/web/content/index.html
+
 # Accounts
 # ---------------
 
