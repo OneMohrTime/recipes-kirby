@@ -34,6 +34,10 @@
 			grid-template-columns: 1fr 1fr 2fr;
 		}
 	}
+	
+	@include media(">=for-tablet-landscape-up") {
+		max-width: calc( var(--content-width) );
+	}
 
 	a {
 		@include inline-link();

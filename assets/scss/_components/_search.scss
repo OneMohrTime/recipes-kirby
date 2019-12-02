@@ -36,6 +36,12 @@
 	&::placeholder {
 		font-style: italic;
 	}
+	
+	@supports (display: flex) {
+		flex: 0 1 100%;
+		max-width: 100%;
+		width: auto;
+	}
 
 	@include media(">=for-desktop-up") {
 		background-color: transparent;
@@ -76,14 +82,25 @@
 }
 
 .search__submit {
-	padding: map-get($spacer, 1) / 2;
-	background-color: map-get($color, blue);
-	color: map-get($color, white);
+//	padding: map-get($spacer, 1) / 2;
+//	background-color: map-get($color, blue);
+//	color: map-get($color, white);
+	padding: 0;
+	
+	@supports (display: flex) {
+		flex: 0 1 auto;
+		max-width: 100%;
+		width: auto;
+	}
 
 	@include media(">=for-desktop-up") {
 		.--is-searching & {
 			margin-top: map-get($spacer, 1);
 			margin-bottom: map-get($spacer, 1);
 		}
+	}
+	
+	& > span {
+		
 	}
 }
