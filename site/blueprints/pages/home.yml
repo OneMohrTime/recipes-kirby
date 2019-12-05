@@ -45,6 +45,8 @@ columns:
       featureImage:
         label: Featured Image
         type: files
+        layout: cards
+        multiple: false
   - width: 1/2
     fields:
       featureHeadline:
