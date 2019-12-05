@@ -1,8 +1,9 @@
 {% extends '@templates/default.twig' %}
-{% set htmlTitle = page.title ~ ' - ' ~ site.title %}
+{% set mainClass = 'results' %}
 
 {% block content %}
-	<article class="results__grid">
+	<article class="page__results">
+<!--	<article class="results__grid">-->
 
 		<header class="results__intro intro">
 			<h1 class="results__headline headline">&ldquo;{{ query ?? 'Nothing?' }}&rdquo;</h1>

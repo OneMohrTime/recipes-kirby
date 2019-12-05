@@ -10,6 +10,14 @@ Description: Food qualities braise chicken cuts bowl through slices butternut sn
 
 ----
 
+Billboard:
+
+- 
+  id: >
+    home/screen-shot-2019-10-08-at-10.07.26.png
+
+----
+
 Subheadline: Bored?
 
 ----

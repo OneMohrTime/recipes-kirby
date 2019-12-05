@@ -1,6 +1,6 @@
 {% extends '@templates/default.twig' %}
-
-{% set recipes = site
+{% set mainClass    = 'recipes' %}
+{% set recipes      = site
 	.find('recipes')
 	.children()
 	.listed()

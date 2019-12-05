@@ -19,6 +19,10 @@ columns:
         label: Main Description
         type: textarea
   - width: 1/2
+    fields:
+      billboard:
+        label: Main Image
+        type: image-clip
   - width: 1/1
     fields:
       subheadline:

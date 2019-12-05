@@ -44,7 +44,7 @@
 							 class="left-link__cover"
 							 srcset="{{ leftCover.srcset([400, 800, 1200, 1600]) }}" />
 					{% else %}
-						<img src="https://loremflickr.com/1200/1200/food,elegant/all" alt="" class="left-link__cover" />
+						<img src="https://loremflickr.com/400/400/food,elegant/all" alt="" class="left-link__cover" />
 					{% endif %}
 				</a>
 				
@@ -64,18 +64,36 @@
 							 id="img-{{ rightCover.hash }}"
 							 class="right-link__cover"
 							 srcset="{{ rightCover.srcset([400, 800, 1200, 1600]) }}" />
+					{% else %}
+						<img src="https://loremflickr.com/400/400/food,elegant/all" alt="" class="left-link__cover" />
 					{% endif %}
 				</a>
 			</aside>
 			
 			<aside id="homeFeature" class="feature">
+				
 				<h3 class="feature__headline">
 					{{ page.featureHeadline }}
 				</h3>
+				
 				<div class="feature__description">
 					{{ page.featureDescription.kirbytext | raw }}
 				</div>
+				
 				<a href="#" class="feature__link">Link</a>
+				
+				{% set featureImage = page.featureImage.toFile() %}
+				{% if featureImage is defined and featureImage is not empty %}
+					<img src="{{ featureImage.url }}"
+						 alt="{{ featureImage.name }}"
+						 width="{{ featureImage.dimensions.width }}"
+						 height="{{ featureImage.dimensions.height }}"
+						 id="img-{{ featureImage.hash }}"
+						 class="right-link__cover"
+						 srcset="{{ featureImage.srcset([400, 800, 1200, 1600]) }}" />
+				{% else %}
+					<img src="https://loremflickr.com/400/400/food,elegant/all" alt="" class="left-link__cover" />
+				{% endif %}
 			</aside>
 		</section>
 		

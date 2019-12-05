@@ -3,7 +3,8 @@
 ---------------------------------------- */
 
 .nav__search {
-	display: none;
+	position: absolute;
+	visibility: hidden;
 	float: right;
 	padding-left: map-get($spacer, 1);
 	padding-right: map-get($spacer, 1) / 2;
@@ -17,7 +18,8 @@
 	}
 
 	&.--is-active {
-		display: block;
+		position: relative;
+		visibility: visible;
 
 		@supports (display: flex) {
 			flex: 1;
@@ -90,15 +92,21 @@
 	@include media(">=for-desktop-up") {
 		position: absolute;
 		top: 0;
-		left: 100%;
+		left: calc( 100% + #{map-get($spacer, 1)} );
 		height: 100%;
 		height: calc( 100% - #{map-get($spacer, 2)} );
 		padding: 0 map-get($spacer, 1) / 2;
+		opacity: 0;
 		transform: translateY( #{map-get($spacer, 1)} );
+		transition: opacity 500ms;
 		line-height: calc( 100% - #{map-get($spacer, 2)} );
 		background-color: map-get($color, red);
 		box-shadow: $box-shadow;
 		color: map-get($color, white);
+		
+		.--is-searching & {
+			opacity: 1;
+		}
 	}
 
 	@supports (display: flex) {

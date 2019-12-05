@@ -21,7 +21,8 @@
 
 .page.__recipes,
 .page.__drinks,
-.page.__about {
+.page.__about,
+.page.__search {
 	& > .page__body {
 		margin-bottom: map-get($spacer, 2);
 		padding-top: map-get($spacer, 4);
