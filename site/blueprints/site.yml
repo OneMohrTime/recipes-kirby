@@ -1,16 +1,12 @@
 title: Site
 
 columns:
-  - width: 1/1
+  - width: 1/4
     sections:
-      pages:
-        type: pages
-        create: default
-        template:
-          - about
-          - home
-          - default
-  - width: 1/2
+      retrotree:
+        headline: Retro Tree
+        type: retrotree
+  - width: 3/4
     fields:
       site_description:
         label: Site Description
@@ -18,13 +14,13 @@ columns:
       footer:
         label: Footer Text
         type: text
-  - width: 1/4
+  - width: 1/2
     sections:
       r_drafts:
         extends: sections/recipes
         headline: Started Recipes
         status: draft
-  - width: 1/4
+  - width: 1/2
     sections:
       d_drafts:
         extends: sections/drinks
