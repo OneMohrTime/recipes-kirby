@@ -12,7 +12,9 @@
 		<header class="homepage__intro intro">
 			<h1 class="--hide-visually">{{ site.title }}</h1>
 			<h2 class="homepage__headline headline" data-title="{{ page.headline }}">{{ page.headline }}</h2>
-			<p class="homepage__subheadline">{{ page.description }}</p>
+			<div class="homepage__subheadline">
+				{{ page.description.kirbytext | raw }}
+			</div>
 			<a href="javascript:void(0)" id="homeSearchToggle" class="homepage__button button">
 				<span data-title="Seach Food &amp; Drinks">Seach Food &amp; Drinks</span>
 			</a>
