@@ -8,7 +8,7 @@
 
 {% block content %}
 	<article class="homepage__grid">
-		
+
 		<header class="homepage__intro intro">
 			<h1 class="--hide-visually">{{ site.title }}</h1>
 			<h2 class="homepage__headline headline" data-title="{{ page.headline }}">{{ page.headline }}</h2>
@@ -19,16 +19,16 @@
 				<span data-title="Seach Food &amp; Drinks">Seach Food &amp; Drinks</span>
 			</a>
 		</header>
-		
+
 		<section class="homepage__promos">
 			<aside id="homeBored" class="bored">
 				<h2 class="bored__headline headline">{{ page.subheadline | length > 0 ? page.subheadline : 'Browse' }}</h2>
-				
+
 				{% set left      = page.left.related.toPage() %}
 				{% set leftCover = left.cover.toFile() %}
 				{% set right      = page.right.related.toPage() %}
 				{% set rightCover = right.cover.toFile() %}
-				
+
 				<a href="{{ left.url }}" class="bored__link crosshair__trigger">
 					<h3 class="left-link__headline">
 						Browse Food Recipes
@@ -49,7 +49,7 @@
 						<img src="https://loremflickr.com/400/400/food,elegant/all" alt="" class="left-link__cover" />
 					{% endif %}
 				</a>
-				
+
 				<a href="{{ right.url }}" class="bored__link crosshair__trigger">
 					<h3 class="right-link__headline">
 						Browse Drinks &amp; Cocktails
@@ -67,38 +67,39 @@
 							 class="right-link__cover"
 							 srcset="{{ rightCover.srcset([400, 800, 1200, 1600]) }}" />
 					{% else %}
-						<img src="https://loremflickr.com/400/400/food,elegant/all" alt="" class="left-link__cover" />
+						<img src="https://loremflickr.com/400/400/food,elegant/all" alt="" class="right-link__cover" />
 					{% endif %}
 				</a>
 			</aside>
-			
+
 			<aside id="homeFeature" class="feature">
-				
+
 				<h3 class="feature__headline">
 					{{ page.featureHeadline }}
 				</h3>
-				
+
 				<div class="feature__description">
 					{{ page.featureDescription.kirbytext | raw }}
 				</div>
-				
+
 				<a href="#" class="feature__link">Link</a>
-				
-				{% set featureImage = page.featureImage.toFile() %}
-				{% if featureImage is defined and featureImage is not empty %}
-					<img src="{{ featureImage.url }}"
-						 alt="{{ featureImage.name }}"
-						 width="{{ featureImage.dimensions.width }}"
-						 height="{{ featureImage.dimensions.height }}"
-						 id="img-{{ featureImage.hash }}"
-						 class="right-link__cover"
-						 srcset="{{ featureImage.srcset([400, 800, 1200, 1600]) }}" />
-				{% else %}
-					<img src="https://loremflickr.com/400/400/food,elegant/all" alt="" class="left-link__cover" />
-				{% endif %}
+
 			</aside>
+			{% set featureImage = page.featureImage.toFile() %}
+			{% if featureImage is defined and featureImage is not empty %}
+				<img src="{{ featureImage.url }}"
+					 alt="{{ featureImage.name }}"
+					 width="{{ featureImage.dimensions.width }}"
+					 height="{{ featureImage.dimensions.height }}"
+					 id="img-{{ featureImage.hash }}"
+					 class="promo__cover"
+					 srcset="{{ featureImage.srcset([400, 800, 1200, 1600]) }}"
+					 aria-describedby="homeFeature" />
+			{% else %}
+				<img src="https://loremflickr.com/400/400/food,elegant/all" alt="" class="promo__cover" />
+			{% endif %}
 		</section>
-		
+
 		<section id="homeCategory" class="hompage__category">
 			<h3 class="category__headline headline" data-title="Food Category">Food Category</h3>
 			<ul class="category__list">
