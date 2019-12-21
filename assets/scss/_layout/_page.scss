@@ -4,6 +4,10 @@
 
 .page {
 	position: relative;
+	
+	@include media(">=for-tablet-landscape-up") {
+		padding-bottom: map-get($spacer, 4);
+	}
 }
 
 .page > * {
