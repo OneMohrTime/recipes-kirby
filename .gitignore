@@ -51,6 +51,12 @@ node_modules/
 /content/*
 !/content/index.html
 
+# Media
+# ---------------
+
+/media/*
+!/media/index.html
+
 # Accounts
 # ---------------
 
