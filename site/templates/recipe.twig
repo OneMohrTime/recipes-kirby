@@ -1,0 +1,109 @@
+{% extends '@templates/default.twig' %}
+{% set mainClass = 'recipe' %}
+
+{% block content %}
+	<article class="recipe__grid">
+
+		<header class="recipe__intro intro">
+			<h1 class="recipe__headline headline" data-title="{{ page.headline | default(page.title) }}">{{ page.headline | default(page.title) }}</h1>
+
+			{% if page.description is defined and page.description is not empty %}
+				<div class="recipe__subheadline">{{ page.description.kirbytext | raw }}</div>
+			{% endif %}
+		</header>
+
+		<figure class="recipe__cover">
+			{#
+			{% if page.images | length > 1 %}
+				{% for image in page.images %}
+					<img src="{{ image.url }}"
+						 alt="{{ image.name }}"
+						 width="{{ image.dimensions.width }}"
+						 height="{{ image.dimensions.height }}"
+						 class="gallery__image ratio--{{ image.ratio }}-{{ image.orientation }}"
+						 id="{{ image.hash }}"
+						 srcset="" />
+
+						{% if image.alt is defined and image.alt is not empty %}
+							<figcaption class="cover__caption">
+								Photo courtesy of XX
+							</figcaption>
+						{% endif %}
+				{% endfor %}
+			{% elseif page.cover is defined and page.cover is not empty %}
+			#}
+			{% if page.cover is defined and page.cover is not empty %}
+				<img src="{{ page.cover.url }}"
+					 alt="placeholder for {{ page.cover.title }}"
+					 width="{{ page.cover.dimensions.width }}"
+					 height="{{ page.cover.dimensions.height }}"
+					 class="cover__image ratio--{{ page.cover.ratio | slice(0, 2) }}-{{ page.cover.orientation }}"
+					 id="{{ page.cover.hash }}"
+					 srcset="" />
+			{% else %}
+				<img src="https://via.placeholder.com/960x450/e8e7e1/2b3b4c?text=Pretend+this+is+{{ page.title }}" alt="placeholder for {{ page.title }}" class="cover__image" />
+				<figcaption class="cover__caption">
+					{{ page.title ?? null }}
+				</figcaption>
+			{% endif %}
+		</figure>
+
+		{% if page.recipeImages | length > 1 %}
+			<section class="recipe__gallery" style="display: none;">
+				{% for image in page.recipeImages %}
+					<img src="{{ image.url }}"
+						 alt="{{ image.name }}"
+						 width="{{ image.dimensions.width }}"
+						 height="{{ image.dimensions.height }}"
+						 class="gallery__image ratio--{{ image.ratio | slice(0, 2) }}-{{ image.orientation }}"
+						 id="{{ image.hash }}"
+						 srcset="" />
+				{% endfor %}
+			</section>
+		{% endif %}
+
+		<section class="recipe__ingredients">
+			<div id="ingredients" class="ingredients" tabindex="0">
+				<h2 class="ingredients__title">Ingredients</h2>
+
+				{% if page.ingredients is defined and page.ingredients is not empty %}
+					<ul class="ingredients__list">
+
+						{% for ingredient in page.ingredients.yaml %}
+							<li class="ingredient reading">
+								{{ ingredient.ingredient | raw }}
+							</li>
+						{% endfor %}
+
+					</ul>
+				{% endif %}
+			</div>
+		</section>
+
+		<section id="directions" class="recipe__directions">
+			<h2 class="directions__title">Directions</h2>
+
+			{% if page.directions is defined and page.directions is not empty %}
+				<ol class="directions__list" role="tablist">
+
+					{% for step in page.directions.yaml %}
+						<li id="{{ step.step | replace({ ' ' : '', '.' : '', ',' : '' }) | lower | slice(0, 24) }}" class="direction reading" role="tab" tabindex="0">
+							{{ step.step | raw }}
+						</li>
+					{% endfor %}
+
+				</ol>
+			{% endif %}
+		</section>
+
+		{% if page.tags is defined and page.tags is not empty %}
+			<section class="recipe__tags">
+				<h3 class="tags__title">Related</h3>
+				{% for tag in page.tags %}
+					<p>{{ tag }}</p>
+				{% endfor %}
+			</section>
+		{% endif %}
+
+	</article>
+{% endblock %}

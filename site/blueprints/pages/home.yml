@@ -1,0 +1,71 @@
+title: Home
+
+icon: 🏠
+
+options:
+  status:
+    draft: true
+    listed: true
+
+columns:
+  - width: 1/1
+    fields:
+      headline:
+        label: Main Headline
+        type: text
+  - width: 1/2
+    fields:
+      description:
+        label: Main Description
+        type: textarea
+  - width: 1/2
+    fields:
+      billboard:
+        label: Main Image
+        type: image-clip
+  - width: 1/1
+    fields:
+      subheadline:
+        label: Secondary Headline
+        type: text
+  - width: 1/2
+    fields:
+      left:
+        label: Left Link
+        type: pages
+        layout: cards
+        multiple: false
+        image: page.image.findBy('name', 'cover')
+  - width: 1/2
+    fields:
+      right:
+        label: Right Link
+        type: pages
+        layout: cards
+        multiple: false
+        image: page.image.findBy('name', 'cover')
+  - width: 1/2
+    fields:
+      featureImage:
+        label: Featured Image
+        type: files
+        layout: cards
+        multiple: false
+  - width: 1/2
+    fields:
+      featureHeadline:
+        label: Featured Headline
+        type: text
+      featureDescription:
+        label: Featured Description
+        type: textarea
+      featureUrl:
+        label: Featured URL
+        type: pages
+        multiple: false
+  - width: 1/1
+    sections:
+      recipes:
+        headline: Recipes
+        extends: sections/recipes
+        status: listed
