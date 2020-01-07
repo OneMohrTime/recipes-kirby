@@ -16,11 +16,11 @@ $nudge: map-get($spacer, 1);
 	transition: width 500ms, margin 500ms, transform 500ms, border 500ms;
 	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px;
-	
+
 	@include media(">=for-tablet-portrait-up") {
 		padding: map-get($spacer, 1);
 	}
-	
+
 	@include media(">=for-tablet-landscape-up") {
 		padding-left: map-get($spacer, 2);
 		padding-right: map-get($spacer, 2);
@@ -29,8 +29,8 @@ $nudge: map-get($spacer, 1);
 	// When "search" is clicked
 	&.--is-searching {
 		transform: translateY($nudge);
-		border-bottom-left-radius: 3px;
-		border-bottom-right-radius: 3px;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
 
 		@include media(">=for-desktop-up") {
 			width: calc(100% - #{$nudge});
@@ -64,45 +64,5 @@ $nudge: map-get($spacer, 1);
 			// visually align from button padding
 			transform: translateX(-#{map-get($spacer, 1) / 2});
 		}
-	}
-}
-
-.menu {
-	display: block;
-	float: right;
-	padding-right: map-get($spacer, 1) / 2;
-
-	@supports(display: flex) {
-		padding-right: 0;
-
-		@include media(">=for-desktop-up") {
-			// visuall align from button padding
-			transform: translateX(#{map-get($spacer, 1) / 2});
-		}
-	}
-
-	&.--is-hidden {
-		display: none;
-	}
-}
-
-.menu__item {
-
-	@include nav-link();
-
-	&[aria-current] {
-		background-color: map-get($color, light-gray);
-	}
-}
-
-
-.skip-to-content {
-	position: absolute !important;
-	top: map-get($spacer, 1) / 2;
-	left: map-get($spacer, 1) / 2;
-	@include hide-visually('hide');
-
-	&:focus {
-		@include hide-visually('unhide');
 	}
 }

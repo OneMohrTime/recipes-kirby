@@ -15,3 +15,20 @@
 .button {
 	@include nav-link();
 }
+
+
+/**
+ * Hidden but focusable content links
+ */
+
+.skip-to-content {
+	@include nav-link();
+	position: absolute !important;
+	top: map-get($spacer, 1) / 2;
+	left: map-get($spacer, 1) / 2;
+	@include hide-visually('hide');
+
+	&:focus {
+		@include hide-visually('unhide');
+	}
+}

@@ -45,6 +45,18 @@ node_modules/
 /site/cache/*
 !/site/cache/index.html
 
+# Content
+# ---------------
+
+/content/*
+!/content/index.html
+
+# Media
+# ---------------
+
+/media/*
+!/media/index.html
+
 # Accounts
 # ---------------
 

@@ -22,7 +22,9 @@
         "getkirby/cms": "^3.0",
         "mgfagency/kirby-twig": "^1.0",
         "pedroborges/kirby-meta-tags": "^2.0",
-        "mullema/k3-image-clip": "^2.0"
+        "mullema/k3-image-clip": "^2.0",
+        "vitamin2/retrotree": "^1.0",
+        "bvdputte/kirby-bettersearch": "^1.0"
     },
     "config": {
         "optimize-autoloader": true

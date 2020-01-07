@@ -4,8 +4,44 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d1dad3222f06aae81d3afe0eda0ea893",
+    "content-hash": "2d4374cf4124849dad2879da9a193772",
     "packages": [
+        {
+            "name": "bvdputte/kirby-bettersearch",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bvdputte/kirby-bettersearch.git",
+                "reference": "bb0f508eb3324d2226b7b3deac679d08e41d4471"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bvdputte/kirby-bettersearch/zipball/bb0f508eb3324d2226b7b3deac679d08e41d4471",
+                "reference": "bb0f508eb3324d2226b7b3deac679d08e41d4471",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.1"
+            },
+            "type": "kirby-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bart Vandeputte",
+                    "email": "bart.vdputte@gmail.com"
+                }
+            ],
+            "description": "A search plugin for Kirby 3 that searches for full word combinations rather than just individual words.",
+            "keywords": [
+                "kirby3",
+                "kirby3-plugin",
+                "search"
+            ],
+            "time": "2019-12-06T10:25:33+00:00"
+        },
         {
             "name": "claviska/simpleimage",
             "version": "3.3.3",
@@ -869,6 +905,47 @@
                 "templating"
             ],
             "time": "2019-06-18T15:37:11+00:00"
+        },
+        {
+            "name": "vitamin2/retrotree",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://bitbucket.org/vitamin2/retrotree.git",
+                "reference": "520e96da1766fd1a2fc975d4a3b6d2fddc10783c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/vitamin2/retrotree/get/520e96da1766fd1a2fc975d4a3b6d2fddc10783c.zip",
+                "reference": "520e96da1766fd1a2fc975d4a3b6d2fddc10783c",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.1",
+                "php": ">=7.1.0"
+            },
+            "type": "kirby-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitamin2 AG",
+                    "email": "info@vitamin2.ch"
+                }
+            ],
+            "description": "Retrotree is a kirby 3 section plugin to display pages in real retro tree fashion.",
+            "homepage": "https://vitamin2.ch",
+            "keywords": [
+                "kirby-retro-tree",
+                "kirby3",
+                "kirby3-cms",
+                "kirby3-plugin",
+                "retro-tree",
+                "retrotree"
+            ],
+            "time": "2019-08-23T08:10:33+00:00"
         },
         {
             "name": "zendframework/zend-escaper",
