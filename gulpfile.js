@@ -42,7 +42,8 @@ gulp.task('sass', function() {
 });
 
 /**
- * Third, set the `serve` task to be the default task
+ * Third, set tasks
  */
 
+gulp.task('build', ['sass']);
 gulp.task('default', ['serve']);
