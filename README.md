@@ -1,5 +1,7 @@
 # Kirby
 
+[![buddy pipeline](https://app.buddy.works/onemohrtime/recipes/pipelines/pipeline/232974/badge.svg?token=76d8ae679388747988b5bea1c7d43012e43e19944a3e68ad7940c13fa949116d "buddy pipeline")](https://app.buddy.works/onemohrtime/recipes/pipelines/pipeline/232974)
+
 Kirby is a file-based CMS.
 Easy to setup. Easy to use. Flexible as hell.
 
