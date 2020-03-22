@@ -49,7 +49,7 @@ node_modules/
 # ---------------
 
 /content/*
-!/content/index.html
+!/content/site.txt
 
 # Media
 # ---------------
