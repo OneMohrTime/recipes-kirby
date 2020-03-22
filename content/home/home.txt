@@ -1,0 +1,54 @@
+Title: Home
+
+----
+
+Headline: Hungry? Thirsty?
+
+----
+
+Description: Food qualities braise chicken cuts bowl through slices butternut snack. Tender meat juicy dinners. One-pot low heat plenty of time adobo fat raw soften fruit. sweet renders bone-in marrow richness kitchen, fricassee basted pork shoulder. Delicious butternut squash hunk. Flavor centerpiece plate, delicious ribs bone-in meat, excess chef end. sweet effortlessly pork, low heat smoker soy sauce flavor meat, rice fruit fruit. Romantic fall-off-the-bone butternut chuck rice burgers.
+
+----
+
+Billboard:
+
+-
+  id: >
+    home/screen-shot-2019-10-08-at-10.07.26.png
+
+----
+
+Subheadline: Bored?
+
+----
+
+Left:
+
+- recipes
+
+----
+
+Right:
+
+- drinks
+
+----
+
+Featureimage:
+
+- screen-shot-2019-10-08-at-10.07.26.png
+
+----
+
+Featureheadline: Christmas recipeeee
+
+----
+
+Featuredescription: Juicy meatballs brisket slammin' baked shoulder. Juicy smoker soy sauce burgers brisket. polenta mustard hunk greens. Wine technique snack skewers chuck excess.
+
+----
+
+Featureurl:
+
+- >
+  recipes/roasted-zucchini-black-bean-goat-cheese-enchiladas
