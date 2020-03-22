@@ -50,6 +50,14 @@ node_modules/
 
 /content/*
 !/content/site.txt
+!/content/1_recipes/recipes.txt
+!/content/2_drinks/drinks.txt
+!/content/3_about/about.txt
+!/content/home/home.txt
+!/content/error/error.txt
+!/content/privacy-policy/default.txt
+!/content/terms-of-use/default.txt
+!/content/search/search.txt
 
 # Media
 # ---------------
