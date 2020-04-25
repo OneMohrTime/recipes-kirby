@@ -1,6 +1,6 @@
 # Recipe book by [@onemohrtime](https://onemohrti.me)
 
-[![buddy pipeline](https://app.buddy.works/onemohrtime/recipes/pipelines/pipeline/232974/badge.svg?token=76d8ae679388747988b5bea1c7d43012e43e19944a3e68ad7940c13fa949116d "buddy pipeline")](https://app.buddy.works/onemohrtime/recipes/pipelines/pipeline/232974)
+[![buddy pipeline](https://app.buddy.works/onemohrtime/recipes/pipelines/pipeline/234208/badge.svg?token=87fbddf4764a79d8087606f27acba051a5f8777676ebcfd6ebb9563158502a61 "buddy pipeline")](https://app.buddy.works/onemohrtime/recipes/pipelines/pipeline/234208)
 
 **CMS:** Kirby 3
 **PHP:** 7.3
