@@ -19,15 +19,14 @@
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^7.0.0",
+    "gulp-autoprefixer": "^7.0.1",
     "gulp-connect-php": "^1.0.3",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^4.1.0",
     "gulp-uglifycss": "^1.1.0"
   },
   "dependencies": {
     "bourbon": "^6.0.0",
     "include-media": "^1.4.9",
-    "normalize.css": "^8.0.1",
-    "tingle.js": "^0.15.1"
+    "normalize.css": "^8.0.1"
   }
 }
