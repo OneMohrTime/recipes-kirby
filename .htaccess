@@ -3,6 +3,11 @@
 # rewrite rules
 <IfModule mod_rewrite.c>
 
+# force https
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+
 # enable awesome urls. i.e.:
 # http://yourdomain.com/about-us/team
 RewriteEngine on
