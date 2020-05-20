@@ -1,7 +1,8 @@
 {
-  "dependencies": {
-    "graceful-fs": {
-      "version": "4.2.3"
-    }
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "resolutions": {
+    "graceful-fs": "4.2.3"
   }
 }
