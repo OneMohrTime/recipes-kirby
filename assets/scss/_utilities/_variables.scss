@@ -69,4 +69,11 @@ $spacer: (
 	8: 6.5rem
 );
 
+
+/**
+ * Animation
+ */
+
 $box-shadow: 0 2px 24px fade-out( map-get($color, dark-gray), 0.94 );
+
+$speed: 350ms;

@@ -9,7 +9,7 @@
 					{{ crumb.title.words < 6 ? crumb.title : crumb.title|slice(0, 16) ~ '… yada yada…' }}
 				</a>
 			{% if not loop.last %}
-				&emsp;/
+				&emsp;→
 			{% endif %}
 			</li>
 		{% endfor %}

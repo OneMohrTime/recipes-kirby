@@ -120,17 +120,38 @@
 .ingredients {
 	border-radius: 3px;
 	background-image: url("../img/bg.png");
-	transition: transform 500ms;
+	transition: transform $speed;
 
 	@include media(">=for-tablet-landscape-up") {
 		position: absolute;
 		width: 100%;
 		padding: map-get($spacer, 2);
+		transition: transform $speed, box-shadow $speed;
 		background-color: map-get($color, white);
-		box-shadow: 1px 2px 5px 0 fade-out( map-get($color, black), 0.66 );
+		box-shadow: 0 0 0 0 transparent;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 3%;
+			bottom: 0;
+			width: 94%;
+			height: 94%;
+			transition: box-shadow $speed, filter $speed;
+			box-shadow: 1px 2px 5px 0 fade-out( map-get($color, black), 0.66 );
+			z-index: -1;
+			filter: blur(6px);
+		}
 
 		&:focus {
 			transform: translatex( #{map-get($spacer, 2)} );
+			outline-color: transparent;
+			box-shadow: 1px 2px 5px 0 fade-out( map-get($color, black), 0.66 );
+
+			&::before {
+				box-shadow: 0 0 0 0 transparent;
+				filter: blur(0);
+			}
 		}
 	}
 }
@@ -165,7 +186,7 @@
 	.direction {
 		position: relative;
 		margin-bottom: map-get($spacer, 1);
-		transition: padding 500ms;
+		transition: padding $speed;
 		font-size: modular-scale(1);
 		counter-increment: direction-list;
 		z-index: 1;
@@ -174,7 +195,7 @@
 			content: counter(direction-list, decimal-leading-zero);
 			position: absolute;
 			right: 100%;
-			transition: color 500ms;
+			transition: color $speed;
 			transform: translate3d( -#{map-get($spacer, 1) / 2}, -#{map-get($spacer, 1)}, 0 );
 			font-size: modular-scale(4);
 			font-style: italic;
