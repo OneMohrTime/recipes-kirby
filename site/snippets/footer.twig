@@ -16,7 +16,8 @@
 	<h4 class="footer__title highlight --white">Newest Recipes</h4>
 	<ul class="recipe-list reading">
 		{% for recipe in recipes %}
-			<li class="recipe-item"><a href="{{ recipe.url }}" class="highlight --white" title="{{ recipe.title }}" aria-title="{{ recipe.headline }}">{{ recipe.headline | length > 54 ? recipe.headline | slice(0, 54) ~ '...' : recipe.headline }}</a></li>
+			{% set headline = recipe.headline|default(recipe.title) %}
+			<li class="recipe-item"><a href="{{ recipe.url }}" class="highlight --white" title="{{ recipe.title }}" aria-title="{{ headline }}">{{ headline|length > 54 ? headline|slice(0, 54) ~ '...' : headline }}</a></li>
 		{% endfor %}
 		<li class="recipe-item"><a href="{{ site.url }}/recipes" class="highlight --white" title="Show all recipes" aria-title="Show all recipes"><em>Show all recipes</em></a></li>
 	</ul>
@@ -26,7 +27,7 @@
 	<h4 class="footer__title highlight --white">Newest Drinks</h4>
 	<ul class="drink-list reading">
 		{% for drink in drinks %}
-			<li class="drink-item"><a href="{{ drink.url }}" class="highlight --white" title="{{ drink.title }}" aria-title="{{ drink.headline }}">{{ drink.title | length > 54 ? drink.title | slice(0, 54) ~ '...' : drink.title }}</a></li>
+			<li class="drink-item"><a href="{{ drink.url }}" class="highlight --white" title="{{ drink.title }}" aria-title="{{ drink.headline }}">{{ drink.title|length > 54 ? drink.title|slice(0, 54) ~ '...' : drink.title }}</a></li>
 		{% endfor %}
 		<li class="drink-item"><a href="{{ site.url }}/drinks" class="highlight --white" title="Show all drinks" aria-title="Show all drinks"><em>Show all drinks</em></a></li>
 	</ul>
@@ -35,7 +36,7 @@
 <section class="footer__section --copy">
 	<h4 class="footer__title --hide-text">About this website</h4>
 	<p class="highlight --white">
-		&copy; {{ 'now' | date('Y') }} <a href="{{ site.url }}/about">{{ site.title }}</a> | A shared cookbook of recipes
+		&copy; {{ 'now'|date('Y') }} <a href="{{ site.url }}/about">{{ site.title }}</a> | A shared cookbook of recipes
 		<br/>
 		Project of <a href="https://onemohrti.me" target="_blank" rel="nofollow noreferrer">Derek</a> &amp; <a href="https://owielanctot.com" target="_blank" rel="nofollow noreferrer">Owie</a>
 	</p>
