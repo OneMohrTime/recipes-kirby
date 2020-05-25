@@ -218,13 +218,13 @@ a:not([class]) {
 }
 
 .page__body {
-	ul, ol, dl {
+	ul:not(.breadcrumbs), ol, dl {
 		margin-bottom: map-get($spacer, 1) / 2;
 		padding-left: map-get($spacer, 1);
 		line-height: 1.35em;
 	}
 
-	ul {
+	ul:not(.breadcrumbs) {
 		list-style-type: square;
 	}
 

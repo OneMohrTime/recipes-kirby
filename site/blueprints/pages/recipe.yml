@@ -27,7 +27,7 @@ columns:
       description:
         label: Quick Description
         type: textarea
-      aboutRecipes:
+      aboutRecipe:
         label: Longer Description
         type: textarea
   - width: 1/4

@@ -5,10 +5,12 @@
 	<article class="recipe__grid">
 
 		<header class="recipe__intro intro">
-			<h1 class="recipe__headline headline" data-title="{{ page.headline | default(page.title) }}">{{ page.headline | default(page.title) }}</h1>
+			<h1 class="recipe__headline headline" data-title="{{ page.headline|default(page.title) }}">{{ page.headline | default(page.title) }}</h1>
 
 			{% if page.description is defined and page.description is not empty %}
-				<div class="recipe__subheadline">{{ page.description.kirbytext | raw }}</div>
+				<div class="recipe__subheadline">
+					{{ page.description.kirbytext|raw }}
+				</div>
 			{% endif %}
 		</header>
 
@@ -37,7 +39,7 @@
 					 alt="placeholder for {{ page.cover.title }}"
 					 width="{{ page.cover.dimensions.width }}"
 					 height="{{ page.cover.dimensions.height }}"
-					 class="cover__image ratio--{{ page.cover.ratio | slice(0, 2) }}-{{ page.cover.orientation }}"
+					 class="cover__image ratio--{{ page.cover.ratio|slice(0, 2) }}-{{ page.cover.orientation }}"
 					 id="{{ page.cover.hash }}"
 					 srcset="" />
 			{% else %}
@@ -55,7 +57,7 @@
 						 alt="{{ image.name }}"
 						 width="{{ image.dimensions.width }}"
 						 height="{{ image.dimensions.height }}"
-						 class="gallery__image ratio--{{ image.ratio | slice(0, 2) }}-{{ image.orientation }}"
+						 class="gallery__image ratio--{{ image.ratio|slice(0, 2) }}-{{ image.orientation }}"
 						 id="{{ image.hash }}"
 						 srcset="" />
 				{% endfor %}
@@ -71,37 +73,49 @@
 
 						{% for ingredient in page.ingredients.yaml %}
 							<li class="ingredient reading">
-								{{ ingredient.ingredient | raw }}
+								{{ ingredient.ingredient|raw }}
 							</li>
 						{% endfor %}
 
 					</ul>
+				{% else %}
+					<p>Evidently there are no ingredients.</p>
 				{% endif %}
 			</div>
 		</section>
 
 		<section id="directions" class="recipe__directions">
+
+			{{ page.aboutRecipe.kirbytext|raw }}
+
 			<h2 class="directions__title">Directions</h2>
 
 			{% if page.directions is defined and page.directions is not empty %}
 				<ol class="directions__list" role="tablist">
 
 					{% for step in page.directions.yaml %}
-						<li id="{{ step.step | replace({ ' ' : '', '.' : '', ',' : '' }) | lower | slice(0, 24) }}" class="direction reading" role="tab" tabindex="0">
-							{{ step.step | raw }}
+						<li id="{{ step.step|replace({ ' ' : '', '.' : '', ',' : '' })|lower|slice(0, 24) }}" class="direction reading" role="tab" tabindex="0">
+							{{ step.step|raw }}
 						</li>
 					{% endfor %}
 
 				</ol>
+			{% else %}
+				<p>Apparently you should be able to figure this one out on your own?</p>
 			{% endif %}
 		</section>
 
 		{% if page.tags is defined and page.tags is not empty %}
 			<section class="recipe__tags">
 				<h3 class="tags__title">Related</h3>
-				{% for tag in page.tags %}
-					<p>{{ tag }}</p>
-				{% endfor %}
+				{% if page.tags %}
+					{# {% for tag in page.tags %} #}
+						{# <p>{{ tag }}</p> #}
+					{# {% endfor %} #}
+					<p>{{ page.tags }}</p>
+				{% else %}
+					<p>This relates to&hellip;nothing!</p>
+				{% endif %}
 			</section>
 		{% endif %}
 

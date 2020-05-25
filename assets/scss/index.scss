@@ -10,7 +10,7 @@ https://coolors.co/2b3b4c-1e2732-f1bf98-8fd5a6-fffef7
 	"../../node_modules/normalize.css/normalize",
 	"../../node_modules/bourbon/core/bourbon",
 	"../../node_modules/include-media/dist/include-media";
-	
+
 @import
 	"_utilities/variables",
 	"_utilities/mixins",
@@ -25,6 +25,7 @@ https://coolors.co/2b3b4c-1e2732-f1bf98-8fd5a6-fffef7
 	"_layout/footer";
 
 @import
+	"_components/breadcrumb",
 	"_components/buttons",
 	"_components/crosshair",
 //	"_components/font-face": imported in _layout/typography

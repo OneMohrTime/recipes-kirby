@@ -31,7 +31,9 @@
 	}
 }
 
-.recipe__headline {}
+.recipe__headline {
+	position: relative;
+}
 
 .recipe__subheadline {
 
@@ -49,6 +51,10 @@
 			background-size: 100px 61px;
 		}
 	}
+}
+
+.recipe__breadcrumbs {
+	list-style-type: none;
 }
 
 .recipe__cover,
@@ -150,7 +156,7 @@
 		@include list-reset();
 		padding-left: map-get($spacer, 4);
 		counter-reset: direction-list;
-		
+
 		@include media(">=for-tablet-portrait-up") {
 			padding-left: 0;
 		}
