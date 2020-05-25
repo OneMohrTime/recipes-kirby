@@ -85,13 +85,19 @@
 			{% endif %}
 		</section>
 
+
 		<section id="recipesAll" class="recipes __all">
+		{% if tags %}
 			<h2 class="recipes__browse">
 				<span id="recipeLabel" class="recipe-type__label" aria-label="Browse recipes by">Browse</span>
 				<select class="recipe-type__input" aria-labelledby="recipeLabel">
-					<option>Everything</option>
+					<option>Newest Recipes</option>
+					{% for tag in tags %}
+						<option>{{ tag }}</option>
+					{% endfor %}
 				</select>
 			</h2>
+		{% endif %}
 
 			{% if recipes is defined and recipes is not empty %}
 
@@ -121,6 +127,6 @@
 
 			{% endif %}
 		</section>
-		
+
 	</article>
 {% endblock %}
