@@ -72,12 +72,17 @@ h6 {
  */
 
 p {
-	margin: 0 0 #{map-get($spacer, 1) / 2};
+	margin: 0 0 #{$base-line-height};
 	font-weight: 400;
 	line-height: 1.65em;
 	widows: 3;
 	orphans: 3;
 	hyphens: auto;
+
+	&:last-child,
+	&:only-child {
+		margin-bottom: 0;
+	}
 }
 
 ul, ol, dl {
@@ -181,7 +186,7 @@ a:not([class]) {
 	margin-bottom: calc( #{map-get($spacer, 3) / 2} + 7px );
 	padding-bottom: #{map-get($spacer, 3) / 2};
 	border-bottom: 7px map-get($color, tan) solid;
-	
+
 	&::before {
 		content: attr(data-title);
 		position: absolute;

@@ -17,6 +17,8 @@ $bourbon: (
 	"rails-asset-pipeline": false,
 );
 
+$base-line-height: 1.65em;
+
 $breakpoints: (
 	for-phone-only: 599px,
 	for-tablet-portrait-up: 600px,
