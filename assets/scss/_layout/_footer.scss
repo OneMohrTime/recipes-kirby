@@ -13,7 +13,7 @@
 	background-blend-mode: multiply;
 
 	@include media(">=for-tablet-portrait-up") {
-		
+
 		@supports (display: grid) {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
@@ -21,7 +21,7 @@
 			grid-column-gap: map-get($spacer, 1);
 		}
 	}
-	
+
 	@include media(">=for-tablet-landscape-up") {
 		// padding-left: calc( 50% - (var(--content-width) / 2) );
 		// padding-right: calc( 50% - (var(--content-width) / 2) );
@@ -33,7 +33,7 @@
 			grid-template-columns: 1fr 1fr 2fr;
 		}
 	}
-	
+
 	@include media(">=for-tablet-landscape-up") {
 		max-width: calc( var(--content-width) );
 	}
@@ -52,12 +52,11 @@
 			}
 		}
 	}
-	
+
 	p {
-	
+
 		&.highlight {
 			line-height: 2em;
-			background-color: map-get($color, background);
 		}
 	}
 }
@@ -73,7 +72,7 @@
 	.drink-list {
 		padding-left: map-get($spacer, 1);
 		list-style-type: square;
-		
+
 		@supports (display: flex) {
 			display: flex;
 			flex-direction: column;
