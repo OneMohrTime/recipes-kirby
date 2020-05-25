@@ -39,17 +39,9 @@
 
 		{% include '@snippets/modalSection.twig' %}
 
-		<nav class="page__breadcrumb">
-			<ul class="breadcrumbs">
-				{% for crumb in site.breadcrumb %}
-					<li class="breadcrumbs__crumb{{ crumb.isActive == '1' ? ' -isActive' }}">
-						<a href="{{ crumb.url }}">
-							{{ crumb.title.words < 6 ? crumb.title : crumb.title|slice(0, 20) ~ '… yada yada…' }}
-						</a>
-					</li>
-				{% endfor %}
-			</ul>
-		</nav>
+		{% if page.template == 'recipe' or page.template == 'drink' %}
+			{% include '@snippets/breadcrumb.twig' %}
+		{% endif %}
 
 		<footer id="footer" class="page__footer">
 			{% include '@snippets/footer.twig' %}
