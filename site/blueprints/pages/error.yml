@@ -1,4 +1,20 @@
 title: Error
 
-options:
-  read: false
+columns:
+  - width: 1/4
+    sections:
+      retrotree:
+        headline: Retro Tree
+        type: retrotree
+  - width: 3/4
+    fields:
+      intro:
+        label: Headline
+        type: text
+      text:
+        label: Text
+        type: textarea
+        size: huge
+
+# options:
+  # read: false
