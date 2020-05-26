@@ -34,6 +34,11 @@ columns:
   - width: 1/4
     fields:
       tags: true
+      category:
+        label: Category
+        type: tags
+        options: query
+        query: site.children.published
   - width: 2/3
     fields:
       recipeImages:
