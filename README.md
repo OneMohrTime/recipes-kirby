@@ -4,4 +4,4 @@
 
 | CMS | PHP | MySQL | Node | NPM | Server |
 |-|-|-|-|-|-|
-| Kirby 3 | `7.3` | n/a | `12.x` | `6.x` | [Ubuntu 18.04](https://askubuntu.com/questions/449032/29-packages-can-be-updated-how) |
+| Kirby `3.3.5` | `7.3` | n/a | `12.16.x` | `6.14.x` | [Ubuntu 18.04](https://askubuntu.com/questions/449032/29-packages-can-be-updated-how) |

@@ -63,9 +63,21 @@ columns:
         label: Featured URL
         type: pages
         multiple: false
-  - width: 1/1
-    sections:
-      recipes:
-        headline: Recipes
-        extends: sections/recipes
-        status: listed
+  - width: 1/2
+    # sections:
+    #   recipes:
+    #     headline: Recipes
+    #     extends: sections/recipes
+    #     status: listed
+    fields:
+      featuredCategoryHeadline:
+        label: Featured Category Headine
+        type: text
+  - width: 1/2
+    fields:
+      featuredCategory:
+        label: Featured Category
+        type: tags
+        options: query
+        query: site.children.published
+        max: 1

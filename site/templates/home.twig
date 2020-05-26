@@ -100,15 +100,17 @@
 			{% endif %}
 		</section>
 
-		<section id="homeCategory" class="hompage__category">
-			<h3 class="category__headline headline" data-title="Food Category">Food Category</h3>
-			<ul class="category__list">
-				<li><a href="#">Recipe</a></li>
-				<li><a href="#">Recipe</a></li>
-				<li><a href="#">Recipe</a></li>
-				<li><a href="#">Recipe</a></li>
-			</ul>
-		</section>
+		{% if page.featuredCategory is defined and page.featuredCategory is not empty %}
+			<section id="homeCategory" class="hompage__category">
+				<h3 class="category__headline headline" data-title="{{ page.featuredCategoryHeadline ?? 'Featured' }}">{{ page.featuredCategoryHeadline ?? 'Featured' }}</h3>
+				<ul class="category__list">
+					<li><a href="#">Recipe</a></li>
+					<li><a href="#">Recipe</a></li>
+					<li><a href="#">Recipe</a></li>
+					<li><a href="#">Recipe</a></li>
+				</ul>
+			</section>
+		{% endif %}
 
 	</article>
 {% endblock %}
