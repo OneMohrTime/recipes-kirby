@@ -14,7 +14,8 @@ columns:
   - width: 1/4
     fields:
       cover:
-        type: image-clip
+        type: files
+        # type: image-clip
         layout: cards
         template: cover
         multiple: false
