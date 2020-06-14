@@ -44,18 +44,18 @@
 	}
 
 	@supports (display: flex) {
-		flex: 1 1 80%;
-		max-width: 80%;
+		flex: 1 1 55%;
+		max-width: 55%;
 		width: auto;
 
-//		@include media(">=for-tablet-landscape-up") {
-//			flex: 1 1 80%;
-//			max-width: 80%;
-//		}
-		
+		@include media(">=for-tablet-portrait-up") {
+			flex-basis: 60%;
+			max-width: 60%;
+		}
+
 		@include media(">=for-tablet-landscape-up") {
-			flex: 1 1 85%;
-			max-width: 85%;
+			flex-basis: 75%;
+			max-width: 75%;
 		}
 	}
 
@@ -103,15 +103,15 @@
 		background-color: map-get($color, red);
 		box-shadow: $box-shadow;
 		color: map-get($color, white);
-		
+
 		.--is-searching & {
 			opacity: 1;
 		}
 	}
 
 	@supports (display: flex) {
-		flex: 1 1 5%;
-		max-width: 5%;
+		flex: 1 1 15%;
+		max-width: 15%;
 		width: auto;
 	}
 }
@@ -126,16 +126,16 @@
 		max-width: 25%;
 		width: auto;
 
-		@include media(">=for-tablet-portrait-up") {
-			flex: 1 1 15%;
-			max-width: 15%;
-		}
+		// @include media(">=for-tablet-portrait-up") {
+		// 	flex: 1 1 15%;
+		// 	max-width: 15%;
+		// }
 
 		@include media(">=for-tablet-landscape-up") {
 			flex: 1 1 10%;
 			max-width: 10%;
 		}
-		
+
 		@include media(">=for-desktop-up") {
 			margin-left: map-get($spacer, 1);
 			flex: 0 1 15%;
