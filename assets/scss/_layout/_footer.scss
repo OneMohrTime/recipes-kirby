@@ -25,17 +25,14 @@
 	@include media(">=for-tablet-landscape-up") {
 		// padding-left: calc( 50% - (var(--content-width) / 2) );
 		// padding-right: calc( 50% - (var(--content-width) / 2) );
-		max-width: calc( var(--content-width) + #{map-get($spacer, 2)} );
+		max-width: calc( var(--content-width) );
+		margin-top: map-get($spacer, 4);
 		box-shadow: $box-shadow;
 
 		@supports (display: grid) {
 			// grid-template-columns: 25% 25% 50%;
 			grid-template-columns: 1fr 1fr 2fr;
 		}
-	}
-
-	@include media(">=for-tablet-landscape-up") {
-		max-width: calc( var(--content-width) );
 	}
 
 	a {
