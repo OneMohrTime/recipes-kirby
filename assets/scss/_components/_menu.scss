@@ -23,12 +23,6 @@
 
 .menu__item {
 	@include nav-link();
-	
-	&:first-child {
-		@include media("<for-phone-only") {
-			display: none;
-		}
-	}
 
 	&[aria-current] {
 		background-color: map-get($color, light-gray);
