@@ -27,13 +27,13 @@
  * Utility classes
  */
 
-.--hide-text {
+.-hideText {
 	@include hide-text;
 }
 
 .--hide-visually {
 	@include hide-visually;
-	
+
 	&.--focusable {
 		&:active,
 		&:focus {
